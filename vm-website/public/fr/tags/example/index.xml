@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>example on </title>
+    <link>http://example.org/fr/tags/example/</link>
+    <description>Recent content in example on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr</language>
+    <copyright>Copyright © 2025 Altux SA</copyright>
+    <lastBuildDate>Wed, 15 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://example.org/fr/tags/example/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Nos chauffeurs/livreurs</title>
+      <link>http://example.org/fr/posts/1736936275287-nos-chauffeurs_livreurs/</link>
+      <pubDate>Wed, 15 Jan 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/fr/posts/1736936275287-nos-chauffeurs_livreurs/</guid>
+      <description>Nos chauffeurs/livreurs ravitaillent à fréquence régulière chaque distributeur automatique.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://example.org/fr/posts/1736936275287-nos-chauffeurs_livreurs/featured_livraisons.jpg" />
+    </item>
+    
+    <item>
+      <title>Notre call center</title>
+      <link>http://example.org/fr/posts/1736936483816-notre-call-center/</link>
+      <pubDate>Wed, 15 Jan 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/fr/posts/1736936483816-notre-call-center/</guid>
+      <description>Notre call center est en mesure de vous informer ou, si nécessaire, de vous aiguiller rapidement vers un interlocuteur spécialisé.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://example.org/fr/posts/1736936483816-notre-call-center/featured_call_center.jpg" />
+    </item>
+    
+    <item>
+      <title>Notre département informatique</title>
+      <link>http://example.org/fr/posts/1736936568250-notre-d%C3%A9partement-informatique/</link>
+      <pubDate>Wed, 15 Jan 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/fr/posts/1736936568250-notre-d%C3%A9partement-informatique/</guid>
+      <description>Notre département informatique a développé un système de gestion optimal.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://example.org/fr/posts/1736936568250-notre-d%C3%A9partement-informatique/featured_d%C3%A9partement_info.jpg" />
+    </item>
+    
+    <item>
+      <title>Notre force de vente</title>
+      <link>http://example.org/fr/posts/1736936510808-notre-force-de-vente/</link>
+      <pubDate>Wed, 15 Jan 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/fr/posts/1736936510808-notre-force-de-vente/</guid>
+      <description>Notre force de vente vous est entièrement dévouée, elle peut vous informer, vous conseiller ou vous soumettre une offre.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://example.org/fr/posts/1736936510808-notre-force-de-vente/featured_force_de_vente.jpg" />
+    </item>
+    
+    <item>
+      <title>Notre Hotline</title>
+      <link>http://example.org/fr/posts/1736936527129-notre-hotline/</link>
+      <pubDate>Wed, 15 Jan 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/fr/posts/1736936527129-notre-hotline/</guid>
+      <description>Notre Hotline est en mesure, 365 jours/an, de vous dépanner par téléphone ou, en cas de nécessité, d’organiser rapidement un dépannage sur place.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://example.org/fr/posts/1736936527129-notre-hotline/featured_hotline.jpg" />
+    </item>
+    
+    <item>
+      <title>Notre service technique</title>
+      <link>http://example.org/fr/posts/1736936465976-notre-service-technique/</link>
+      <pubDate>Wed, 15 Jan 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/fr/posts/1736936465976-notre-service-technique/</guid>
+      <description>Notre service technique est responsable de la programmation, de l’installation, de la maintenance des appareils automatiques et, 365 jours /an, des dépannages.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://example.org/fr/posts/1736936465976-notre-service-technique/featured_service_technique.jpg" />
+    </item>
+    
+  </channel>
+</rss>

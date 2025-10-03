@@ -1,0 +1,25 @@
+[[main]]
+name = "VM"
+pageRef = "posts"
+weight = 1
+
+[[footer]]
+name = "VM Vending Management"
+pageRef = "newSite"
+weight = 9
+
+[[footer]]
+name = "Bodenackerstrasse 53"
+pageRef = "newSite"
+weight = 99
+
+[[footer]]
+name = "4657 Dulliken"
+pageRef = "newSite"
+weight = 999
+
+[[footer]]
+name = "+41 62 388 34 34"
+pageRef = "newSite"
+weight = 9999
+

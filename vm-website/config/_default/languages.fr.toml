@@ -1,0 +1,19 @@
+disabled = false
+languageCode = "fr"
+languageName = "Français"
+weight = 2 
+title = ""
+contentDir = "content/fr"
+
+[params]
+displayName = "FR"
+isoCode = "fr"
+rtl = false
+dateFormat = "2 January 2006"
+logo = "vm_classic.svg"
+copyright = "Copyright © 2025 Altux SA"
+
+[params.author]
+   name = "VM Vending Management"
+   headline = "VM Vending Management est une société opérant dans le secteur de la logistique. Elle est en charge de la gestion administrative et opérationnelle de distributeurs automatiques de cigarettes. Ce faisant, elle offre une solution globale et efficace aux propriétaires des distributeurs automatiques ainsi qu’à leurs clients. VM gère ainsi plus de 5’000 distributeurs automatiques situés essentiellement dans les hôtels, cafés, restaurants et discothèques sur l’ensemble du territoire suisse."
+

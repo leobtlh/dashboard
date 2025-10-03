@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ _('Altux Traduction') }}</title>
+    <link rel="stylesheet" href="/static/css/index.css">
+</head>
+
+<body>
+    <div class="margin-content">
+        <a href="/" class="form-menu logo-link">
+            <div class="logo-container">
+                <img src="/static/img/altux-logo.png" alt="altux-logo">
+            </div>
+        </a>
+        <div class="menu-category">
+            <h3>{{ _('Thème') }}</h3>
+        </div>
+        <a href="#" class="form-link" id="themeSwitch" style="font-size: 1.7em;">☀ ︲ ☾</a>
+<!--         <a href="#" class="form-link" id="themeSwitch" style="font-size: 1.7em;">☀ ╎ ☾</a> -->
+        <div class="menu-category">
+            <h3>{{ _('Langues') }}</h3>
+        </div>
+        <a href="{{ url_for('set_locale', lang_code='fr') }}" class="form-menu">
+            <p>Français</p>
+        </a>
+        <a href="{{ url_for('set_locale', lang_code='de') }}" class="form-menu">
+            <p>Deutsch</p>
+        </a>
+        <div class="menu-category">
+            <h3>{{ _('Outils') }}</h3>
+        </div>
+        <a href="/" class="form-menu">
+            <p>{{ _('Traduction de texte') }}</p>
+        </a>
+        <a href="/documents/" class="form-menu">
+            <p>{{ _('Traduction de documents') }}</p>
+        </a>
+        <a href="/amelioration/" class="form-menu">
+            <p>{{ _('Amélioration de texte') }}</p>
+        </a>
+        <div class="menu-category">
+            <h3>{{ _('Liens') }}</h3>
+        </div>
+        <a href="https://www.altux.ch/" target="_blank" class="form-link">
+            <p>Altux</p>
+        </a>
+        <a href="https://shop.margot.ch/" target="_blank" class="form-link">
+            <p>Margot</p>
+        </a>
+    </div>
+
+    <script src="/static/js/index.js"></script>
+</body>
+
+</html>
+

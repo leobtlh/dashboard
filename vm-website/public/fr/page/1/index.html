@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>http://example.org/fr/</title>
+    <link rel="canonical" href="http://example.org/fr/"/>
+    <meta name="robots" content="noindex">
+    <meta charset="utf-8"/>
+    <noscript>
+        <meta http-equiv="refresh" content="0; url=http://example.org/fr/"/>
+    </noscript>
+    <script>
+      ;(function () {
+        
+        
+        if (window.location.pathname !== '/') {
+          window.location.replace('http:\/\/example.org\/fr\/')
+          return
+        }
+
+        var getFirstBrowserLanguage = function () {
+          var nav = window.navigator,
+          browserLanguagePropertyKeys = ['language', 'browserLanguage', 'systemLanguage', 'userLanguage'],
+          i,
+          language
+
+          if (Array.isArray(nav.languages)) {
+            for (i = 0; i < nav.languages.length; i++) {
+              language = nav.languages[i]
+              if (language && language.length) {
+                return language
+              }
+            }
+          }
+
+          
+          for (i = 0; i < browserLanguagePropertyKeys.length; i++) {
+            language = nav[browserLanguagePropertyKeys[i]]
+            if (language && language.length) {
+              return language
+            }
+          }
+          return 'de'
+        }
+
+        var preferLang = getFirstBrowserLanguage()
+        if (preferLang.indexOf('fr') !== -1) {
+          
+          window.location.replace('/fr/')
+        } else {
+          
+          window.location.replace('/de/')
+        }
+      })()
+    </script>
+</head>
+<body>
+<h1>Rerouting</h1>
+<p>You should be rerouted in a jiff, if not, <a href="http://example.org/fr/">click here</a>.</p>
+</body>
+</html>
+

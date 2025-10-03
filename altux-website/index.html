@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <title>Altux</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Altux crazy description">
+    <meta name="author" content="Altux">
+    <link rel="stylesheet" href="./assets/css/index.css">
+    <link rel="stylesheet" href="./assets/css/colors.css">
+    <link rel="stylesheet" href="./assets/css/leaflet.css"/>
+    <link rel="apple-touch-icon" sizes="57x57" href="./assets/img/icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="./assets/img/icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="./assets/img/icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="./assets/img/icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="./assets/img/icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="./assets/img/icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="./assets/img/icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="./assets/img/icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/img/icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="./assets/img/icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/img/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="./assets/img/icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/img/icons/favicon-16x16.png">
+    <link rel="manifest" href="./assets/img/icons/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="./assets/img/icons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+</head>
+<body>
+<div id="loader">
+    <img src="assets/img/loading.gif" src="Loading...">
+</div>
+<header class="dark">
+    <img src="./assets/img/altux-logo.png" alt="altux-logo">
+    <div class="languages">
+        <a id="lang-en" href="./index-en.html">EN</a>
+        <a class="active" href="./index.html">FR</a>
+    </div>
+</header>
+<div id="slide-0" class="fixed-container">
+    <h1>Altux SA</h1>
+    <p>Depuis 2006, des solutions informatiques au service des métiers de la logistique. Altux est une société du Groupe Margot. Elle emploie aujourd'hui 15 personnes.</p>
+</div>
+<div id="slide-1" class="fixed-container">
+    <h1>Altux SA</h1>
+    <p>Le Groupe Margot est un des leaders en Suisse dans ses domaines d'expertise. Il opère dans la distribution, la logistique du E-commerce et dans la gestion opérationnelle de distributeurs automatiques.</p>
+</div>
+<div id="slide-2" class="fixed-container">
+    <h1>Altux SA</h1>
+    <p>Altux est la société informatique du Groupe Margot. Elle développe des systèmes logiciels et matériels permettant au groupe de disposer d'outils adaptés, flexibles, sûrs et évolutifs.</p>
+</div>
+<div id="slide-3" class="fixed-container">
+    <h1>Altux SA</h1>
+    <p>Altux est également au service de nombreux clients externes. Elle développe pour eux des solutions adaptées.</p>
+</div>
+<div class="main-container">
+    <div id="targetProduit" class="container product-container">
+        <h1>Produits</h1>
+        <div class="products">
+            <div class="two-products">
+                <div class="product-card">
+                    <div class="upper-card"></div>
+                    <img src="assets/img/tuxybox_large_w.png" alt="tuxybox-alt">
+                    <div class="inner-card">
+                        <h3>ERP pour les grossistes.</h3>
+                        <p>Depuis 2002, des solutions logicielles de gestion de centrale de distribution.</p>
+                        <div class="button-container">
+                            <button id="scrollButtonBox" type="button" class="contact-button" onclick="selectProduct('TuxyBox')">Prendre contact</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="two-products">
+                <div class="product-card">
+                    <div class="upper-card"></div>
+                    <img src="assets/img/tuxymat_large_w.png" alt="tuxymat-alt">
+                    <div class="inner-card">
+                        <h3>Gestion des parcs d'automates</h3>
+                        <p>Depuis 2008, des solutions logicielles complètes pour la gestion des parcs de distributeurs automatiques, intégrant la télémétrie, le cashless, ...</p>
+                        <div class="button-container">
+                            <button id="scrollButtonMat" type="button" class="contact-button" onclick="selectProduct('TuxyMat')">Prendre contact</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="two-products">
+                <div class="product-card">
+                    <div class="upper-card"></div>
+                    <img src="assets/img/tuxypick_large_w.png" alt="tuxypick-alt">
+                    <div class="inner-card">
+                        <h3>Solution Pick to Light</h3>
+                        <p>Depuis 2004, des systèmes pour la préparation des commandes adaptés à tous type de rotation (forte, moyenne ou faible).</p>
+                        <div class="button-container">
+                            <button id="scrollButtonPick" type="button" class="contact-button" onclick="selectProduct('TuxyPick')">Prendre contact</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="two-products">
+                <div class="product-card">
+                    <div class="upper-card"></div>
+                    <img src="assets/img/tuxyshop_large_w.png" alt="tuxyshop-alt">
+                    <div class="inner-card">
+                        <h3>Gestion de point de vente</h3>
+                        <p>Depuis 1998, des systèmes de caisse et de gestion de point de vente intégrant tous les aspects des opérations quotidiennes.</p>
+                        <div class="button-container">
+                            <button id="scrollButtonShop" type="button" class="contact-button" onclick="selectProduct('TuxyShop')">Prendre contact</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container clients-container">
+        <div class="numbers-container">
+            <div class="numbers-wrapper">
+                <div class="number-card">
+                    <h1 class="number-value">5000</h1>
+                    <h3>Commandes</h3>
+                    <p>Chaque jour, plusieurs milliers de commandes sont traitées par nos systèmes de préparation et nos logiciels.</p>
+                </div>
+                <div class="number-card">
+                    <h1 class="number-value">7000</h1>
+                    <h3>Automates</h3>
+                    <p>Chaque jour, nous traitons les données des automates et assurons le remplissage et la maintenance du parc.</p>
+                </div>
+                <div class="number-card">
+                    <h1 class="number-value">50000</h1>
+                    <h3>Pickings</h3>
+                    <p>Chaque jour, notre solution TuxyPICK traite des milliers de picking avec une fiabilité de 99.95%.</p>
+                </div>
+                <div class="number-card">
+                    <h1 class="number-value">1500</h1>
+                    <h3>Points de vente</h3>
+                    <p>De nombreux points de vente utilisent TuxySHOP, nos shops en ligne B2B, nos outils de saisies de commandes ou nos solutions de ventes de produits dématérialisés.</p>
+                </div>
+            </div>
+        </div>
+        <h1>Ils nous font confiance</h1>
+        <div class="carousel">
+            <a class="carouselem" href="https://www.margot.ch/" target="_blank">
+                <img class="" src="assets/img/margot-logo.png" alt="margot-logo">
+            </a>
+            <a class="carouselem" href="https://www.vmsa.ch/" target="_blank">
+                <img class="small" src="assets/img/vm-logo.png" alt="vm-logo">
+            </a>
+            <a class="carouselem" href="https://www.nespresso.com" target="_blank">
+                <img class="" src="assets/img/nespresso-logo.png" alt="nespresso-logo">
+            </a>
+            <a class="carouselem" href="https://www.bat.ch" target="_blank">
+                <img class="" src="assets/img/bat-logo.png" alt="bat-logo">
+            </a>
+            <a class="carouselem" href="https://www.jti.com" target="_blank">
+                <img class="" src="assets/img/jti-logo.png" alt="jti-logo">
+            </a>
+            <a class="carouselem" href="https://www.pmi.com/markets/switzerland" target="_blank">
+                <img class="" src="assets/img/pm-logo.jpg" alt="pm-logo">
+            </a>
+            <a class="carouselem" href="https://www.mobilet.ch/" target="_blank">
+                <img class="" src="assets/img/mobilet-logo.png" alt="mobilet-logo">
+            </a>
+        </div>
+    </div>
+    <div class="articles-wrapper">
+        <div class="container articles-container">
+            <h1>Actualités</h1>
+            <div class="articles"></div>
+        </div>
+    </div>
+    <div class="contact">
+        <div id="map"></div>
+        <div id="targetSection" class="container contact-container">
+            <h1>Contactez-nous</h1>
+            <div class="contact-wrapper">
+                <form  id="contact-form">
+                    <input class="cool-input" placeholder="Société" id="form-societe">
+                    <input class="cool-input" placeholder="Téléphone" id="form-telephone">
+                    <input class="cool-input" placeholder="E-mail" id="form-email">
+                    <select class="cool-input" id="form-produit">
+                        <option value="">Produits</option>
+                        <option class="TuxyBox" onclick="selectProduct('TuxyBox')">TuxyBox</option>
+                        <option class="TuxyMat" onclick="selectProduct('TuxyMat')">TuxyMat</option>
+                        <option class="TuxyPick" onclick="selectProduct('TuxyPick')">TuxyPick</option>
+                        <option class="TuxyShop" onclick="selectProduct('TuxyShop')">TuxyShop</option>
+                    </select>
+                    <textarea class="cool-input" rows="5" placeholder="Message" id="form-message"></textarea>
+                    <button type="button" class="btn" onclick="prepare_mail()">Envoyer</button>
+                    <input class="ohnohoney" autocomplete="off" type="text" id="check" name="check" placeholder="Humain">
+                    <div class="address">
+                        <address>Altux SA<br/>Route de Lavaux 235<br/>1095 Lutry</address>
+                        <address>+41 21 796 12 49</address>
+                    </div>
+                </form>
+                <div class="empty"></div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <span>
+            <a href="https://www.abuseipdb.com/user/162870" title="AbuseIPDB is an IP address blacklist for webmasters and sysadmins to report IP addresses engaging in abusive behavior on their networks">
+                <img src="https://www.abuseipdb.com/contributor/162870.svg" alt="AbuseIPDB Contributor Badge" style="width: 200px;">
+            </a>
+        </span>
+        <span>© Altux SA</span>
+    </footer>
+</div>
+<script src="./assets/js/leaflet.js"></script>
+<script src="./assets/js/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+/frontend
+  /public
+    index.html
+  /src
+    /components
+      LoanRequestForm.jsx
+      LoanList.jsx
+      RepayLoanForm.jsx
+      StrategyDeposit.jsx
+      YieldDisplay.jsx
+    /pages
+      Home.jsx
+      Dashboard.jsx
+      Documentation.jsx
+    /utils
+      contractABI.js
+      ethersProvider.js
+    App.jsx
+    index.jsx
+  package.json
+  tailwind.config.js (si Tailwind)

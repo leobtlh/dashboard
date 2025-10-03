@@ -1,0 +1,389 @@
+body {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  text-align: left;
+  background-color: white;
+  transition: all 0.3s ease;
+}
+
+h1 {
+  font-size: 40px;
+  width: 100%;
+  max-width: 900px;
+  margin-left: 5px;
+  padding-bottom: 40px
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+textarea {
+  resize : none;
+  font-size: 16px;
+}
+
+textarea:focus {
+  outline: none;
+}
+
+footer {
+  display: flex;
+  margin-top: 5%;
+  bottom: 0;
+  flex-direction: column;
+  align-items: center;
+  color: #a1a1a1
+}
+
+.color {
+  color: rgb(193, 80, 37);
+}
+
+.margin-content {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 240px;
+  height: 100vh;
+  padding: 20px 20px 20px 0;
+  background-color: #f9f9f9;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+  border-radius: 0;
+}
+
+.logo-container img {
+  height: 40px;
+  padding: 0 0 20px 0;
+}
+
+.form-link,
+.form-menu {
+  width: 99%;
+  height: 100%;
+  max-height: 30px;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  padding: 10px;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+}
+
+.form-link:hover,
+.form-menu:hover {
+  background-color: rgb(250, 190, 150);
+}
+
+.form-menu.active {
+  background-color: rgb(230, 150, 100);
+  font-weight: bold;
+}
+
+.logo-link:hover {
+  background-color: transparent;
+}
+
+.logo-link.active {
+  background-color: transparent;
+}
+
+.menu-category {
+  width: 99%;
+  height: 100%;
+  max-height: 15px;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  padding: 10px;
+  border-radius: 4px;
+  background-color: #EDEDF2;
+  color: #B6B6BA;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px 20px 20px;
+  margin-left: 250px;
+}
+
+.form-title {
+  display: flex;
+  width: 100%;
+  max-width: 1520px;
+  height: 150px;
+  padding: 15px 40px 25px 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 0 0 20px 20px;
+  background-color: #f9f9f9;
+  margin-bottom: 20px;
+}
+
+.form-container {
+  width: 100%;
+  max-width: 1550px;
+  padding: 20px;
+  background-color: white;
+  margin-bottom: 20px;
+}
+
+.textarea-container {
+  display: flex;
+  gap: 20px;
+}
+
+.textarea-container textarea {
+  flex: 1;
+  height: 400px;
+  box-sizing: border-box;
+}
+
+.dropdown-container {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.dropdown_box {
+  width: 100%;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 580px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  column-count: 3;
+  padding: 5px;
+  top: 100%;
+}
+
+.dropdown-left {
+  left: 0%;
+}
+
+.dropdown-right {
+  left: -30%;
+}
+
+.dropdown.open .dropdown-content {
+  display: block;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 5px 20px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a.selected {
+  font-weight: bold;
+  background-color: #f0f0f0;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+.dropdown-button {
+  background-color: white;
+  color: black;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+}
+
+.dropdown-button:hover {
+  background-color: #f9f9f9;
+}
+
+.switch-button {
+  background-color: white;
+  color: black;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: left;
+}
+
+.switch-button:hover {
+  background-color: #f9f9f9;
+}
+
+.proceed_button {
+  padding: 10px 20px;
+  margin-right: 5px;
+  background-color: rgb(193, 80, 37);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.refresh_button {
+  padding: 0px 15px;
+  margin-left: 15px;
+  margin-bottom: 5px;
+  font-size: 1.8em;
+  opacity: 0.6;
+  background-color: white;
+  color: black;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.refresh_button:hover {
+  background-color: #f1f1f1;
+}
+
+.box__button:hover,
+.proceed_button:hover {
+  background-color: rgb(200, 100, 37);
+}
+
+.box__dragndrop {
+  margin-top: 45px;
+  display: block;
+}
+
+.box__input {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 20px 93px 20px;
+  border: 2px dashed #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  cursor: pointer;
+}
+
+.print_file {
+  font-size: 0.9em;
+  opacity: 0.33;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.box__error {
+  color: #d8000c;
+  display: none;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.is-error .box__error {
+  display: block;
+}
+
+.box__input.is-dragover {
+  background-color: #eee;
+}
+
+.box__file {
+  display: none;
+}
+
+.box__button {
+  margin-top: 120px;
+  padding: 10px 20px;
+  background-color: rgb(193, 80, 37);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.loading-spinner {
+  color: blue;
+}
+
+.file-button {
+  background-color: #f9f9f9;
+  color: black;
+  padding: 10px 4px 10px 4px;
+  font-size: 17px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: left;
+}
+
+.file-button:hover {
+  background-color: #f1f1f1;
+  color: rgb(200, 100, 37);
+}
+
+/* =============================== */
+/* ============ THEME ============ */
+/* =============================== */
+
+body.dark-theme,
+body.dark-theme .textarea-container textarea,
+body.dark-theme .dropdown-button,
+body.dark-theme .dropdown-content,
+body.dark-theme .dropdown-content a,
+body.dark-theme .switch-button,
+body.dark-theme .refresh_button,
+body.dark-theme .form-container,
+body.dark-theme .file-button,
+body.dark-theme .box__input {
+  background-color: #170B40;
+  color: white;
+}
+
+body.dark-theme .dropdown-button:hover,
+body.dark-theme .switch-button:hover,
+body.dark-theme .refresh_button:hover,
+body.dark-theme .file-button:hover,
+body.dark-theme .form-link:hover,
+body.dark-theme .dropdown-content a:hover,
+body.dark-theme .form-menu:hover {
+  background-color: #251650;
+}
+
+body.dark-theme .form-menu.active {
+  background-color: #251663;
+  color: white;
+}
+
+body.dark-theme .logo-link.active,
+body.dark-theme .logo-link:hover {
+  background-color: transparent;
+}
+
+body.dark-theme .margin-content,
+body.dark-theme .form-title,
+body.dark-theme .form-link,
+body.dark-theme .form-menu {
+  background-color: #170B47;
+  color: white;
+}
+
+body.dark-theme .menu-category {
+  background-color: #1A0D4E;
+  color: #6868B3;
+}

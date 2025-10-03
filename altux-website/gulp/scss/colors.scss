@@ -1,0 +1,25 @@
+$dark: #1B1C19;
+$black: #111;
+$lightest: #fff;
+$lighter: #eee;
+$white: #f9f9f9;
+
+$logo: #C15025;
+$icon1: #647C8A;
+$icon2: #4BCFFA;
+$success: #5cb85c;
+$danger: #d9534f;
+$blue1: #0d6efd;
+
+$theme-orange: #C15025;
+$theme-gray: #615D6C;
+$theme-blue: #006AB3;
+
+$input-color: #99A3BA;
+$input-border: #CDD9ED;
+$input-background: #fff;
+
+.dark {
+    background-color: $dark;
+    color: $lightest;
+}

@@ -1,0 +1,17 @@
+disabled = false
+languageCode = "fr"
+languageName = "Français"
+weight = 2 
+title = ""
+contentDir = "content/fr"
+
+[params]
+displayName = "FR"
+isoCode = "fr"
+rtl = false
+dateFormat = "2 January 2006"
+author = { name = "VM Vending Management" }
+logo = "vm_classic.svg"
+copyright = "Copyright © 2025 Altux SA"
+
+

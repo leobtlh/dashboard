@@ -1,0 +1,18 @@
+disabled = false
+languageCode = "de"
+languageName = "Deutsch"
+weight = 1
+title = ""
+contentDir = "content/de"
+
+[params]
+displayName = "DE"
+isoCode = "de"
+rtl = false
+dateFormat = "2 January 2006"
+logo = "vm_classic.svg"
+copyright = "Copyright © 2025 Altux SA"
+
+[params.author]
+   name = "VM Vending Management"
+   headline = "VM Vending Management ist ein Unternehmen, das im Logistiksektor tätig ist. Es ist für die administrative und operative Verwaltung von Zigarettenautomaten zuständig. Dabei bietet es eine umfassende und effiziente Lösung für die Besitzer der Automaten sowie deren Kunden. VM verwaltet somit mehr als 5'000 Automaten, die sich hauptsächlich in Hotels, Cafés, Restaurants und Diskotheken auf dem gesamten Schweizer Gebiet befinden."

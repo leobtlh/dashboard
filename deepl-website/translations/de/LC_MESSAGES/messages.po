@@ -1,0 +1,106 @@
+# German translations for PROJECT.
+# Copyright (C) 2025 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2025-10-01 13:45+0200\n"
+"PO-Revision-Date: 2025-09-29 08:02+0200\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: de\n"
+"Language-Team: de <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: templates/amelioration/index.html:7 templates/documents/index.html:7
+#: templates/index.html:7 templates/menu.html:7
+msgid "Altux Traduction"
+msgstr "Altux Übersetzung"
+
+#: templates/amelioration/index.html:16 templates/documents/index.html:16
+#: templates/index.html:16
+msgid "Traduction par "
+msgstr "Übersetzung von "
+
+#: templates/index.html:21
+msgid "Traduction de Texte"
+msgstr "Textübersetzung"
+
+#: templates/index.html:38
+msgid "Texte à traduire"
+msgstr "Zu übersetzender Text"
+
+#: templates/index.html:39
+msgid "Traduction"
+msgstr "Übersetzung"
+
+#: templates/index.html:42
+msgid "Traduire"
+msgstr "Übersetzen"
+
+#: templates/menu.html:19
+msgid "Langues"
+msgstr "Sprachen"
+
+#: templates/menu.html:28
+msgid "Outils"
+msgstr "Tools"
+
+#: templates/menu.html:31
+msgid "Traduction de texte"
+msgstr "Textübersetzung"
+
+#: templates/menu.html:34
+msgid "Traduction de documents"
+msgstr "Übersetzung von Dokumenten"
+
+#: templates/menu.html:37
+msgid "Amélioration de texte"
+msgstr "Text verbesserung"
+
+#: templates/menu.html:40
+msgid "Liens"
+msgstr "Links"
+
+#: templates/amelioration/index.html:21
+msgid "Amélioration de Texte"
+msgstr "Text verbesserung"
+
+#: templates/amelioration/index.html:40
+msgid "Texte à améliorer"
+msgstr "Text zu verbessern"
+
+#: templates/amelioration/index.html:41
+msgid "Texte amélioré"
+msgstr "Verbesserter Text"
+
+#: templates/amelioration/index.html:44
+msgid "Améliorer"
+msgstr "Verbessern"
+
+#: templates/documents/index.html:21
+msgid "Traduction de Document"
+msgstr "Übersetzung von Dokumenten"
+
+#: templates/documents/index.html:40
+msgid "Formats autorisés"
+msgstr "Erlaubte Formate"
+
+#: templates/documents/index.html:47
+msgid "Choisissez un fichier"
+msgstr "Wählen Sie eine Datei aus"
+
+#: templates/documents/index.html:48
+msgid "ou glissez-le ici."
+msgstr "oder schieben Sie es hierher."
+
+#: templates/documents/index.html:50
+msgid "Lancer la traduction"
+msgstr "Übersetzung starten"
+

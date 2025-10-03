@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "browser-sync": "^2.27.11",
+    "gulp": "^4.0.2",
+    "gulp-sass": "^5.1.0",
+    "gulp-zip": "^5.1.0",
+    "sass": "^1.58.0"
+  }
+}

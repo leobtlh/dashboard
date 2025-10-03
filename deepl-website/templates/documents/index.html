@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ _('Altux Traduction') }}</title>
+    <link rel="stylesheet" href="/static/css/index.css">
+</head>
+
+<body>
+    <div id="menu"></div>
+
+    <div class="container">
+        <div class="form-title">
+            <h1>{{ _('Traduction par ') }}<span class="color">Altux SA !</span></h1>
+        </div>
+        <!-- Formulaire de Traduction de Document -->
+        <div class="form-container">
+            <form id="document-translation-form" enctype="multipart/form-data">
+                <h2>{{ _('Traduction de Document') }}</h2>
+                <div class="dropdown-container">
+                    <div class="dropdown_box">
+                        <div class="dropdown" id="source-dropdown-doc">
+                            <button type="button" class="dropdown-button"><span style="font-size: 1.5em;">⌄</span></button>
+                            <div id="source-dropdown-content-doc" class="dropdown-content dropdown-left"></div>
+                        </div>
+                    </div>
+                    <button type="button" class="switch-button" id="switch_document">⇆</button>
+                    <div class="dropdown_box">
+                        <div class="dropdown" id="target-dropdown-doc">
+                            <button type="button" class="dropdown-button"><span style="font-size: 1.5em;">⌄</span></button>
+                            <div id="target-dropdown-content-doc" class="dropdown-content dropdown-right"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="box__input">
+                    <input class="box__file" type="file" name="file" id="file" accept=".pdf,.docx,.pptx,.txt" required />
+                    <span class="print_file" id="print_file">
+                        {{ _('Formats autorisés') }} : &nbsp;&nbsp;
+                            .pdf &nbsp;&nbsp;
+                            .docx &nbsp;&nbsp;
+                            .pptx &nbsp;&nbsp; .txt
+                    </span>
+                    <span class="box__dragndrop" style="font-size: 1.3em;">
+                        <label class="file-button" for="file">
+                                <strong style="font-size: 1.3em;">{{ _('Choisissez un fichier') }}</strong>
+                        </label>&nbsp;{{ _('ou glissez-le ici.') }}
+                    </span>
+                    <button type="submit" class="box__button" id="download-button" style="font-size: 1em;">{{ _('Lancer la traduction') }}</button>
+                </div>
+                <div class="box__error">
+                    <span></span>
+                </div>
+            </form>
+            <div class="form-container">
+                <span class="loading-spinner" id="loading-spinner"></span>
+                <div class="loading-spinner" id="document-result"></div>
+            </div>
+        </div>
+
+    </div>
+    <script src="/static/js/index.js"></script>
+</body>
+
+<footer>
+    <p>Copyright © Altux SA</p>
+</footer>
+
+</html>
+

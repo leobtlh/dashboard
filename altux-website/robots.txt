@@ -1,0 +1,19 @@
+##################################################
+##       _____ ___  __________ ___ ___ ___  /\  ##
+##      / __ | | | /@_@ @ @_@/ |@| |@| \@ \/@/  ##
+##     / /_| | | |     |@|     |@| |@|  \@ @/   ##
+##    / ____ | | |____ |@|     |@|_|@|  /@ @\   ##
+##   /_/   |_| |_____/ |@|      \@_@/  /@/\_@\  ##
+##  @_@_@_@_@_@_@_@_@_@_@_@_@_@_@_@_@_@_/       ##
+##                                              ##
+##################################################
+
+
+# Accepter l'exploration de l'entièreté du site
+User-agent: *
+Disallow:
+
+# 8 secondes de délai entre chaque recherche des bots → améliorer la bande passante
+# Attention tous les moteurs de recherche ne prennent pas en compte Crawl-delay.
+User-agent: *
+Crawl-delay: 8

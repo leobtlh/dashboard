@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ _('Altux Traduction') }}</title>
+    <link rel="stylesheet" href="/static/css/index.css">
+</head>
+
+<body>
+    <div id="menu"></div>
+
+    <div class="container">
+        <div class="form-title">
+            <h1>{{ _('Traduction par ') }}<span class="color">Altux SA !</span></h1>
+        </div>
+        <!-- Formulaire d'Amélioration de Texte -->
+        <div class="form-container">
+            <form id="improve-text-form">
+                <h2>{{ _('Amélioration de Texte') }}</h2>
+                <div class="dropdown-container">
+                    <div class="dropdown_box">
+                        <div class="dropdown" id="improve-dropdown">
+                            <button type="button" class="dropdown-button"><span style="font-size: 1.5em;">⌄</span></button>
+                            <div id="improve-dropdown-content" class="dropdown-content dropdown-left">
+                                <a href="#" data-value="FR">French</a>
+                                <a href="#" data-value="EN-US">English (American)</a>
+                                <a href="#" data-value="EN-GB">English (British)</a>
+                                <a href="#" data-value="ES">Spanish</a>
+                                <a href="#" data-value="DE">German</a>
+                                <a href="#" data-value="IT">Italian</a>
+                                <a href="#" data-value="PT-PT">Portuguese (European)</a>
+                                <a href="#" data-value="PT-BR">Portuguese (Brazilian)</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="textarea-container">
+                    <textarea placeholder="{{ _('Texte à améliorer') }}" id="improve-text" name="text" required></textarea>
+                    <textarea placeholder="{{ _('Texte amélioré') }}" id="improve-result" readonly></textarea>
+                </div>
+                <div class="button-row">
+                    <button class="proceed_button" id="improve-btn" style="font-size: 1em;">{{ _('Améliorer') }}</button>
+                    <button class="refresh_button" id="refresh-improve"><span>⟳</span></button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+    <script src="/static/js/index.js"></script>
+</body>
+
+<footer>
+    <p>Copyright © Altux SA</p>
+</footer>
+
+</html>
+

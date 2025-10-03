@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on </title>
+    <link>http://example.org/de/posts/</link>
+    <description>Recent content in Posts on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>de</language>
+    <copyright>Copyright © 2025 Altux SA</copyright>
+    <lastBuildDate>Wed, 15 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://example.org/de/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Unser Callcenter</title>
+      <link>http://example.org/de/posts/1736936483816-notre-call-center/</link>
+      <pubDate>Wed, 15 Jan 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/de/posts/1736936483816-notre-call-center/</guid>
+      <description>Unser Callcenter kann Sie informieren oder Sie bei Bedarf schnell an einen spezialisierten Ansprechpartner weiterleiten.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://example.org/de/posts/1736936483816-notre-call-center/featured_call_center.jpg" />
+    </item>
+    
+    <item>
+      <title>Unser technischer Service</title>
+      <link>http://example.org/de/posts/1736936465976-notre-service-technique/</link>
+      <pubDate>Wed, 15 Jan 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/de/posts/1736936465976-notre-service-technique/</guid>
+      <description>Unser technischer Service ist verantwortlich für die Programmierung, Installation, Wartung der Automaten und 365 Tage im Jahr für Reparaturen.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://example.org/de/posts/1736936465976-notre-service-technique/featured_service_technique.jpg" />
+    </item>
+    
+    <item>
+      <title>Unser Vertriebsteam</title>
+      <link>http://example.org/de/posts/1736936510808-notre-force-de-vente/</link>
+      <pubDate>Wed, 15 Jan 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/de/posts/1736936510808-notre-force-de-vente/</guid>
+      <description>Unser Vertriebsteam steht Ihnen voll und ganz zur Verfügung, um Sie zu informieren, zu beraten oder Ihnen ein Angebot zu unterbreiten.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://example.org/de/posts/1736936510808-notre-force-de-vente/featured_force_de_vente.jpg" />
+    </item>
+    
+    <item>
+      <title>Unsere Fahrer/Lieferanten</title>
+      <link>http://example.org/de/posts/1736936275287-nos-chauffeurs_livreurs/</link>
+      <pubDate>Wed, 15 Jan 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/de/posts/1736936275287-nos-chauffeurs_livreurs/</guid>
+      <description>Unsere Fahrer/Lieferanten versorgen jeden Automaten in regelmäßigen Abständen und nutzen ihre Besuche, um Sortimente anzupassen, Poster auszutauschen oder grundlegende Wartung durchzuführen.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://example.org/de/posts/1736936275287-nos-chauffeurs_livreurs/featured_livraisons.jpg" />
+    </item>
+    
+    <item>
+      <title>Unsere Hotline</title>
+      <link>http://example.org/de/posts/1736936527129-notre-hotline/</link>
+      <pubDate>Wed, 15 Jan 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/de/posts/1736936527129-notre-hotline/</guid>
+      <description>Unsere Hotline kann Sie 365 Tage im Jahr telefonisch unterstützen oder bei Bedarf schnell einen Vor-Ort-Service organisieren.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://example.org/de/posts/1736936527129-notre-hotline/featured_hotline.jpg" />
+    </item>
+    
+    <item>
+      <title>Unsere IT-Abteilung</title>
+      <link>http://example.org/de/posts/1736936568250-notre-d%C3%A9partement-informatique/</link>
+      <pubDate>Wed, 15 Jan 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/de/posts/1736936568250-notre-d%C3%A9partement-informatique/</guid>
+      <description>Unsere IT-Abteilung hat ein optimales Verwaltungssystem entwickelt.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://example.org/de/posts/1736936568250-notre-d%C3%A9partement-informatique/featured_d%C3%A9partement_info.jpg" />
+    </item>
+    
+  </channel>
+</rss>
