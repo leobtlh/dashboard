@@ -72,8 +72,7 @@ a {
 .btn {
   padding: .5rem .75rem;
   border-radius: 8px;
-  border: 1px solid #e6eef8;
-  background: transparent;
+  background: lightblue;
   cursor: pointer;
 }
 
