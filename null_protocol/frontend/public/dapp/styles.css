@@ -65,7 +65,10 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
+  padding: .7rem;
+  width: 95%;
+  border-radius: 10px;
+  margin: .3rem;
   background-color: transparent;
 }
 
