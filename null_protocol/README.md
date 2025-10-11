@@ -4,7 +4,7 @@
 
 ## Description
 
-Ce projet vise à créer un **navigateur / dashboard pour l’écosystème DeFi** avec une expérience utilisateur complète et sécurisée. Contrairement aux navigateurs Web3 existants comme Brave, ce projet se concentre sur une **interface centralisée pour toutes les dApps**, avec un wallet natif toujours accessible et une transparence totale sur les transactions.
+Ce projet vise à créer un **navigateur / dashboard pour l’écosystème DeFi** avec une expérience utilisateur complète et sécurisée. Contrairement aux navigateurs Web3 existants comme Brave, ce projet se concentre sur une **interface centralisée pour toutes les dApps**, avec un wallet natif toujours accessible mais remplaçable et une transparence totale sur les transactions.
 
 L’objectif est de créer une **place financière décentralisée**, où l’utilisateur peut interagir avec toutes les dApps sans quitter l’interface, tout en ayant accès à la documentation et à des outils d’analyse.
 
