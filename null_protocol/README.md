@@ -1,101 +1,83 @@
-Bloomberg Terminal du Web3
+# Bloomberg Terminal du Web3
 
-(-------------------------
-construire un navigateur adapté depuis lequel on peut visiter les dapp deja existant mais qui est nativement plus adapté au web3 et plus sécurisé par exemple en montrant chaque transactions qui va etre effectuée et ou les utilisateurs doivent montrer patte blanche, bref qqch de securisé avec un espace wallet natif etc. Comme une grande place financiere qui reunirait toute les dapp comme un condensé du web pour les dapp.
--------------------------)
+# Web3 Financial Dashboard
 
-1. Vision générale
+## Description
 
-L’objectif est de créer un navigateur natif Web3 conçu spécifiquement pour interagir avec les applications décentralisées (dApps), tout en offrant un niveau de sécurité, de transparence et de contrôle utilisateur supérieur à celui des navigateurs traditionnels.
-Ce navigateur agirait comme une grande place financière décentralisée, centralisant l’accès aux protocoles DeFi, NFT, DAO et autres services blockchain, tout en respectant la philosophie de la décentralisation.
+Ce projet vise à créer un **navigateur / dashboard pour l’écosystème DeFi** avec une expérience utilisateur complète et sécurisée. Contrairement aux navigateurs Web3 existants comme Brave, ce projet se concentre sur une **interface centralisée pour toutes les dApps**, avec un wallet natif toujours accessible et une transparence totale sur les transactions.
 
+L’objectif est de créer une **place financière décentralisée**, où l’utilisateur peut interagir avec toutes les dApps sans quitter l’interface, tout en ayant accès à la documentation et à des outils d’analyse.
 
-2. Problèmes identifiés dans l’écosystème actuel
+---
 
-Les navigateurs classiques (Chrome, Firefox, etc.) sont conçus pour le Web2 et ne sont pas adaptés à la logique Web3.
+## Fonctionnalités principales
 
-Les extensions comme MetaMask sont des ajouts externes, souvent peu intégrés et vulnérables à des attaques de phishing ou à des erreurs utilisateur.
+### Interface principale
 
-Les utilisateurs ne disposent pas d’une vision claire des transactions réelles qu’ils signent ou de l’exposition des risques.
+- **Barre de recherche en haut** : permet de trouver et accéder directement aux dApps existantes (pas de recherche Web classique).  
+- **Onglet central** : affichage de la dApp actuellement visitée.  
+- **Barre latérale gauche** :  
+  - Wallet natif (toujours visible, en bas à gauche)  
+  - Catégories de dApps (Bridge, Swap, Liquidity Pools, etc.)  
+  - dApps favorites  
+- **Barre verticale droite** :  
+  - Affichage et signature des transactions  
+  - Visualisation des chemins optimaux pour les swaps ou transactions complexes  
+  - Historique des transactions et alertes de sécurité  
+  - Indication si une adresse ou un chemin a déjà été visité ou utilisé  
 
-Le Web3 manque d’un point d’accès unifié et sûr vers l’ensemble des dApps, tout en préservant la décentralisation.
+### Expérience utilisateur et sécurité
 
+- Visualisation détaillée de chaque transaction avant signature  
+- Alertes claires pour les erreurs avec propositions d’alternatives  
+- Historique transparent et suivi des interactions avec chaque dApp  
+- Possibilité de sandboxing par dApp (prévention des risques et interactions malveillantes)  
 
-3. Proposition de valeur
+### Documentation et apprentissage
 
-Un navigateur Web3 de nouvelle génération qui :
+- Accès rapide aux documentations des dApps et protocoles  
+- Explications du fonctionnement des principaux protocoles DeFi  
+- Guide pour comprendre les actions et implications des transactions  
 
-Intègre nativement un wallet multi-chaînes, non pas en extension mais dans le cœur du navigateur.
+---
 
-Affiche et décode chaque transaction avant signature : adresses impliquées, montants, gas fees, permissions demandées, contrats appelés, etc.
+## Différenciation par rapport à Brave
 
-Isolé les dApps dans des environnements sécurisés (sandbox) pour éviter les scripts malveillants ou les attaques cross-dApp.
+| Brave | Ce projet |
+|-------|------------|
+| Navigateur Web3 classique | Navigateur / dashboard “place financière décentralisée” |
+| Wallet intégré, extensions Web3 | Wallet **toujours visible et central** dans l’interface |
+| Navigation Web classique + dApps | Navigation **centrée sur les dApps**, onglet actif central |
+| Popups de signature standards | Barre verticale dédiée pour **signatures et chemins optimaux**, historique et alertes |
+| Interface basique | **Dashboard complet** : wallet, dApps favorites, catégories, documentation, protocol explorer |
+| Navigation Web classique | Barre de recherche uniquement pour accéder aux dApps |
 
-Met en avant la transparence et la traçabilité, avec des logs vérifiables par l’utilisateur.
+---
 
-Permet la connexion avec identité vérifiée ou pseudonyme, selon les besoins (KYC optionnel via protocoles décentralisés d’identité).
+## Objectifs
 
-Offre un espace de visualisation unifié des positions DeFi, NFTs, DAO et portefeuilles.
+- Créer une **interface centralisée et intuitive** pour toutes les dApps.  
+- Offrir **transparence et sécurité** à l’utilisateur sur toutes les transactions.  
+- Fournir un espace pédagogique avec documentation et explications sur les protocoles.  
+- Permettre un accès rapide aux dApps favorites et catégorisées.  
+- Maintenir la possibilité de naviguer sur des URLs dApps sans moteur de recherche Web classique.
 
-Fonctionne de manière décentralisée : le code du navigateur, les mises à jour et certains services (comme les agrégateurs de prix ou d’applications) reposent sur un réseau distribué plutôt qu’un serveur centralisé.
+---
 
+## Futur développement
 
-4. Architecture technique envisagée
+- Intégration de fonctionnalités décentralisées pour le stockage des données utilisateurs (IPFS, Arweave).  
+- Distribution via des canaux décentralisés avec gestion des mises à jour en Web3.  
+- Gouvernance communautaire pour l’évolution des fonctionnalités et des règles de sécurité.  
+- Sandbox complet pour chaque dApp, avec contrôle et simulation des transactions.  
 
-Base du navigateur : fork de Chromium ou moteur Web open source (comme Brave, mais sans centralisation).
+---
 
-Intégration native du wallet : compatible EVM + autres chaînes via modules adaptateurs (similaire à RainbowKit mais en natif).
+## MVP
 
-Module de transaction sécurisée : sandbox d’analyse qui simule chaque transaction avant signature pour en montrer les effets probables.
+- Prototype basé sur **Electron ou un fork léger de Chromium**  
+- Wallet natif intégré avec affichage permanent  
+- Visualisation des transactions et chemins optimaux  
+- Barre latérale avec accès aux dApps favorites et catégorisées  
+- Onglet central pour la dApp active  
 
-Système de permissions granulaire : contrôle explicite des accès par dApp (contrats, tokens, adresses).
-
-Interface modulaire : tableau de bord type “terminal financier” avec accès aux dApps, graphiques de marché, outils d’analyse, suivi de portefeuille, etc.
-
-Décentralisation partielle :
-
-stockage distribué via IPFS ou Arweave,
-
-utilisation d’un DNS décentralisé (ENS, Handshake),
-
-publication du code en open source,
-
-authentification par clés publiques.
-
-
-5. Positionnement stratégique
-
-Le navigateur deviendrait :
-
-Le point d’entrée universel du Web3 (comme Chrome l’est pour le Web2).
-
-Une infrastructure de confiance pour les utilisateurs DeFi et les institutions cherchant sécurité et transparence.
-
-Une interface standardisée entre les dApps existantes, les wallets, et les utilisateurs.
-
-Un équivalent décentralisé du Bloomberg Terminal, mais pour le Web3.
-
-
-6. Perspectives d’évolution
-
-Intégration de protocoles d’identité décentralisée (DID).
-
-Connexion aux blockchains non-EVM.
-
-Création d’un réseau de réputation on-chain des dApps pour évaluer leur fiabilité.
-
-Éventuelle gouvernance communautaire via une DAO.
-
-Monétisation possible via services premium, analytics décentralisés, ou participation aux frais de réseau.
-
-
-7. Synthèse
-
-Ce projet vise à combiner :
-
-L’expérience fluide et unifiée du Web2,
-
-La sécurité et la transparence du Web3,
-
-La souveraineté et la décentralisation des utilisateurs,
-pour construire le navigateur de référence du Web décentralisé.
