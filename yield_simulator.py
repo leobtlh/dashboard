@@ -129,10 +129,9 @@ def main():
         gain = total_with_interest - total_invested
 
         # Couleurs ANSI
-        RED = '\033[91m'
         CYAN = '\033[96m'
         GREEN = '\033[92m'
-        YELLOW = '\033[33m'
+        YELLOW = '\033[93m'
         BLUE = '\033[94m'
         MAGENTA = '\033[95m'
         RESET = '\033[0m'
@@ -158,8 +157,8 @@ def main():
 
         # Résultats
         print(f"{BOLD}- Résultats de la simulation{RESET}\n")
-        print(f"{RED}Capital initial  :   {format_currency(initial_capital)}{RESET}")
-        print(f"{CYAN}Montant investi  :   {format_currency(total_invested)}{RESET}")
+        print(f"{CYAN}Capital initial  :   {format_currency(initial_capital)}{RESET}")
+        print(f"{BLUE}Montant investi  :   {format_currency(total_invested)}{RESET}")
         print(f"{MAGENTA}Montant final    :   {format_currency(total_with_interest)}{RESET}")
         print(f"{GREEN}Gain (rendement) :   {format_currency(gain)}{RESET}")
         print(f"\n{YELLOW}Rendement total  :   +{(gain/initial_capital)*100:.1f}%{RESET}\n")
