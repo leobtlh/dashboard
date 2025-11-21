@@ -162,8 +162,8 @@ def main():
             print(f"{BLUE}{label}{RESET}{''.join(row)}")
 
         # Axe X
-        print(f"{BLUE}      └{'─' * len(grid[0])}{RESET}")
-        print(f"{BLUE}       0{' ' * (len(grid[0]) - 10)}{'temps'}{RESET}\n")
+        print(f"{BLUE}       └{'─' * len(grid[0])}{RESET}")
+        print(f"{BLUE}        0{' ' * (len(grid[0]) - 10)}{'temps'}{RESET}\n")
 
         # Légende
         print(f"  {BLUE}* Montant investi{RESET}    {MAGENTA}* Avec rendement{RESET}\n")
