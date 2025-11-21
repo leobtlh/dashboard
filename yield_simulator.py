@@ -145,7 +145,20 @@ def main():
         # Afficher le graphique avec l'échelle
         for i, row in enumerate(grid):
             value = max_value * (1 - i / (len(grid) - 1))
-            label = f"{value/1000:5.1f}k│" if value >= 1000 else f"{value:6.0f}│"
+
+            # Gestion unités / milliers / millions / milliards
+            if value >= 1_000_000_000:
+                label = f"{value/1_000_000_000:4.1f}B│"
+            elif value >= 1_000_000:
+                label = f"{value/1_000_000:4.1f}M│"
+            elif value >= 1000:
+                label = f"{value/1000:5.1f}k│"
+            else:
+                label = f"{value:6.0f}│"
+
+            # Largeur FIXE pour empêcher tout décalage
+            label = f"{label:>8}"
+
             print(f"{BLUE}{label}{RESET}{''.join(row)}")
 
         # Axe X
@@ -161,7 +174,11 @@ def main():
         print(f"{BLUE}Montant investi  :   {format_currency(total_invested)}{RESET}")
         print(f"{MAGENTA}Montant final    :   {format_currency(total_with_interest)}{RESET}")
         print(f"{GREEN}Gain (rendement) :   {format_currency(gain)}{RESET}")
-        print(f"\n{YELLOW}Rendement total  :   +{(gain/initial_capital)*100:.1f}%{RESET}\n")
+
+        denom = initial_capital if initial_capital != 0 else 1
+        rendement_total = (gain / denom) * 100
+
+        print(f"\n{YELLOW}Rendement total  :   +{rendement_total:.1f}%{RESET}\n")
 
     except ValueError as e:
         print(f"Erreur: {e}")
