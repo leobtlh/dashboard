@@ -63,7 +63,7 @@ def calculate_investment(initial_capital, amount, frequency_days, total_days, an
 
     return total_invested, total_with_interest, history_invested, history_with_interest
 
-def plot_ascii(history_invested, history_with_interest, width=60, height=15):
+def plot_ascii(history_invested, history_with_interest, width=80, height=25):
     """Génère un graphique ASCII avec des étoiles et remplissage sous les courbes"""
     max_value = max(max(history_with_interest), max(history_invested))
 
