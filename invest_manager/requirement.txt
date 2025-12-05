@@ -1,0 +1,5 @@
+typer
+rich
+web3
+pandas
+python-dotenv
