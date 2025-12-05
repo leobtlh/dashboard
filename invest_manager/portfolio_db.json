@@ -1,0 +1,52 @@
+[
+    {
+        "id": 1,
+        "date_creation": "2025-12-05",
+        "category": "Lending",
+        "protocol": "Aave",
+        "asset": "ETH",
+        "current_state": {
+            "collateral": 3000.0,
+            "debt": 1000.0,
+            "apr_col": 0.04,
+            "apr_debt": 0.02
+        },
+        "stats": {
+            "total_interest_paid": 0.0,
+            "initial_collateral": 3000.0,
+            "initial_debt": 1000.0
+        },
+        "history": [
+            {
+                "date": "2025-12-05",
+                "action": "CREATION",
+                "details": "Ouverture position. Collat: 3000.0$, Dette: 1000.0$"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "date_creation": "2025-12-05",
+        "category": "Lending",
+        "protocol": "Morpho",
+        "asset": "yoETH",
+        "current_state": {
+            "collateral": 6000.0,
+            "debt": 4000.0,
+            "apr_col": 0.04,
+            "apr_debt": 0.03
+        },
+        "stats": {
+            "total_interest_paid": 0.0,
+            "initial_collateral": 6000.0,
+            "initial_debt": 4000.0
+        },
+        "history": [
+            {
+                "date": "2025-12-05",
+                "action": "CREATION",
+                "details": "Ouverture position. Collat: 6000.0$, Dette: 4000.0$"
+            }
+        ]
+    }
+]

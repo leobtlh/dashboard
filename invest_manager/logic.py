@@ -1,47 +1,62 @@
 # logic.py
 import pandas as pd
 
-def calculate_yields(collateral_value, debt_value, apr_collateral, apr_debt):
-    """
-    Réplique la logique de ton Excel pour calculer les rendements (y, m, w, d).
-    Net Value = Collateral - Debt
-    """
-    net_value = collateral_value + debt_value # Debt is usually negative in your sheet
+# logic.py
+def calc_simple_yield(amount, apr):
+    """Pour: Wallet, Vault, Governance (veToken), Staking simple"""
+    y = amount * apr
+    return {
+        "Net Value": amount,
+        "y": y, "m": y/12, "w": y/52, "d": y/365
+    }
 
-    # Calcul du rendement annuel net estimé (en $)
-    # Yield = (Collateral * APR_Collat) + (Debt * APR_Debt)
-    # Note: Dans ton excel, la dette est négative, donc si le taux d'emprunt coûte,
-    # assure-toi que APR_Debt est traité correctement (coût vs revenu).
+def calc_lending_yield(collateral, debt, apr_col, apr_debt):
+    """Pour: Emprunts standards, Aave, Morpho"""
+    # La dette arrive en positif, on la convertit en négatif pour le calcul de Net Value
+    debt_val = -abs(debt)
+    net_value = collateral + debt_val
 
-    yearly_yield = (collateral_value * apr_collateral) + (debt_value * apr_debt)
+    # Gain du collateral - Coût de la dette
+    y = (collateral * apr_col) - (abs(debt) * apr_debt)
 
     return {
         "Net Value": net_value,
-        "APR Net": yearly_yield / net_value if net_value != 0 else 0,
-        "y": yearly_yield,
-        "m": yearly_yield / 12,
-        "w": yearly_yield / 52,
-        "d": yearly_yield / 365
+        "y": y, "m": y/12, "w": y/52, "d": y/365
     }
 
-def simulate_loop(asset_initial, leverage, borrow_rate, supply_rate):
-    """
-    Réplique la logique de 'Loops.csv'.
-    """
-    # Exemple simplifié de boucle
-    total_supplied = asset_initial * leverage
-    total_borrowed = total_supplied - asset_initial
+def calc_loop_yield(investment, leverage, apr_supply, apr_borrow):
+    """Pour: Looping, Folding (ex: 3x ETH sur Aave)"""
+    # Si leverage 3x : J'ai 1000$ (investment).
+    # Total Supply = 3000$ (Investment * Leverage)
+    # Total Debt = 2000$ (Total Supply - Investment)
 
-    supply_income = total_supplied * supply_rate
-    borrow_cost = total_borrowed * borrow_rate
+    total_supply = investment * leverage
+    total_debt = total_supply - investment
 
-    net_profit_annual = supply_income - borrow_cost
-    roi = net_profit_annual / asset_initial
+    y = (total_supply * apr_supply) - (total_debt * apr_borrow)
 
     return {
-        "Initial": asset_initial,
-        "Leverage": leverage,
-        "Profits": net_profit_annual,
-        "ROI": roi,
-        "APR": roi # Dans ce cas simple
+        "Net Value": investment, # Mon equity réelle
+        "Total Exposure": total_supply,
+        "Total Debt": -total_debt,
+        "y": y, "m": y/12, "w": y/52, "d": y/365
+    }
+
+def calc_lp_yield(val_token_a, val_token_b, apr):
+    """Pour: Liquidity Providing (Uniswap, Curve, Aerodrome)"""
+    total_tvl = val_token_a + val_token_b
+    y = total_tvl * apr
+    return {
+        "Net Value": total_tvl,
+        "y": y, "m": y/12, "w": y/52, "d": y/365
+    }
+
+def calc_delta_neutral(long_pos, short_pos, apr_long, apr_short):
+    """Pour: Strategies Delta Neutral"""
+    # Souvent Long = Short pour ne pas être exposé au prix
+    net_val = long_pos - short_pos
+    y = (long_pos * apr_long) - (short_pos * apr_short)
+    return {
+        "Net Value": net_val, # Devrait être proche de 0 ou égal au capital initial buffer
+        "y": y, "m": y/12, "w": y/52, "d": y/365
     }

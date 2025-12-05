@@ -1,90 +1,110 @@
 # Gabarti DeFi Protocol - Guide d'Utilisation
 
-Ce protocole en ligne de commande (CLI) permet de suivre tes positions
-DeFi. Il combine la flexibilité d'un fichier Excel (Mode Web2) avec la
-puissance de la blockchain (Mode Web3).
+Ce guide décrit comment utiliser les principales commandes du tableau de bord DeFi en ligne de commande.
 
-## Mode Web2 : Gestion Manuelle (Comme Excel)
+## 1. Créer une position (Exemple Lending)
 
-Ce mode te permet de saisir tes positions manuellement. Le programme
-calcule automatiquement tes rendements journaliers (d), hebdomadaires
-(w), mensuels (m) et annuels (y), exactement comme dans ton tableau
-"Positions.csv".
-
-### 1. Ajouter une position (add-position)
-
-C'est la commande principale. Voici la structure à taper dans le
-terminal :
-
-``` bash
-python main.py add-position [PROTOCOLE] [ASSET] [COLLATERAL] [DETTE] [APR_COLLATERAL] [APR_DETTE]
+```bash
+python main.py add-lending Aave ETH 3000 1000 0.04 0.02
 ```
 
-Détail des variables à renseigner :
+Note : Pour la dette, mets une valeur positive (ici 1000).  
+Le système sait automatiquement que c'est une dette parce que la position est un type "Lending".
 
-PROTOCOL (Texte) : Le nom du protocole (ex: Aave, Morpho, Euler). Mettre
-entre guillemets si le nom contient des espaces.
+## 2. Voir le tableau de bord (List)
 
-ASSET (Texte) : L'actif principal ou la stratégie (ex: wstETH, USDC,
-eUSD).
-
-COLLATERAL (Nombre) : La valeur totale en USD de tes actifs déposés.
-
-Exemple : Si tu as déposé 10 ETH à 2500\$, écris 25000.
-
-DETTE (Nombre) : La valeur totale en USD de ton emprunt.
-
-Important : Cette valeur doit être negative pour que le calcul de la Net
-Value soit correct.
-
-APR_COLLATERAL (Décimal) : Le taux d'intérêt que tu gagnes sur ton
-dépôt.
-
-APR_DETTE (Décimal) : Le taux d'intérêt que tu paies sur ta dette.
-
-Exemple concret :
-
-Tu as une position sur Morpho avec 15000 USD de wstETH déposés, tu as
-emprunté -8700 USD d'USDC. Tu gagnes 3% sur le wstETH et tu paies 1.5%
-sur l'USDC.
-
-``` bash
-python main.py add-position Morpho wstETH 15000 8700 0.03 0.015
+```bash
+python main.py list
 ```
 
-### 2. Voir mes positions (web2)
+L'affichage montre toutes les positions avec leurs IDs (1, 2, ...).
 
-``` bash
-python main.py web2
+## Logiciel interne (logic.py)
+
+```python
+import pandas as pd
+
+def calc_simple_yield(amount, apr):
+    y = amount * apr
+    return {
+        "Net Value": amount,
+        "y": y, "m": y/12, "w": y/52, "d": y/365
+    }
+
+def calc_lending_yield(collateral, debt, apr_col, apr_debt):
+    debt_val = -abs(debt)
+    net_value = collateral + debt_val
+    y = (collateral * apr_col) - (abs(debt) * apr_debt)
+    return {
+        "Net Value": net_value,
+        "y": y, "m": y/12, "w": y/52, "d": y/365
+    }
+
+def calc_loop_yield(investment, leverage, apr_supply, apr_borrow):
+    total_supply = investment * leverage
+    total_debt = total_supply - investment
+    y = (total_supply * apr_supply) - (total_debt * apr_borrow)
+    return {
+        "Net Value": investment,
+        "Total Exposure": total_supply,
+        "Total Debt": -total_debt,
+        "y": y, "m": y/12, "w": y/52, "d": y/365
+    }
+
+def calc_lp_yield(val_token_a, val_token_b, apr):
+    total_tvl = val_token_a + val_token_b
+    y = total_tvl * apr
+    return {
+        "Net Value": total_tvl,
+        "y": y, "m": y/12, "w": y/52, "d": y/365
+    }
+
+def calc_delta_neutral(long_pos, short_pos, apr_long, apr_short):
+    net_val = long_pos - short_pos
+    y = (long_pos * apr_long) - (short_pos * apr_short)
+    return {
+        "Net Value": net_val,
+        "y": y, "m": y/12, "w": y/52, "d": y/365
+    }
 ```
 
-## Mode Web3 : Scan Automatique
+## 3. Voir le détail "Expert" (View)
 
-Ce mode se connecte directement à la blockchain. Il scanne le contenu de
-ton portefeuille.
-
-### Prérequis
-
-Assure-toi d'avoir configuré ton accès RPC dans le fichier .env.
-
-### Commande de connexion (web3)
-
-``` bash
-python main.py web3 [ADRESSE_ETHEREUM]
+```bash
+python main.py view 1
 ```
 
-Détail de la variable :
+Affiche :
 
-ADRESSE_ETHEREUM : L'adresse publique de ton wallet.
+- Un panneau supérieur avec les informations générales.
+- Deux colonnes distinctes :
+  - À gauche : le Collatéral, son APR, et son évolution par rapport au dépôt initial.
+  - À droite : la Dette, son APR, et le total cumulé des intérêts payés (en rouge).
+- En bas : l'historique complet des actions (création, update, remboursements).
 
-Exemple :
+## 4. Faire vivre la position (Edit)
 
-``` bash
-python main.py web3 0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045
+```bash
+python main.py edit 1
 ```
 
-Ce que le scan Web3 fait :
+Deux choix :
 
-Il interroge la blockchain Ethereum en temps réel. Il récupère ton solde
-d'ETH natif. Il récupère tes soldes de tokens ERC20 définis dans le
-fichier web3_scan.py. Il affiche un tableau avec les quantités trouvées.
+### Choix 1 : Actualiser Valeurs  
+Exemple : ta dette passe de 1000 à 1005.  
+Tu entres 1005.  
+Le logiciel calcule automatiquement 5 d'intérêts et les ajoute dans la colonne correspondante.
+
+### Choix 2 : Opération de Caisse  
+Exemple : ajout de 500 de collatéral.  
+Tu entres +500.  
+Le logiciel met à jour le collatéral sans toucher aux intérêts accumulés.
+
+## 5. Supprimer une position
+
+```bash
+python main.py delete 1
+```
+
+Supprime complètement la position.
+
