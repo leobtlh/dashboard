@@ -48,5 +48,30 @@
                 "details": "Ouverture position. Collat: 6000.0$, Dette: 4000.0$"
             }
         ]
+    },
+    {
+        "id": 3,
+        "date_creation": "2025-12-05",
+        "category": "Delta Neutral",
+        "protocol": "HYPE",
+        "asset": "ETH",
+        "current_state": {
+            "collateral": 500.0,
+            "debt": 500.0,
+            "apr_col": 0.5,
+            "apr_debt": 0.12
+        },
+        "stats": {
+            "total_interest_paid": 0.0,
+            "initial_collateral": 500.0,
+            "initial_debt": 500.0
+        },
+        "history": [
+            {
+                "date": "2025-12-05",
+                "action": "CREATION",
+                "details": "Ouverture position. Collat: 500.0$, Dette: 500.0$"
+            }
+        ]
     }
 ]
