@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Commande de Tapis Sur-Mesure</title>
+    <link rel="stylesheet" href="/static/css/index.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Configuration de votre Tapis</h1>
+    <p class="subtitle">Remplissez les détails ci-dessous pour recevoir votre devis et valider la commande.</p>
+
+    <form action="/submit-order" method="POST" enctype="multipart/form-data">
+
+        <div class="row">
+            <div class="col form-group">
+                <label for="prenom">Prénom</label>
+                <input type="text" id="prenom" name="prenom" required placeholder="Rémi">
+            </div>
+            <div class="col form-group">
+                <label for="nom">Nom</label>
+                <input type="text" id="nom" name="nom" required placeholder="Chevalley">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Adresse Email</label>
+            <input type="email" id="email" name="email" required placeholder="rémi.chevalley@gmail.com">
+        </div>
+
+        <div class="form-group">
+            <label for="telephone">Numéro de téléphone</label>
+            <input type="tel" id="telephone" name="telephone" required placeholder="+41 79 122 56 78">
+        </div>
+
+        <div class="form-group">
+            <label for="adresse">Adresse complète</label>
+            <input type="text" id="adresse" name="adresse" required placeholder="Avenue Général Guison 12">
+        </div>
+
+        <div class="row">
+            <div class="col form-group">
+                <label for="ville">Ville</label>
+                <input type="text" id="ville" name="ville" required placeholder="Vevey">
+            </div>
+            <div class="col form-group">
+                <label for="cp">Code Postal</label>
+                <input type="text" id="cp" name="cp" required placeholder="1800">
+            </div>
+        </div>
+
+        <hr style="border: 0; border-top: 1px solid var(--border); margin: 30px 0;">
+
+        <div class="form-group">
+            <label for="taille">Format du tapis</label>
+            <select id="taille" name="taille" required onchange="updatePrice()">
+                <option value="" data-price="0" selected disabled>Choisir une taille...</option>
+                <option value="petit" data-price="120">Petit (80x150cm) — 120CHF</option>
+                <option value="moyen" data-price="250">Moyen (120x170cm) — 250CHF</option>
+                <option value="grand" data-price="400">Grand (160x230cm) — 400CHF</option>
+                <option value="xxl" data-price="650">XXL (200x290cm) — 650CHF</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="motif">Choix du motif</label>
+            <select id="motif" name="motif" onchange="toggleFileUpload()">
+                <option value="geometrique">Géométrique Moderne</option>
+                <option value="oriental">Oriental Classique</option>
+                <option value="abstrait">Abstrait Coloré</option>
+                <option value="custom">Importer mon propre motif (+50CHF)</option>
+            </select>
+        </div>
+
+        <div class="form-group" id="file-upload-container" style="display:none;">
+            <label for="fichier_motif">Importer votre motif (Image ou PDF)</label>
+            <input type="file" id="fichier_motif" name="fichier_motif" accept="image/*,.pdf">
+            <small style="color: var(--text-muted);">Un supplément de 50CHF est appliqué pour les motifs personnalisés.</small>
+        </div>
+
+        <div class="form-group">
+            <label for="precisions">Précisions supplémentaires</label>
+            <textarea id="precisions" name="precisions" rows="4" placeholder="Détails sur les couleurs, livraison, etc..."></textarea>
+        </div>
+
+        <div class="price-display-wrapper">
+            <div class="price-label">Prix Total Estimé</div>
+            <div class="total-price">
+                <span id="price-value">0</span><span class="currency">CHF</span>
+            </div>
+            <p style="margin:0; font-size: 0.85rem; opacity: 0.8;">TVA incluse</p>
+        </div>
+
+        <button type="submit">Valider ma commande</button>
+    </form>
+</div>
+
+<script src="/static/js/index.js"></script>
+
+</body>
+</html>
