@@ -177,3 +177,5 @@ comparé à :
 - Perte maximale : 100 % (Cat Bonds traditionnels)
 
 rend ce produit **viable pour une adoption retail (grand public)**.
+
+<img width="1714" height="1455" alt="shapes at 25-12-19 11 55 22" src="https://github.com/user-attachments/assets/6bc26e6b-9ef2-464f-b038-a73a06e5d96f" />
