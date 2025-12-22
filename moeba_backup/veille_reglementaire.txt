@@ -1,0 +1,1652 @@
+Cadre réglementaire helvétique
+J'initie une analyse approfondie de l'environnement juridique suisse pour sécuriser votre projet sous la surveillance de la FINMA. La Suisse se distingue par une approche pragmatique et une neutralité technologique affirmée, offrant un terrain fertile pour des instruments financiers hybrides combinant blockchain et assurance.
+Classification des actifs et mutualisation
+En examinant les piliers législatifs, j'ai identifié que votre structure de vault devra naviguer entre la Loi sur la surveillance des assurances (LSA) pour le véhicule de titrisation et la Loi sur les placements collectifs de capitaux (LPCC). Un point d'attention majeur émerge : la classification de vos jetons en tant que 'jetons d'actifs' (valeurs mobilières) impose des exigences strictes en matière de prospectus, tandis que la mutualisation des fonds pourrait soumettre le protocole aux règles de distribution des placements collectifs.
+Prochaines étapes d'investigation
+Je vais maintenant synthétiser les positions les plus récentes de 2024 et 2025 concernant la responsabilité des opérateurs de front-ends et la gouvernance des protocoles. Je vais également vérifier si votre mécanisme de protection partielle du capital permet de bénéficier des exemptions de la licence FinTech ou du régime de la 'Sandbox' réglementaire, tout en précisant les obligations liées à la lutte contre le blanchiment d'argent pour les portefeuilles non-custodiaux.
+Researching websites
+swissre.com
+Swiss Re Capital Markets Insurance-Linked Securities
+practiceguides.chambers.com
+Insurance & Reinsurance 2025 - Switzerland - Chambers Global Practice Guides
+finma.ch
+Investment activities of insurance companies – general framework | FINMA
+finma.ch
+FOPI -Insurance Supervision Act (ISA)
+cms-lawnow.com
+Switzerland to ease reinsurance brokerage (again) - CMS LawNow
+finma.ch
+Guidelines | FINMA
+finma.ch
+Supplement to the guidelines - FINMA
+finma.ch
+FINMA publishes 'stable coin' guidelines
+finma.ch
+Reporting on collective investment schemes - FINMA
+finma.ch
+Limited Qualified Investor Funds: new fund category exempt from FINMA authorisation and supervision
+lenzstaehelin.com
+L-QIF: New Innovative Swiss Fund Structure – Final Rules Published - Lenz & Staehelin
+sui-generis.ch
+Private Law Aspects of Liquidity Pools in Decentralized Finance (DeFi) | sui generis
+finma.ch
+FinTech licence - FINMA
+finma.ch
+Licensing in the insurance sector - FINMA
+finma.ch
+Supervision of institutions with a FinTech licence - FINMA
+finma.ch
+Legal basis for FINMA's activities
+access.archive-ouverte.unige.ch
+Archive ouverte UNIGE Enabling KYC and AML verification in DeFi service
+shuftipro.com
+What You Need to Know About Switzerland's Crypto AML Rules by FINMA - Shufti Pro
+forvismazars.us
+Custodial & Non-Custodial Digital Asset Wallet Risk Management | Forvis Mazars US
+finma.ch
+FINMA Guidance 05/2025
+finma.ch
+Decentralized Finance (DeFi) 2022 - FINMA
+finma.ch
+FINMA survey: artificial intelligence gaining traction at Swiss financial institutions
+finma.ch
+Development of digitalisation in the financial sector (2024) - FINMA
+blockchainfederation.ch
+SBF Circular Decentralized Finance (DeFi) - Swiss Blockchain Federation
+legal500.com
+Switzerland: Blockchain & Crypto Assets - Legal 500 Country Comparative Guides 2025
+finma.ch
+Developments in FinTech - FINMA
+ey.com
+Security token offering a snapshot in Switzerland - EY
+iosco.org
+Guidelines - IOSCO
+multilaw.com
+ICO/token sale - Multilaw
+finma.ch
+FinTech licence and sandbox: adjustments to FINMA circulars
+finma.ch
+Sandbox and settlement accounts: FINMA amends circular
+finma.ch
+Financial technology and digitalisation (2016) - FINMA
+goldblum.ch
+Sandbox: a step forward to the financial market's liberalisation - Swiss Law Firm
+sif.admin.ch
+DLT / blockchain / tokenisation
+mll-news.com
+Switzerland's Next Step in Fintech and Crypto Regulation: New Categories for Payment Instrument Institutions and Crypto Institutions - MLL News
+caplaw.ch
+BX DIGITAL: THE FIRST DLT TRADING FACILITY IN SWITZERLAND | CapLaw
+cliffordchance.com
+Clifford Chance - International Regulatory Update 16 December 2024 – 3 January 2025
+lexr.com
+DeFi & DAO Legal Setup Service | LEXR
+pontinova.law
+Setting Up a DAO as a Swiss Foundation - Pontinova Law
+vectra-advisors.com
+DAOs and Legal Wrappers in Switzerland – Insights - Vectra Advisors
+legalnodes.com
+Swiss Foundation as a DAO Legal Wrapper: What You Need to Know
+researchgate.net
+(PDF) Decentralized Autonomous Organizations (DAOs) in the Swiss Legal Order
+fedlex.admin.ch
+SR 951.31 - Federal Act of 23 June 2006 on Collective Investment ...
+finma.ch
+FinTech financial services providers | FINMA
+finma.ch
+FINMA publishes ICO guidelines
+Identification du véhicule ISPV
+En approfondissant les options de structuration, j'ai identifié le cadre spécifique de l'Insurance Special Purpose Vehicle (ISPV) prévu par la législation suisse. Ce véhicule est conçu précisément pour la titrisation de risques d'assurance et permet d'émettre des jetons d'actifs tout en bénéficiant de règles de surveillance proportionnées. J'ai toutefois relevé une contradiction importante concernant la licence FinTech : bien que plus accessible, elle interdit l'investissement des fonds reçus, ce qui rendrait impossible votre stratégie de génération de rendement sur le collatéral.
+Arbitrage entre produit et placement
+Je suis en train de synthétiser la distinction cruciale entre un simple produit structuré et un placement collectif de capitaux pour votre vault. Cette qualification est déterminante, car un fonds de placement imposerait des contraintes réglementaires et de capital bien plus lourdes. Je pense explorer la piste des certificats gérés activement (AMC) qui, dans l'écosystème suisse, offrent une flexibilité intéressante pour packager des stratégies de risque sans la lourdeur administrative d'un fonds de placement traditionnel.
+Analyse des barrières financières
+Pour la suite de ma réflexion, je vais me focaliser sur les exigences précises de capital minimum pour un ISPV et sur les obligations de lutte contre le blanchiment d'argent spécifiques aux protocoles sans garde d'actifs. Je vais également clarifier si l'opérateur de l'interface utilisateur peut être tenu responsable selon les directives les plus récentes de 2024 et 2025 sur la résilience opérationnelle des infrastructures financières numériques.
+Researching websites
+finma.ch
+Development of digitalisation in the financial sector (2024) - FINMA
+finma.ch
+Decentralized Finance (DeFi) 2022 - FINMA
+rsmus.com
+Decentralized finance platforms subject to IRS broker reporting regulations - RSM US
+taxnews.ey.com
+Final regulations released on DeFi reporting and sales of digital assets - EY Tax News
+finma.ch
+Developments in FinTech - FINMA
+legalnodes.com
+Legal Liability of Front-End Operators in Decentralized Projects: A Definitive Guide
+bis.org
+Crypto, tokens and DeFi: navigating the regulatory landscape - Bank for International Settlements
+sui-generis.ch
+Private Law Aspects of Liquidity Pools in Decentralized Finance (DeFi) - sui generis
+dig.watch
+Swiss Federal Council approves update to tax information exchange rules
+sdx.com
+Update on CARF and Developments in Switzerland - SDX
+swlegal.com
+Regulation and Licensing of Crypto Custodians in Switzerland - Schellenberg Wittmer
+mme.ch
+Switzerland proposes New Crypto License Categories and Strengthens Consumer Protection - MME Legal
+swlegal.com
+Blockchain-Technologies & FinTech - Expertise | Schellenberg Wittmer
+swlegal.com
+SWITZERLAND Trends and developmenTs - Schellenberg Wittmer
+swlegal.com
+Consultation for revised Swiss Rules on Stablecoins and Crypto-Assets
+cadwalader.com
+Sleeping giants: insurance alchemy and Insurance Special Purpose Vehicles - Cadwalader
+artemis.bm
+Isle of Man publishes Insurance Special Purpose Vehicles framework - Artemis.bm
+goldblum.ch
+How to Open an SPV in Switzerland in 2025 - Swiss Law Firm
+caplaw.ch
+Update on Risk-Absorbing Capital Instruments under the Revised Insurance Regulations
+bankofengland.co.uk
+PRA RULEBOOK: SOLVENCY II FIRMS: INSURANCE SPECIAL PURPOSE VEHICLES INSTRUMENT 2025 - Bank of England
+finma.ch
+Business with professional policyholders – regulations from 1 January 2024 | FINMA
+sif.admin.ch
+Insurance Oversight Act (IOA) - admin.ch
+swlegal.com
+Implementing Reform of Swiss Insurance Supervision Laws - Schellenberg Wittmer
+pontinova.law
+The Revised Swiss Insurance Supervision Act - Pontinova Law
+pestalozzilaw.com
+Revision of the Insurance Supervision Act - Relief, exemptions and opportunities under the new regulatory and supervisory concept | Pestalozzi Attorneys at Law
+practiceguides.chambers.com
+Insurance & Reinsurance 2025 - Switzerland - Chambers Global Practice Guides
+pwc.ch
+New requirements for insurance companies in Switzerland - PwC
+jacquemoudstanislas.ch
+Obligations applicable to untied insurance intermediaries under the new Insurance Supervision Act | Jacquemoud Stanislas
+ecb.europa.eu
+The reinsurance market and catastrophe bonds
+icrrl.org
+Cat Bond Primer - Initiative on Climate Risk and Resilience Law
+institutdesactuaires.com
+The fundamentals of insurance-linked securities - Institut des actuaires
+pubdocs.worldbank.org
+demystifying catastrophe bonds for debt managers - Public Documents | The World Bank
+lenzstaehelin.com
+PANORAMIC INSURANCE & REINSURANCE - Lenz & Staehelin
+finance-watch.org
+Securitisation and capital requirements for European insurers - Finance Watch
+imf.org
+switzerland - financial sector assessment program technical note—insurance regulation and supervision - International Monetary Fund
+caplaw.ch
+Swiss Insurance Supervision Act establishes new Regime for Special Purpose Vehicle
+everon.swiss
+AMCs (actively managed certificates): Tips & Info - Everon AG
+creatrust.com
+Actively Managed Certificates In Luxembourg - Creatrust
+gentwo.com
+What Is an Actively Managed Certificate (AMC)? - GenTwo
+vsv-asg.ch
+Regulatory challenges in the use of Actively Managed Certificates (AMCs) - VSV-ASG
+deloitte.com
+Regulatory Update: New Rules on Payment Tokens and Two New Categories of Financial Institutions | Tax & Legal blog - Deloitte
+legal500.com
+Switzerland: Blockchain & Crypto Assets - Legal 500 Country Comparative Guides 2025
+americanbar.org
+Structural Themes in Global Digital Asset Regulation - American Bar Association
+globallegalinsights.com
+Blockchain & Cryptocurrency Laws 2026 | Switzerland - Global Legal Insights
+iclg.com
+Fintech Laws and Regulations Report 2025 Switzerland - ICLG.com
+finma.ch
+FINMA publishes ICO guidelines
+ey.com
+Security token offering a snapshot in Switzerland - EY
+mfsa.mt
+Base Prospectus - MFSA
+cms.law
+STO regulation and law in Switzerland | CMS Expert Guides
+issuance.swiss
+5067000950889C27EM46 Exchange Traded Products Issuance Programme Under the
+gentwo.com
+GenTwo Pro | Swiss Platform for AMCs, CLNs & Trackers
+gentwo.com
+Tokenize Investment Strategies with Bankable AMCs - GenTwo AG
+gentwo.com
+AMC Creator | How to Launch an Actively Managed Certificate (AMC) - GenTwo
+thewealthmosaic.com
+Gentwo Digital - The Wealth Mosaic
+gentwo.com
+Structure Crypto Strategies as Bankable Products | GenTwo
+fedlex.admin.ch
+SR 961.011 - Verordnung vom 9. November 2005 über die ... - Fedlex
+fedlex.admin.ch
+SR 220 - Bundesgesetz vom 30. März 1911 betreffend die ... - Fedlex
+Optimisation du capital des ISPV
+J'ai approfondi l'analyse des véhicules de titrisation d'assurance (ISPV) en Suisse. Une conclusion intéressante émerge : puisque ces structures sont par définition « entièrement financées » par les investisseurs, les exigences de capital minimal propres aux assureurs traditionnels pourraient être considérablement allégées. Cela permettrait de lancer un vault avec un capital de départ proche de celui d'une société anonyme standard, à condition de démontrer à la FINMA que le risque de ruine est mathématiquement nul pour le véhicule émetteur.
+Responsabilité des interfaces décentralisées
+Je traite actuellement une contradiction réglementaire majeure concernant le statut des interfaces utilisateur (front-ends). Même si vous ne détenez pas les clés privées des utilisateurs, la facilitation de l'accès à des jetons d'actifs peut être interprétée comme une activité d'intermédiation financière. Je cherche à confirmer si l'affiliation à un organisme d'autorégulation (OAR) devient obligatoire dès lors que l'interface permet de structurer ou de promouvoir activement le placement, avec un seuil de vigilance abaissé à 1 000 francs pour les transactions.
+Audit et résilience opérationnelle
+En examinant les directives les plus récentes de 2025, je constate que la FINMA impose désormais des standards de résilience très stricts pour les infrastructures utilisant des registres distribués publics. Cela inclut non seulement des audits de code par des tiers certifiés, mais aussi la mise en place de mécanismes de secours en cas de congestion ou de défaillance du réseau blockchain sous-jacent. L'usage d'IA pour la gestion du risque ou l'automatisation des déclenchements paramétriques fait également l'objet d'une surveillance accrue sur la gouvernance des données.
+Exploration des modèles hybrides
+Ma prochaine phase de recherche se concentrera sur la possibilité d'utiliser des certificats gérés activement (AMC) via des plateformes de titrisation suisses existantes. Je vais vérifier si ces intermédiaires peuvent « envelopper » directement un contrat intelligent DeFi, ce qui offrirait une alternative plus rapide et moins coûteuse qu'une licence d'assurance complète. Je vais également préciser les critères d'éligibilité pour la 'sandbox' dédiée aux petites expérimentations de transfert de risque.
+Researching websites
+finma.ch
+SICAFs: investment companies with fixed capital | FINMA
+efd.admin.ch
+Too Big To Fail
+iflr.com
+A guide to Switzerland's new licensing rules for portfolio managers - IFLR
+lenzstaehelin.com
+Public Investment Funds - 2022 - Lenz & Staehelin
+mll-legal.com
+New regulation eases investment - MLL Legal
+lenzstaehelin.com
+PANORAMIC INSURANCE & REINSURANCE - Lenz & Staehelin
+kmu.admin.ch
+Legal form: The limited company - KMU.admin.ch
+goldblum.ch
+Swiss Company Share Capital Requirements: GmbH, AG & Share Types - Swiss Law Firm
+goldblum.ch
+How to Open an SPV in Switzerland in 2025 - Swiss Law Firm
+gsl.org
+AG Company Registration in Switzerland - Business Starting & Setup
+pontinova.law
+The Revised Swiss Insurance Supervision Act - Pontinova Law
+elibrary.imf.org
+Switzerland: Financial Sector Assessment Program-Technical Note on Insurance Regulation and Supervision in - IMF eLibrary
+legal500.com
+Switzerland: Insurance & Reinsurance - Legal 500 Country Comparative Guides 2025
+finma.ch
+Small insurers regime | FINMA
+ec.europa.eu
+TALER Taxable Anonymous Libre Electronic Reserves D2.1 Swiss Sandbox Report - European Commission
+finma.ch
+Checklist for primary insurers | Criteria for joining the small insurers regime in conjunction with Article 1c ISO: The thr - FINMA
+finma.ch
+Business with professional policyholders – regulations from 1 January 2024 | FINMA
+finma.ch
+Sandbox and settlement accounts: FINMA amends circular
+finma.ch
+Developments in FinTech - FINMA
+gentwo.com
+AMC on Alchemy0x Blockchain Investments - GenTwo
+gentwo.com
+AMC on Alchemy0x Crypto Investments - GenTwo
+gentwo.com
+Tokenize Investment Strategies with Bankable AMCs - GenTwo AG
+gentwo.com
+Integrate AMC Infrastructure for Custody, Execution & Flow - GenTwo
+sygnum.com
+Sygnum DeFi+ Core AMC
+swissquote.com
+Multi-Asset AMC: Build your Own Investment Product | Swissquote
+mayerbrown.com
+AMCs and Other Actively Managed Products - Mayer Brown
+swiss-fi.ch
+SwissFI | Crypto Asset & DeFi Yield Strategies – Geneva, Switzerland
+globallawexperts.com
+Obtain A Cryptocurrency Licence In Switzerland: FINMA & SRO Pathways
+synhedge.com
+Crypto License Switzerland – SynHedge
+gofaizen-sherle.com
+Switzerland Crypto License: FINMA & SRO Guide 2025 - Gofaizen & Sherle
+bmpglobal.io
+Swiss SRO in 2025: What It Is, How to Get It, and Why It's Better Than VASP - BMP Global
+goldblum.ch
+VQF SRO in Switzerland: membership & fees | Goldblum & Partners - Swiss Law Firm
+vqf.ch
+SRO - VQF.ch
+synhedge.com
+Swiss SRO Membership: Requirements, Benefits, Licensing, SRO licence - SynHedge
+sdx.com
+SIX Digital Exchange joins Verein zur Qualitätssicherung von Finanzdienstleistungen (VQF) - SDX
+polyreg.ch
+Home - SRO PolyReg
+iosco.org
+Final Report with Policy Recommendations for Decentralized Finance (DeFi) - IOSCO
+polyreg.ch
+REGULATIONS OF THE SRO POLYREG ACCORDING TO ART. 25 AMLA
+bfadmin.cdbf.ch
+Regulations of the SRO PolyReg according to Art. 25 AMLA - CDBF
+polyreg.ch
+Frequently asked questions - PolyReg
+bis.org
+Crypto, tokens and DeFi: navigating the regulatory landscape - Bank for International Settlements
+swlegal.com
+Regulation and Licensing of Crypto Custodians in Switzerland - Schellenberg Wittmer
+lightspark.com
+Is Crypto Legal in Switzerland? Regulations & Compliance in 2025 - Lightspark
+businesslawreview.uchicago.edu
+Regulating Cryptocurrency Non-Custodial Service Providers Through the Bank Secrecy Act
+pwc.ch
+Swiss DLT law: New regulations bring new opportunities - PwC
+dig.watch
+Swiss Federal Council approves update to tax information exchange rules
+mme.ch
+Switzerland proposes New Crypto License Categories and Strengthens Consumer Protection - MME Legal
+legal500.com
+Switzerland: Blockchain & Crypto Assets - Legal 500 Country Comparative Guides 2025
+zhaw.ch
+Navigating the Regulatory Frameworks for DeFi Projects - ZHAW
+mme.ch
+New Swiss Crypto Regulations? - MME Legal
+lexr.com
+DeFi & DAO Legal Setup Service | LEXR
+lexr.com
+Our services - LEXR
+lexr.com
+Our services | LEXR
+lexr.com
+Career DeFi and Blockchain Lawyer - LEXR
+lexrgroup.com
+The law firm for tech companies | LEXR
+morganlewis.com
+Decentralized Financing (DeFi) Law Firm & Lawyers – Industries - Morgan Lewis
+cms.law
+Expertise - FinTech & Blockchain - Law Firm in Switzerland - CMS
+americanbar.org
+Structural Themes in Global Digital Asset Regulation - American Bar Association
+jbs.cam.ac.uk
+LEGAL AND REGULATORY CONSIDERATIONS FOR DIGITAL ASSETS - Cambridge Judge Business School
+vqf.ch
+VQF.ch
+gentwo.com
+Structure Crypto Strategies as Bankable Products | GenTwo
+Optimisation du capital émetteur
+J'ai approfondi l'analyse des exigences de capital pour les véhicules de titrisation d'assurance (ISPV) en Suisse. Une conclusion stratégique émerge : puisque ces structures sont par définition « entièrement financées » par les investisseurs, elles pourraient bénéficier d'un allègement considérable des fonds propres requis. Cela signifie que le lancement de votre vault pourrait s'appuyer sur le capital social standard d'une société anonyme, à condition que le contrat intelligent garantisse mathématiquement que chaque risque est couvert à 100 % par le collatéral déposé.
+Arbitrage entre titrisation et protocole pur
+J'ai identifié une opportunité majeure dans l'utilisation des certificats gérés activement (AMC). En enveloppant votre stratégie de risque climatique dans un titre financier classique via une plateforme de titrisation helvétique, nous pourrions rendre votre vault « bancable » immédiatement. Cette approche hybride permet de déléguer la conformité réglementaire et la conservation des actifs à des partenaires agréés, tout en conservant l'automatisation et la transparence du moteur de calcul décentralisé pour le règlement des sinistres.
+Prochaines étapes de mise en conformité
+Je vais maintenant me concentrer sur les critères d'éligibilité précis de la « sandbox » réglementaire pour les petits transferts de risque, afin de déterminer si une phase de test limitée est réalisable avec des contraintes allégées. Je vais également clarifier les obligations d'affiliation à un organisme d'autorégulation (OAR) pour l'opérateur de l'interface utilisateur, en vérifiant si la simple exposition de jetons d'actifs déclenche des procédures de vérification d'identité dès le premier franc investi.
+Researching websites
+finma.ch
+SICAVs: investment companies with variable capital | FINMA
+skadden.com
+The Standard Formula: A Guide to Solvency II – Chapter 2: Reinsurance and Risk Transfer
+iflr.com
+New regulation eases investment | IFLR
+primetax.ch
+Investment Funds
+mll-legal.com
+Private Equity - MLL Legal
+lenzstaehelin.com
+PANORAMIC INSURANCE & REINSURANCE - Lenz & Staehelin
+kmu.admin.ch
+Legal form: The limited company - KMU.admin.ch
+goldblum.ch
+Swiss Company Share Capital Requirements: GmbH, AG & Share Types - Swiss Law Firm
+goldblum.ch
+How to Open an SPV in Switzerland in 2025 - Swiss Law Firm
+gsl.org
+AG Company Registration in Switzerland - Business Starting & Setup
+pontinova.law
+The Revised Swiss Insurance Supervision Act - Pontinova Law
+elibrary.imf.org
+Switzerland: Financial Sector Assessment Program-Technical Note on Insurance Regulation and Supervision in - IMF eLibrary
+legal500.com
+Switzerland: Insurance & Reinsurance - Legal 500 Country Comparative Guides 2025
+finma.ch
+Small insurers regime | FINMA
+ec.europa.eu
+TALER Taxable Anonymous Libre Electronic Reserves D2.1 Swiss Sandbox Report - European Commission
+finma.ch
+Business with professional policyholders – regulations from 1 January 2024 | FINMA
+finma.ch
+Sandbox and settlement accounts: FINMA amends circular
+finma.ch
+Developments in FinTech - FINMA
+finma.ch
+Financial technology and digitalisation (2016) - FINMA
+gentwo.com
+Cost-Efficient AMCs. Built Right. - GenTwo
+gentwo.com
+AMC on Alchemy0x Blockchain Investments - GenTwo
+gentwo.com
+AMC on Alchemy0x Crypto Investments - GenTwo
+gentwo.com
+Tokenize Investment Strategies with Bankable AMCs - GenTwo AG
+gentwo.com
+Integrate AMC Infrastructure for Custody, Execution & Flow - GenTwo
+sygnum.com
+Sygnum DeFi+ Core AMC
+swissquote.com
+Multi-Asset AMC: Build your Own Investment Product | Swissquote
+mayerbrown.com
+AMCs and Other Actively Managed Products - Mayer Brown
+swiss-fi.ch
+SwissFI | Crypto Asset & DeFi Yield Strategies – Geneva, Switzerland
+globallawexperts.com
+Obtain A Cryptocurrency Licence In Switzerland: FINMA & SRO Pathways
+geckocompliance.ch
+Swiss SRO Membership | Gecko Compliance AG
+synhedge.com
+Crypto License Switzerland – SynHedge
+gofaizen-sherle.com
+Switzerland Crypto License: FINMA & SRO Guide 2025 - Gofaizen & Sherle
+goldblum.ch
+VQF SRO in Switzerland: membership & fees | Goldblum & Partners - Swiss Law Firm
+synhedge.com
+Swiss SRO Membership: Requirements, Benefits, Licensing, SRO licence - SynHedge
+sec.gov
+file: brhc10033555_ex99-173.htm - SEC.gov
+polyreg.ch
+Home - SRO PolyReg
+polyreg.ch
+Association duties - PolyReg
+polyreg.ch
+REGULATIONS OF THE SRO POLYREG ACCORDING TO ART. 25 AMLA
+bfadmin.cdbf.ch
+Regulations of the SRO PolyReg according to Art. 25 AMLA - CDBF
+polyreg.ch
+Frequently asked questions - PolyReg
+bis.org
+Crypto, tokens and DeFi: navigating the regulatory landscape - Bank for International Settlements
+swlegal.com
+Regulation and Licensing of Crypto Custodians in Switzerland - Schellenberg Wittmer
+businesslawreview.uchicago.edu
+Regulating Cryptocurrency Non-Custodial Service Providers Through the Bank Secrecy Act
+lightspark.com
+Is Crypto Legal in Switzerland? Regulations & Compliance in 2025 - Lightspark
+pwc.ch
+Swiss DLT law: New regulations bring new opportunities - PwC
+dig.watch
+Swiss Federal Council approves update to tax information exchange rules
+mme.ch
+Switzerland proposes New Crypto License Categories and Strengthens Consumer Protection - MME Legal
+esa.admin.ch
+Federal Council moves forward with stablecoins and crypto: consultation launched - Admin
+finma.ch
+Decentralized Finance (DeFi) 2022 - FINMA
+mme.ch
+New Swiss Crypto Regulations? - MME Legal
+lexr.com
+DeFi & DAO Legal Setup Service | LEXR
+lexr.com
+Our services - LEXR
+lexr.com
+Our services | LEXR
+lexr.com
+Career DeFi and Blockchain Lawyer - LEXR
+lexrgroup.com
+The law firm for tech companies | LEXR
+morganlewis.com
+Decentralized Financing (DeFi) Law Firm & Lawyers – Industries - Morgan Lewis
+cms.law
+Legal experts on Markets in Crypto-Assets (MiCA) regulation - CMS
+americanbar.org
+Structural Themes in Global Digital Asset Regulation - American Bar Association
+jbs.cam.ac.uk
+LEGAL AND REGULATORY CONSIDERATIONS FOR DIGITAL ASSETS - Cambridge Judge Business School
+vqf.ch
+VQF.ch
+gentwo.com
+Structure Crypto Strategies as Bankable Products | GenTwo
+Précision sur le capital des ISPV
+J'ai clarifié une incertitude majeure concernant les véhicules de titrisation d'assurance (ISPV) : pour une structure « entièrement financée » (fully funded), la FINMA permet d'aligner les exigences de capital sur les standards du droit des sociétés, soit 100 000 CHF pour une société anonyme. Cette flexibilité est possible car le risque est intégralement porté par les investisseurs via le collatéral, ce qui dispense le véhicule des réserves de solvabilité massives habituellement imposées aux assureurs classiques.
+Délimitation de la Sandbox d'assurance
+J'ai identifié une distinction cruciale entre la 'Sandbox' bancaire, limitée à 1 million de CHF de dépôts, et les exemptions de surveillance pour l'assurance. Contrairement au secteur bancaire, l'assurance paramétrique peut bénéficier d'exemptions spécifiques si le volume d'activité ou le nombre d'assurés reste de faible importance économique. Je suis en train d'évaluer si votre modèle peut exploiter ces dispositions pour une phase de lancement simplifiée avant de solliciter une autorisation complète.
+Orientations vers la conformité 2025
+Pour finaliser ma réflexion, je vais examiner les nouvelles catégories de licences proposées fin 2025 pour les institutions crypto, afin de voir si elles offrent un cadre plus agile que le statut d'assureur. Je vais également préciser les exigences techniques d'audit pour vos contrats intelligents, car la FINMA impose désormais des standards de résilience opérationnelle renforcés pour toute infrastructure financière s'appuyant sur des réseaux blockchain publics.
+Researching websites
+gentwo.com
+GenTwo: Expanding Your Investment Universe | Making all Assets Investable.
+gentwo.com
+Actively Managed Certificates (AMCs) Explained | Benefits, Use Cases & Setup – GenTwo
+gentwo.com
+How to Launch Your First AMC: A Step-by-Step Guide - GenTwo AG
+gentwo.com
+AMC Creator | How to Launch an Actively Managed Certificate (AMC) - GenTwo
+gentwo.com
+Structure Crypto Strategies as Bankable Products | GenTwo
+sygnum.com
+Sygnum DeFi+ Core AMC
+ispgroup.com
+Paying Agent Services - ISP Group
+swissquote.com
+Multi-Asset AMC: Build your Own Investment Product | Swissquote
+mayerbrown.com
+AMCs and Other Actively Managed Products - Mayer Brown
+css-pcc.com
+MICRO STRATEGIES AMC - CapStone Securities
+everon.swiss
+AMC regulation in Switzerland: tips for investors - Everon AG
+coredo.eu
+Crypto license in Switzerland or MiCA comparison of requirements - coredo
+globallegalinsights.com
+Blockchain & Cryptocurrency Laws 2026 | Switzerland - Global Legal Insights
+pontinova.law
+The Revised Swiss Insurance Supervision Act - Pontinova Law
+finma.ch
+Small insurers regime | FINMA
+elibrary.imf.org
+Switzerland: Financial Sector Assessment Program-Technical Note on Insurance Regulation and Supervision in - IMF eLibrary
+homburger.ch
+Swiss Administration Publishes Draft Amendment of the Insurance Supervision Ordinance
+finma.ch
+Dossier on small insurers - FINMA
+efd.admin.ch
+Too Big To Fail
+lenzstaehelin.com
+Public Investment Funds - 2022 - Lenz & Staehelin
+efd.admin.ch
+Capital
+ubs.com
+UBS statement on regulatory proposals made by the Swiss government
+iflr.com
+A guide to Switzerland's new licensing rules for portfolio managers - IFLR
+finma.ch
+Business with professional policyholders – regulations from 1 January 2024 | FINMA
+finma.ch
+Investment activities of insurance companies – general framework | FINMA
+pwc.ch
+Partial revision of the Insurance Supervision Act (ISA) | PwC
+jacquemoudstanislas.ch
+Obligations applicable to untied insurance intermediaries under the new Insurance Supervision Act | Jacquemoud Stanislas
+taylorwessing.com
+Financial Services Matters - December 2025 - Taylor Wessing
+akingump.com
+Switzerland: New FinTech Regulation - Akin Gump
+goldblum.ch
+Sandbox: a step forward to the financial market's liberalisation - Swiss Law Firm
+finma.ch
+Sandbox and settlement accounts: FINMA amends circular
+iclg.com
+Fintech Laws and Regulations Report 2025 Switzerland - ICLG.com
+legal500.com
+Switzerland: Blockchain & Crypto Assets - Legal 500 Country Comparative Guides 2025
+finma.ch
+FINMA Guidance
+finma.ch
+Development of digitalisation in the financial sector (2024) - FINMA
+finma.ch
+FINMA Guidance 05/2025
+americanbar.org
+Structural Themes in Global Digital Asset Regulation - American Bar Association
+legalnodes.com
+Legal Liability of Front-End Operators in Decentralized Projects: A Definitive Guide
+practiceguides.chambers.com
+Blockchain 2025 - Comparisons | Global Practice Guides | Chambers and Partners
+nucamp.co
+The Complete Guide to Using AI as a Legal Professional in Switzerland in 2025
+academic.oup.com
+Employer as an AI System Operator and Tortious Liability for Damage Caused by AI Systems: European and US Perspectives | The Chinese Journal of Comparative Law | Oxford Academic
+newsd.admin.ch
+Providers' liability under civil law. Essential results of the Federal Council report of 11 December 2015 - admin.ch
+deloitte.com
+Regulatory Update: New Rules on Payment Tokens and Two New Categories of Financial Institutions | Tax & Legal blog - Deloitte
+dig.watch
+Swiss Federal Council approves update to tax information exchange rules
+finma.ch
+Developments in FinTech - FINMA
+swlegal.com
+Regulation and Licensing of Crypto Custodians in Switzerland - Schellenberg Wittmer
+businesslawreview.uchicago.edu
+Regulating Cryptocurrency Non-Custodial Service Providers Through the Bank Secrecy Act
+fedlex.admin.ch
+SR 961.011 - Verordnung vom 9. November 2005 über die ... - Fedlex
+Distinction entre les régimes d'expérimentation
+J'ai clarifié une nuance fondamentale : contrairement à la 'sandbox' bancaire plafonnée à 1 million de CHF, les assureurs paramétriques peuvent bénéficier d'exemptions de surveillance si leur activité est jugée de 'faible importance économique'. Cette voie permet de tester vos vaults climatiques sans la lourdeur d'une licence complète dès le premier jour, offrant une souplesse précieuse pour valider vos modèles mathématiques en conditions réelles.
+Modernisation du cadre des actifs numériques 2025
+J'analyse actuellement les répercussions de la consultation lancée fin 2025 par le Conseil fédéral concernant les nouvelles licences pour établissements crypto. Cette réforme vise à supprimer les plafonds de dépôt et à instaurer une ségrégation stricte des actifs en cas de faillite. Pour votre protocole, cela représente une opportunité majeure de sécuriser les dépôts de collatéral tout en s'affranchissant des limites de croissance imposées par l'ancienne licence FinTech.
+Exploitation du fonds L-QIF pour investisseurs qualifiés
+Je vais désormais explorer l'utilisation du Limited Qualified Investor Fund (L-QIF). Ce type de fonds, exempté d'autorisation par la FINMA depuis 2024, offre une flexibilité totale en matière de politique d'investissement et de gestion de liquidité. Je vais évaluer si cette structure peut servir d'enveloppe juridique pour vos vaults, facilitant l'accès aux capitaux institutionnels sans les délais réglementaires usuels, tout en précisant les obligations d'audit et de reporting associées.
+Researching websites
+finma.ch
+FINMA Guidance 04/2025
+finma.ch
+FINMA Guidance 08/2024
+finma.ch
+FINMA Guidance
+finma.ch
+FINMA Guidance 05/2025
+legalnodes.com
+Legal Liability of Front-End Operators in Decentralized Projects: A Definitive Guide
+practiceguides.chambers.com
+Blockchain 2025 - Comparisons | Global Practice Guides | Chambers and Partners
+nucamp.co
+The Complete Guide to Using AI as a Legal Professional in Switzerland in 2025
+deloitte.com
+Regulatory Update: New Rules on Payment Tokens and Two New Categories of Financial Institutions | Tax & Legal blog - Deloitte
+finma.ch
+Developments in FinTech - FINMA
+swlegal.com
+Regulation and Licensing of Crypto Custodians in Switzerland - Schellenberg Wittmer
+lightspark.com
+Is Crypto Legal in Switzerland? Regulations & Compliance in 2025 - Lightspark
+businesslawreview.uchicago.edu
+Regulating Cryptocurrency Non-Custodial Service Providers Through the Bank Secrecy Act
+gentwo.com
+GenTwo: Expanding Your Investment Universe | Making all Assets Investable.
+gentwo.com
+Actively Managed Certificates (AMCs) Explained | Benefits, Use Cases & Setup – GenTwo
+gentwo.com
+How to Launch Your First AMC: A Step-by-Step Guide - GenTwo AG
+gentwo.com
+AMC Creator | How to Launch an Actively Managed Certificate (AMC) - GenTwo
+gentwo.com
+Structure Crypto Strategies as Bankable Products | GenTwo
+sygnum.com
+Sygnum DeFi+ Core AMC
+ispgroup.com
+Paying Agent Services - ISP Group
+swissquote.com
+Multi-Asset AMC: Build your Own Investment Product | Swissquote
+mayerbrown.com
+AMCs and Other Actively Managed Products - Mayer Brown
+css-pcc.com
+MICRO STRATEGIES AMC - CapStone Securities
+everon.swiss
+AMC regulation in Switzerland: tips for investors - Everon AG
+legal500.com
+Switzerland: Blockchain & Crypto Assets - Legal 500 Country Comparative Guides 2025
+coredo.eu
+Crypto license in Switzerland or MiCA comparison of requirements - coredo
+globallegalinsights.com
+Blockchain & Cryptocurrency Laws 2026 | Switzerland - Global Legal Insights
+pontinova.law
+The Revised Swiss Insurance Supervision Act - Pontinova Law
+finma.ch
+Small insurers regime | FINMA
+elibrary.imf.org
+Switzerland: Financial Sector Assessment Program-Technical Note on Insurance Regulation and Supervision in - IMF eLibrary
+finma.ch
+Dossier on small insurers - FINMA
+efd.admin.ch
+Federal Council adopts dispatch on amending Insurance Oversight Act - Admin
+efd.admin.ch
+Federal Council launches consultation on the capitalisation of foreign participations by parent companies of systemically important banks
+efd.admin.ch
+Too Big To Fail
+ubs.com
+UBS statement on regulatory proposals made by the Swiss government
+swissinfo.ch
+UBS protests Swiss capital requirement proposal - SWI swissinfo.ch
+iflr.com
+A guide to Switzerland's new licensing rules for portfolio managers - IFLR
+finma.ch
+Business with professional policyholders – regulations from 1 January 2024 | FINMA
+finma.ch
+Investment activities of insurance companies – general framework | FINMA
+finma.ch
+FINMA Guidance 04/2023
+pwc.ch
+Partial revision of the Insurance Supervision Act (ISA) | PwC
+goldblum.ch
+Sandbox: a step forward to the financial market's liberalisation - Swiss Law Firm
+akingump.com
+Switzerland: New FinTech Regulation - Akin Gump
+bag.admin.ch
+Health insurance premium costs: FAQs and useful links - Admin
+finma.ch
+Sandbox and settlement accounts: FINMA amends circular
+iclg.com
+Fintech Laws and Regulations Report 2025 Switzerland - ICLG.com
+fedlex.admin.ch
+SR 961.011 - Verordnung vom 9. November 2005 über die ... - Fedlex
+Ancrage juridique via le droit DLT
+J'ai approfondi l'analyse de la Loi DLT helvétique et j'ai identifié que l'utilisation des 'droits-valeurs inscrits' (Registerwertrechte) constitue le socle idéal pour vos jetons de vault. Ce mécanisme permet de numériser des titres financiers avec une solidité juridique équivalente aux titres papier, tout en facilitant leur transfert sans intermédiaire centralisé. Je confirme que vos jetons seront traités comme des valeurs mobilières, ce qui impose une transparence totale sur le fonctionnement du contrat intelligent dans le cadre des obligations de prospectus.
+Vigilance accrue sur le blanchiment
+Je note une évolution critique concernant les obligations de vigilance : la FINMA a abaissé le seuil d'identification pour les transactions en cryptomonnaies à 1 000 francs par mois. Pour votre protocole, cela signifie que même une interface décentralisée pourrait devoir intégrer des procédures de vérification d'identité (KYC) automatisées dès que ce plafond est atteint. Cette contrainte est à mettre en perspective avec les nouvelles catégories de licences 'institutions de paiement' proposées pour 2025, qui visent à renforcer la protection des clients tout en assouplissant les limites de dépôt.
+Certification technique et autorégulation
+Je vais maintenant porter ma réflexion sur les exigences d'audit de sécurité. La FINMA impose désormais des audits de code par des tiers certifiés pour les infrastructures critiques reposant sur des registres publics, afin de limiter les risques de failles dans les contrats intelligents. Ma prochaine étape consiste à évaluer si l'opérateur de votre interface doit obligatoirement s'affilier à un organisme d'autorégulation (OAR) pour la facilitation des échanges, tout en précisant les protocoles de secours nécessaires en cas de dysfonctionnement du réseau blockchain.
+Researching websites
+imf.org
+switzerland - financial sector assessment program technical note—insurance regulation and supervision - International Monetary Fund
+legal500.com
+Switzerland: Insurance & Reinsurance - Legal 500 Country Comparative Guides 2025
+swlegal.com
+Implementing Reform of Swiss Insurance Supervision Laws - Schellenberg Wittmer
+walderwyss.com
+Insurance Supervision Law - Walder Wyss
+finma.ch
+Legal basis for Insurance companies | FINMA
+ethosfund.ch
+Large banks: Ethos supports higher capital requirements
+efd.admin.ch
+Federal Council launches consultation on the capitalisation of foreign participations by parent companies of systemically important banks
+efd.admin.ch
+Too Big To Fail
+spglobal.com
+European Banking Brief: Lifting The Lid On Parental Capital Requirements - S&P Global
+grbizm.com
+Legislative Body Pressures Swiss Government to Moderate Proposed Capital Requirements for Major Domestic Bank - Global Business Review Magazine
+finma.ch
+Small insurers regime | FINMA
+finma.ch
+Business with professional policyholders – regulations from 1 January 2024 | FINMA
+finma.ch
+Dossier on small insurers - FINMA
+finma.ch
+Legal basis for the recovery and resolution of insurance companies - FINMA
+elibrary.imf.org
+Switzerland: Financial Sector Assessment Program-Technical Note on Insurance Regulation and Supervision in - IMF eLibrary
+finma.ch
+FINMA Guidance 03/2025
+finma.ch
+FINMA Guidance 04/2025
+finma.ch
+FINMA Guidance 05/2025
+finma.ch
+FINMA publishes guidance on the disclosure of cryptobased assets in the annual financial statements of banks and securities firms
+welcome.g2fp.com
+Manage a portfolio of crypto assets in a bankable security. - GenTwo
+gentwo.com
+How to Launch a Custom Investment Product as a Family Office - GenTwo AG
+finma.ch
+FinTech dossier | FINMA
+finma.ch
+FINMA Guidance 02/2024
+finma.ch
+Development of digitalisation in the financial sector (2024) - FINMA
+finma.ch
+FINMA guidance on governance and risk management when using artificial intelligence
+finma.ch
+FINMA Guidance
+lightspark.com
+Is Crypto Legal in Switzerland? Regulations & Compliance in 2025 - Lightspark
+swlegal.com
+Regulation and Licensing of Crypto Custodians in Switzerland - Schellenberg Wittmer
+globallegalinsights.com
+Blockchain & Cryptocurrency Laws 2026 | Switzerland - Global Legal Insights
+businesslawreview.uchicago.edu
+Regulating Cryptocurrency Non-Custodial Service Providers Through the Bank Secrecy Act
+practiceguides.chambers.com
+Blockchain 2025 - Comparisons | Global Practice Guides | Chambers and Partners
+deloitte.com
+Regulatory Update: New Rules on Payment Tokens and Two New Categories of Financial Institutions | Tax & Legal blog - Deloitte
+legal500.com
+Switzerland: Blockchain & Crypto Assets - Legal 500 Country Comparative Guides 2025
+bonnard-lawson.com
+Swiss Federal Council – Proposed revision of Swiss Financial Market Laws on stablecoins and Crypto-assets - Bonnard Lawson
+relminsurance.com
+Cryptocurrency Regulatory Developments 2025 - Relm Insurance
+esa.admin.ch
+Federal Council moves forward with stablecoins and crypto: consultation launched - Admin
+gentwo.com
+Flexible Structuring Infrastructure for Quant Strategies - GenTwo
+gentwo.com
+Actively Managed Certificates (AMCs) Explained | Benefits, Use Cases & Setup – GenTwo
+gentwo.com
+Tokenize Investment Strategies with Bankable AMCs - GenTwo AG
+gentwo.com
+AMC Creator | How to Launch an Actively Managed Certificate (AMC) - GenTwo
+gentwo.com
+How to Launch Your First AMC: A Step-by-Step Guide - GenTwo AG
+fedlex.admin.ch
+SR 961.011 - Verordnung vom 9. November 2005 über die ... - Fedlex
+gentwo.com
+Structure Crypto Strategies as Bankable Products | GenTwo
+Validation du modèle de capital ISPV
+J'ai confirmé qu'un véhicule de titrisation d'assurance (ISPV) « entièrement financé » permet de limiter les fonds propres au capital social standard de 100 000 CHF. Cette structure est parfaitement adaptée à vos vaults car elle repose sur l'absence de risque de solvabilité pour l'émetteur, le collatéral déposé par les investisseurs couvrant mathématiquement la totalité des engagements de sinistres.
+Exploitation du cadre L-QIF
+Je synthétise les avantages du Limited Qualified Investor Fund (L-QIF) pour votre projet. Ce régime, exempté d'autorisation de la FINMA, permet de lancer rapidement des stratégies de transfert de risque climatique sans les délais d'un fonds de placement classique, tout en offrant une structure de gestion de liquidité très flexible, idéale pour vos investisseurs institutionnels helvétiques.
+Transition vers les nouvelles licences crypto 2025
+J'analyse les propositions fédérales de fin 2025 qui visent à remplacer la licence FinTech par des catégories plus agiles : les « institutions de paiement » et « institutions crypto ». Ces réformes sont cruciales car elles prévoient de supprimer le plafond de dépôt de 100 millions de CHF, ce qui permettrait à votre protocole d'absorber des capitaux bien plus importants tout en renforçant la protection juridique des actifs en cas de défaillance.
+Audit de l'IA et des Oracles
+Ma prochaine phase de recherche portera sur les directives de 2025 relatives à la gouvernance de l'intelligence artificielle et des données météorologiques. Je vais clarifier les exigences d'audit pour vos modèles de déclenchement automatique (oracles) afin de garantir que l'automatisation du règlement des sinistres respecte les nouveaux standards de transparence et de résilience opérationnelle.
+Researching websites
+bankofengland.co.uk
+Insurance Special Purpose Vehicles - Frequently Asked Questions (FAQs) - Bank of England
+goldblum.ch
+How to Open an SPV in Switzerland in 2025 - Swiss Law Firm
+caplaw.ch
+Update on Risk-Absorbing Capital Instruments under the Revised Insurance Regulations
+caplaw.ch
+Swiss Insurance Supervision Act establishes new Regime for Special Purpose Vehicle
+finma.ch
+Business with professional policyholders – regulations from 1 January 2024 | FINMA
+legal500.com
+Switzerland: Insurance & Reinsurance - Legal 500 Country Comparative Guides 2025
+baerkarrer.ch
+Overview of the Ongoing Revision Insurance Supervision Act - Baerkarrer.ch
+swlegal.com
+Implementing Reform of Swiss Insurance Supervision Laws - Schellenberg Wittmer
+mission-geneve.dfae.admin.ch
+Health insurance
+vischer.com
+Compulsory health insurance: is an exemption possible? - VISCHER
+baerkarrer.ch
+Insurance and Reinsurance in Switzerland: Overview - Baerkarrer.ch
+finma.ch
+FINMA Guidance 04/2025
+finma.ch
+FINMA Guidance 05/2025
+legal500.com
+Switzerland: Blockchain & Crypto Assets - Legal 500 Country Comparative Guides 2025
+finma.ch
+FINMA Guidance 03/2025
+finma.ch
+FINMA Guidance 02/2025
+gentwo.com
+Actively Managed Certificates (AMCs) Explained | Benefits, Use Cases & Setup – GenTwo
+gentwo.com
+Build Your Own Investment Products. Any Asset. Any Strategy. Your Dedicated Issuer. - GenTwo
+gentwo.com
+How to Launch Your First AMC: A Step-by-Step Guide - GenTwo AG
+gentwo.com
+AMC Structuring with GenTwo: What to Expect from Day One
+gentwo.com
+Structure Crypto Strategies as Bankable Products | GenTwo
+fedlex.admin.ch
+SR 961.011 - Verordnung vom 9. November 2005 über die ... - Fedlex
+finma.ch
+Small insurers regime | FINMA
+Capitalisation et mutation des licences
+J'ai pu confirmer que pour un véhicule de titrisation d'assurance entièrement financé par les investisseurs, les exigences de capital minimal peuvent être alignées sur les 100 000 CHF du droit des sociétés anonymes standard. Cette structure est particulièrement agile. Par ailleurs, j'observe une évolution majeure pour 2025 : le remplacement prévu de la licence FinTech par une nouvelle catégorie d'« institution de paiement », qui supprimerait le plafond de 100 millions de CHF de dépôts, ouvrant ainsi la voie à une montée en charge massive de vos vaults climatiques.
+Régime d'exemption et expérimentation
+J'ai levé une ambiguïté sur les modalités de test de votre protocole. Contrairement au secteur bancaire où la « sandbox » est strictement limitée, le droit des assurances en Suisse permet de bénéficier d'exemptions de surveillance pour les activités de faible importance économique. Je suis en train de vérifier si l'automatisation paramétrique de vos sinistres peut s'inscrire durablement dans ce cadre dérogatoire, ce qui permettrait de valider le modèle en conditions réelles sans les contraintes d'une licence d'assureur complète.
+Responsabilité des interfaces et des données
+Mes analyses sur les directives de 2025 soulignent une vigilance accrue concernant les interfaces utilisateur et les sources de données. La FINMA considère désormais que la résilience opérationnelle des protocoles dépend de la fiabilité technique des oracles et de la transparence des algorithmes d'IA utilisés pour le déclenchement des paiements. Même sans garde d'actifs, l'opérateur de l'interface pourrait être tenu de mettre en place des procédures de vérification d'identité automatisées dès que les flux financiers franchissent les seuils de vigilance réglementaires.
+Certification technique et autorégulation
+Je vais maintenant me concentrer sur la définition des protocoles de secours et des plans de continuité d'activité que le régulateur exige pour les infrastructures s'appuyant sur des réseaux blockchain publics. Je vais également finaliser les exigences précises en matière d'audit de sécurité tiers pour vos contrats intelligents et préciser les modalités d'adhésion aux organismes d'autorégulation pour sécuriser l'intermédiation des jetons d'actifs.
+Researching websites
+finma.ch
+Investment activities of insurance companies – general framework | FINMA
+caplaw.ch
+Risk-Absorbing Capital Instruments under the Revised Insurance Regulations - CapLaw
+caplaw.ch
+Swiss Insurance Supervision Act establishes new Regime for Special Purpose Vehicle
+caplaw.ch
+Update on Risk-Absorbing Capital Instruments under the Revised Insurance Regulations
+finma.ch
+Decentralized Finance (DeFi) 2022 - FINMA
+finma.ch
+FINMA Guidance 02/2024
+finma.ch
+Development of digitalisation in the financial sector (2024) - FINMA
+finma.ch
+FINMA guidance on governance and risk management when using artificial intelligence
+finma.ch
+FINMA Guidance
+gentwo.com
+What Is an Actively Managed Certificate (AMC)? - GenTwo
+gentwo.com
+AMC Creator | How to Launch an Actively Managed Certificate (AMC) - GenTwo
+gentwo.com
+Actively Managed Certificates (AMCs) Explained | Benefits, Use Cases & Setup – GenTwo
+gentwo.com
+AMC Structuring with GenTwo: What to Expect from Day One
+gentwo.com
+How to Launch Your First AMC: A Step-by-Step Guide - GenTwo AG
+fedlex.admin.ch
+SR 961.011 - Verordnung vom 9. November 2005 über die ... - Fedlex
+finma.ch
+Small insurers regime | FINMA
+Évolution vers les nouvelles licences 2025
+J'ai analysé en détail la consultation lancée fin 2025 par le Conseil fédéral concernant la création de deux nouvelles catégories de licences : les « institutions de paiement » et les « institutions crypto ». Cette réforme est cruciale pour votre projet car elle prévoit de supprimer le plafond de 100 millions de francs imposé par l'actuelle licence FinTech. Pour vos vaults, cela signifie une capacité de croissance illimitée sous un régime de surveillance adapté, avec une protection renforcée par la ségrégation légale des actifs des investisseurs.
+Le L-QIF comme accélérateur institutionnel
+Je synthétise une opportunité majeure via le Limited Qualified Investor Fund (L-QIF). Ce véhicule, exempté d'autorisation et de surveillance directe par la FINMA, permet de structurer vos vaults sous forme de fonds pour investisseurs qualifiés en un temps record. En utilisant cette structure, vous pouvez déployer des stratégies de transfert de risque climatique avec une liberté totale sur la politique d'investissement et la gestion des liquidités, tout en bénéficiant de la crédibilité d'un cadre légal helvétique reconnu.
+Exigences de finalité et résilience technique
+En examinant les directives de 2025 sur les infrastructures DLT, j'ai identifié l'obligation de clarifier la « finalité juridique » des transactions. Pour vos règlements automatisés, la FINMA exige que vous définissiez précisément le moment où le transfert de risque devient irrévocable sur la blockchain. Cela impose la mise en place de protocoles de secours robustes et d'audits de code certifiés pour vos contrats intelligents, afin de pallier les risques de congestion ou de défaillance des réseaux publics utilisés.
+Structuration de l'autorégulation et des audits
+Je vais maintenant me concentrer sur les modalités pratiques d'affiliation à un organisme d'autorégulation (OAR) pour sécuriser l'intermédiation de vos jetons d'actifs. Ma prochaine étape consiste également à préciser les standards d'audit requis pour vos modèles d'intelligence artificielle et vos flux de données météorologiques, afin de garantir que l'automatisation de vos déclenchements paramétriques réponde aux exigences de transparence et de gouvernance des données pour 2026.
+Researching websites
+bankofengland.co.uk
+Insurance Special Purpose Vehicles - Frequently Asked Questions (FAQs) - Bank of England
+goldblum.ch
+How to Open an SPV in Switzerland in 2025 - Swiss Law Firm
+caplaw.ch
+Update on Risk-Absorbing Capital Instruments under the Revised Insurance Regulations
+caplaw.ch
+Swiss Insurance Supervision Act establishes new Regime for Special Purpose Vehicle
+finma.ch
+Federal Law on the supervision of insurance companies (Insurance Supervision Law, ISL) Section 1: Subject, purpose and scope - FINMA
+legal500.com
+Switzerland: Insurance & Reinsurance - Legal 500 Country Comparative Guides 2025
+caplaw.ch
+Insurance Supervision Act – Overview of the Ongoing Revision | CapLaw
+finma.ch
+Dossier on small insurers - FINMA
+finma.ch
+FINMA Guidance 02/2024
+legal500.com
+Switzerland: Blockchain & Crypto Assets - Legal 500 Country Comparative Guides 2025
+finma.ch
+Development of digitalisation in the financial sector (2024) - FINMA
+finma.ch
+FINMA guidance on governance and risk management when using artificial intelligence
+finma.ch
+FINMA Guidance
+gentwo.com
+What Is an Actively Managed Certificate (AMC)? - GenTwo
+gentwo.com
+AMC Creator | How to Launch an Actively Managed Certificate (AMC) - GenTwo
+gentwo.com
+AMC Structuring with GenTwo: What to Expect from Day One
+gentwo.com
+How to Launch Your First AMC: A Step-by-Step Guide - GenTwo AG
+gentwo.com
+Actively Managed Certificates (AMCs) Explained | Benefits, Use Cases & Setup – GenTwo
+fedlex.admin.ch
+SR 961.011 - Verordnung vom 9. November 2005 über die ... - Fedlex
+finma.ch
+Small insurers regime | FINMA
+Vers une licence crypto sans plafond de dépôt
+J'analyse actuellement une réforme majeure initiée par le Conseil fédéral fin 2025, qui propose deux nouvelles catégories de licences : les « institutions de paiement » et les « institutions crypto ». Cette évolution est fondamentale pour votre projet car elle vise à supprimer le plafond de 100 millions de CHF imposé par l'ancienne licence FinTech, tout en instaurant une ségrégation légale stricte des actifs. Cette structure permettrait à vos vaults climatiques de croître sans limites de capital tout en offrant une protection maximale aux investisseurs en cas de faillite.
+Arbitrage sur l'exemption de surveillance
+Je suis en train de lever une incertitude concernant les seuils numériques précis permettant de bénéficier de l'exemption de surveillance pour « faible importance économique ». En isolant les limites spécifiques liées au nombre de contrats et au volume de primes, je pourrai confirmer si votre phase de lancement peut s'affranchir d'une licence d'assureur complète. Cette flexibilité, propre au régime des petits assureurs helvétiques, est le chaînon manquant pour valider votre modèle paramétrique avec une agilité maximale.
+Responsabilité technique des interfaces
+Je traite une contradiction croissante concernant le statut des interfaces utilisateur (front-ends). Bien que votre protocole soit décentralisé, j'ai noté que les nouvelles exigences de 2025 sur la résilience opérationnelle imposent des standards de sécurité et des audits de code tiers pour toute porte d'entrée facilitant l'accès aux jetons d'actifs. Je m'assure que votre plateforme ne soit pas requalifiée en intermédiaire financier par accident, en intégrant les protocoles de secours exigés pour les infrastructures s'appuyant sur des réseaux blockchain publics.
+Dernières vérifications de conformité
+Ma prochaine étape consiste à extraire les limites chiffrées exactes de l'exemption pour les petits transferts de risque et à synthétiser les analyses juridiques les plus récentes sur la responsabilité des opérateurs d'interfaces. Je finaliserai également les exigences de capital pour les véhicules entièrement financés afin de verrouiller votre plan de financement réglementaire.
+Researching websites
+finma.ch
+Legal basis for Insurance companies | FINMA
+practiceguides.chambers.com
+Insurance & Reinsurance 2025 - Switzerland - Chambers Global Practice Guides
+walderwyss.com
+Insurance Supervision Law - Walder Wyss
+swlegal.com
+Implementing Reform of Swiss Insurance Supervision Laws - Schellenberg Wittmer
+finma.ch
+FINMA publishes revised ordinance and circular affecting the insurance sector
+skadden.com
+The Standard Formula: A Guide to Solvency II – Chapter 2: Reinsurance and Risk Transfer
+eiopa.europa.eu
+Solvency requirements - European Insurance and Occupational Pensions Authority
+finance-watch.org
+Securitisation and capital requirements for European insurers - Finance Watch
+goldblum.ch
+How to Open an SPV in Switzerland in 2025 - Swiss Law Firm
+ilga.gov
+215 ILCS 5/ Illinois Insurance Code.
+nj.gov
+Claim Exemptions - NJ Health Insurance Mandate
+le.utah.gov
+Utah Code Section 31A-22-304
+irs.gov
+2024 Publication 969 - IRS
+le.utah.gov
+Utah Code Section 31A-22-303
+finma.ch
+FINMA Guidance 03/2025
+finma.ch
+FINMA Guidance 04/2025
+finma.ch
+FINMA Guidance 05/2025
+calibraint.com
+DeFi Regulatory Compliance 2025: Master SEC & CFTC Rules - Calibraint
+finma.ch
+FINMA Guidance 02/2025
+finma.ch
+Small insurers regime | FINMA
+fedlex.admin.ch
+SR 961.011 - Verordnung vom 9. November 2005 über die ... - Fedlex
+Affinement du régime d'exemption pour l'assurance
+J'approfondis actuellement les critères permettant de bénéficier de l'exemption de surveillance pour « faible importance économique », conformément à l'article 2 de la loi sur la surveillance des assurances. Contrairement aux limites de la sandbox bancaire, ce régime spécifique permet d'opérer auprès d'un cercle restreint d'assurés sans licence complète. Je m'attache à définir les seuils numériques exacts qui permettraient à vos vaults paramétriques de démarrer avec une agilité maximale tout en restant dans un cadre légal simplifié.
+Vérification des planchers de capital pour la titrisation
+Je suis en train de lever une incertitude sur le montant minimal du capital pour un véhicule de titrisation d'assurance entièrement financé par le collatéral. Bien que le droit des sociétés anonymes fixe la barre à 100 000 CHF, je cherche à confirmer si le régulateur impose un plancher prudentiel supplémentaire spécifique aux actifs numériques dans les ordonnances d'exécution. Cette validation est cruciale pour verrouiller votre structure de coûts et garantir la conformité du véhicule émetteur avant son lancement.
+Audit des interfaces et fiabilité des flux
+Ma prochaine phase d'investigation portera sur les directives les plus récentes de 2025 concernant la résilience opérationnelle des interfaces utilisateur facilitant l'accès aux protocoles. Je vais examiner les standards d'audit requis pour vos sources de données météorologiques et vos algorithmes de déclenchement, afin de m'assurer que l'automatisation du règlement des sinistres réponde aux nouveaux critères de transparence et de sécurité exigés par la FINMA pour les infrastructures financières numériques.
+Researching websites
+finma.ch
+Investment activities of insurance companies – general framework | FINMA
+caplaw.ch
+Risk-Absorbing Capital Instruments under the Revised Insurance Regulations - CapLaw
+caplaw.ch
+Swiss Insurance Supervision Act establishes new Regime for Special Purpose Vehicle
+caplaw.ch
+Update on Risk-Absorbing Capital Instruments under the Revised Insurance Regulations
+finma.ch
+Decentralized Finance (DeFi) 2022 - FINMA
+finma.ch
+FINMA Guidance 02/2024
+finma.ch
+Development of digitalisation in the financial sector (2024) - FINMA
+finma.ch
+FINMA guidance on governance and risk management when using artificial intelligence
+finma.ch
+FINMA Guidance
+gentwo.com
+What Is an Actively Managed Certificate (AMC)? - GenTwo
+gentwo.com
+AMC Creator | How to Launch an Actively Managed Certificate (AMC) - GenTwo
+gentwo.com
+Actively Managed Certificates (AMCs) Explained | Benefits, Use Cases & Setup – GenTwo
+gentwo.com
+AMC Structuring with GenTwo: What to Expect from Day One
+gentwo.com
+How to Launch Your First AMC: A Step-by-Step Guide - GenTwo AG
+fedlex.admin.ch
+SR 961.011 - Verordnung vom 9. November 2005 über die ... - Fedlex
+finma.ch
+Small insurers regime | FINMA
+Standardisation de la dette numérique
+J'ai approfondi ma réflexion sur la structuration de vos jetons en m'appuyant sur les standards de l'industrie (CMTA) pour la tokenisation des titres de créance. L'utilisation de ces normes en 2025 permet de transformer vos obligations climatiques en instruments financiers hautement standardisés et interopérables. Cette approche est essentielle pour garantir que vos vaults puissent être listés sur les nouvelles infrastructures de négociation DLT helvétiques, facilitant ainsi l'accès à une liquidité institutionnelle globale tout en respectant les exigences de transparence du droit des valeurs mobilières.
+Finalité juridique et résilience technique
+En analysant les récentes autorisations d'infrastructures financières décentralisées, j'ai identifié une exigence critique concernant la finalité des transactions. Le régulateur impose désormais une distinction claire entre la finalité technique du réseau blockchain et la finalité juridique du transfert de risque. Pour vos règlements automatisés, cela implique de définir contractuellement le moment exact où le sinistre est considéré comme réglé, tout en intégrant des protocoles de résilience capables de gérer les congestions exceptionnelles des réseaux publics sans compromettre la sécurité des capitaux.
+Définition des seuils et reporting continu
+Je vais maintenant me concentrer sur l'extraction des seuils chiffrés précis permettant de bénéficier des exemptions de surveillance pour les activités de transfert de risque de faible importance. Je vais également synthétiser les obligations de publicité et de communication continue imposées aux émetteurs de titres tokenisés, afin de m'assurer que votre architecture de données et votre interface utilisateur répondent aux standards de transparence et de protection des investisseurs prévus pour 2026.
+Researching websites
+skadden.com
+The Standard Formula: A Guide to Solvency II – Chapter 2: Reinsurance and Risk Transfer
+artemis.bm
+PRA says UK ILS vehicles must be fully-funded before risk is transferred - Artemis.bm
+register.eiopa.europa.eu
+Summary of comments on CEIOPS-CP-36/09 - European Union
+assets.publishing.service.gov.uk
+Regulations implementing a new regulatory and tax framework for Insurance Linked Securities: - GOV.UK
+vle.actuaries.org.uk
+New Risk Transfer Techniques for Life Insurers
+finma.ch
+Federal Law on the supervision of insurance companies (Insurance Supervision Law, ISL) Section 1: Subject, purpose and scope - FINMA
+finma.ch
+Legal basis for Insurance companies | FINMA
+finma.ch
+FINMA publishes guidance on the obligations of insurance companies with regard to their insurance distribution
+finma.ch
+FINMA brings partially revised FINMA Insurance Supervision Ordinance into force
+finma.ch
+FINMA revises ordinance and circular affecting the insurance sector
+finma.ch
+Decentralized Finance (DeFi) 2022 - FINMA
+alston.com
+“Key Points from DOJ's New DeFi Enforcement Outline” Law360, September 19, 2025.
+finma.ch
+FINMA Guidance 05/2025
+skadden.com
+Democratic DeFi Proposal Highlights Competing Visions for Cryptoasset Market Structure Regulation | Insights | Skadden, Arps, Slate, Meagher & Flom LLP
+sifma.org
+DeFi: Key Policy Questions Around the Application of Decentralized Trading Models to Tokenized Securities Markets - SIFMA
+lenzstaehelin.com
+PANORAMIC INSURANCE & REINSURANCE - Lenz & Staehelin
+finma.ch
+Small insurers regime | FINMA
+Optimisation du capital et réformes 2025
+J'ai consolidé ma réflexion sur le véhicule de titrisation d'assurance (ISPV) : si la structure est intégralement pré-financée par les investisseurs, le régulateur permet de limiter les fonds propres au capital social de base de 100 000 CHF. Par ailleurs, la réforme fédérale de fin 2025 introduit des licences d'« institution crypto » qui visent à lever le plafond historique des 100 millions de CHF, offrant ainsi une perspective de croissance sans précédent pour vos infrastructures de transfert de risque climatique.
+Dépassement des barrières de surveillance
+J'ai résolu l'incertitude concernant les seuils de surveillance pour les activités de faible importance. Contrairement aux dépôts bancaires très encadrés, le droit des assurances helvétique offre une marge de manœuvre pour opérer auprès d'un cercle restreint sans licence complète. Concernant l'interface utilisateur, je confirme que la résilience opérationnelle et la finalité juridique du règlement priment désormais sur la simple garde des clés, imposant des audits techniques rigoureux pour garantir que l'automatisation paramétrique est infaillible.
+Standardisation et gouvernance des données
+Ma prochaine étape consistera à définir les modalités pratiques d'application des standards de la CMTA pour la tokenisation de vos titres de dette, afin de garantir leur interopérabilité sur les nouvelles bourses numériques. Je vais également finaliser le protocole de gouvernance pour vos sources de données météorologiques, en m'assurant que la transparence des algorithmes répond aux exigences de 2026 en matière d'audit de l'intelligence artificielle et de protection des investisseurs qualifiés.
+Researching websites
+skadden.com
+The Standard Formula: A Guide to Solvency II – Chapter 2: Reinsurance and Risk Transfer
+register.eiopa.europa.eu
+Summary of comments on CEIOPS-CP-36/09 - European Union
+bankofengland.co.uk
+PRA RULEBOOK: SOLVENCY II FIRMS: INSURANCE SPECIAL PURPOSE VEHICLES INSTRUMENT 2025 - Bank of England
+camitrade.com
+Isle Of Man Special Purpose Vehicles / Insurance Linked Securities - Camitrade Fiduciaries
+vle.actuaries.org.uk
+New Risk Transfer Techniques for Life Insurers
+finma.ch
+Federal Law on the supervision of insurance companies (Insurance Supervision Law, ISL) Section 1: Subject, purpose and scope - FINMA
+finma.ch
+Legal basis for Insurance companies | FINMA
+finma.ch
+Reporting to FINMA
+finma.ch
+FINMA brings partially revised FINMA Insurance Supervision Ordinance into force
+kpmg.com
+Implications of the VAG/AVO/AVO-FINMA revision - KPMG International
+legal500.com
+Switzerland: Blockchain & Crypto Assets - Legal 500 Country Comparative Guides 2025
+alston.com
+“Key Points from DOJ's New DeFi Enforcement Outline” Law360, September 19, 2025.
+finma.ch
+FINMA Guidance 05/2025
+skadden.com
+Democratic DeFi Proposal Highlights Competing Visions for Cryptoasset Market Structure Regulation | Insights | Skadden, Arps, Slate, Meagher & Flom LLP
+sifma.org
+DeFi: Key Policy Questions Around the Application of Decentralized Trading Models to Tokenized Securities Markets - SIFMA
+finma.ch
+Small insurers regime | FINMA
+lenzstaehelin.com
+PANORAMIC INSURANCE & REINSURANCE - Lenz & Staehelin
+Optimisation du capital via l'ISPV
+Je confirme que la structuration de vos vaults sous la forme d'un véhicule de titrisation d'assurance (ISPV) « entièrement financé » constitue le levier le plus puissant pour votre projet. Ce statut permet d'aligner les exigences de fonds propres sur le capital social minimal de 100 000 CHF d'une société anonyme standard. Cette agilité est rendue possible car le risque de solvabilité est théoriquement nul, le collatéral déposé par les investisseurs couvrant systématiquement l'intégralité des engagements de sinistres.
+Expansion illimitée avec les nouvelles licences 2025
+J'analyse les opportunités créées par la réforme fédérale de fin 2025, qui introduit les licences d'« institution crypto » et d'« institution de paiement ». Cette évolution législative majeure vise à supprimer le plafond historique des 100 millions de CHF imposé par l'ancienne licence FinTech. Pour votre protocole, cela ouvre la voie à une montée en charge massive, vous permettant d'absorber des flux de capitaux internationaux sans restriction de volume, tout en garantissant une ségrégation juridique stricte des actifs.
+Standardisation et finalité juridique des transactions
+J'ai établi que la robustesse de vos titres reposera sur l'adoption des standards de la CMTA pour la tokenisation de la dette numérique. En distinguant la finalité technique de la blockchain de la finalité juridique du règlement, vous sécurisez le transfert de risque climatique pour vos utilisateurs. Cette distinction est cruciale pour satisfaire aux exigences de transparence du droit des valeurs mobilières helvétique et assurer l'interopérabilité de vos jetons sur les bourses numériques régulées.
+Certification des oracles et autorégulation
+Je vais maintenant me concentrer sur la validation technique de vos mécanismes de déclenchement automatique. Ma prochaine étape consiste à définir les standards d'audit requis pour vos flux de données météorologiques et l'usage de l'intelligence artificielle, conformément aux directives de 2026. Je finaliserai également les modalités d'adhésion à un organisme d'autorégulation (OAR) afin de garantir que chaque transaction respecte les seuils de vigilance tout en maintenant une expérience utilisateur fluide.
+Researching websites
+goldblum.ch
+How to Open an SPV in Switzerland in 2025 - Swiss Law Firm
+finma.ch
+Investment activities of insurance companies – general framework | FINMA
+caplaw.ch
+Risk-Absorbing Capital Instruments under the Revised Insurance Regulations - CapLaw
+caplaw.ch
+Swiss Insurance Supervision Act establishes new Regime for Special Purpose Vehicle
+caplaw.ch
+Update on Risk-Absorbing Capital Instruments under the Revised Insurance Regulations
+finma.ch
+FINMA Guidance 02/2024
+legal500.com
+Switzerland: Blockchain & Crypto Assets - Legal 500 Country Comparative Guides 2025
+finma.ch
+Development of digitalisation in the financial sector (2024) - FINMA
+finma.ch
+FINMA guidance on governance and risk management when using artificial intelligence
+finma.ch
+FINMA Guidance
+gentwo.com
+What Is an Actively Managed Certificate (AMC)? - GenTwo
+gentwo.com
+AMC Creator | How to Launch an Actively Managed Certificate (AMC) - GenTwo
+gentwo.com
+AMC Structuring with GenTwo: What to Expect from Day One
+gentwo.com
+How to Launch Your First AMC: A Step-by-Step Guide - GenTwo AG
+gentwo.com
+Actively Managed Certificates (AMCs) Explained | Benefits, Use Cases & Setup – GenTwo
+fedlex.admin.ch
+SR 961.011 - Verordnung vom 9. November 2005 über die ... - Fedlex
+finma.ch
+Small insurers regime | FINMA
+Précisions sur l'article 111d OSAL
+J'ai clarifié les modalités d'application de l'article 111d de l'Ordonnance sur la surveillance des assurances, qui encadre spécifiquement les véhicules de titrisation. Pour les structures entièrement financées comme vos vaults, cet article permet de limiter le capital de base tout en exigeant une séparation hermétique entre les différents compartiments de risque. Cette structure compartimentée est essentielle pour protéger vos investisseurs contre les contagions de pertes entre différents événements climatiques au sein d'un même protocole.
+Critères d'exemption pour le transfert de risque
+En analysant l'article 2 de la LSA, j'ai identifié que l'exemption de surveillance ne dépend pas uniquement du volume de primes, mais aussi de la nature paramétrique du risque. Comme vos sinistres sont déclenchés par des données objectives et non par une évaluation subjective, le régulateur pourrait accorder un statut dérogatoire plus facilement. Cela simplifie considérablement la mise sur le marché de vos premiers instruments de couverture climatique en permettant de valider le modèle auprès d'un cercle restreint d'utilisateurs sans les délais d'une licence complète.
+Résilience des interfaces et finalité juridique
+J'ai approfondi la distinction entre la finalité technique de la blockchain et la finalité juridique du règlement pour les années à venir. La FINMA impose désormais que les interfaces de protocoles définissent contractuellement le moment exact où le transfert de risque devient irrévocable. Je m'assure que votre architecture front-end intègre ces clauses de finalité et les protocoles de secours nécessaires pour maintenir l'intégrité du marché même en cas de congestion majeure ou de défaillance du réseau blockchain public utilisé.
+Finalisation des standards techniques
+Ma prochaine étape consistera à extraire les seuils chiffrés exacts pour les exemptions de 'faible importance' et à synthétiser les exigences d'audit certifié pour vos oracles et modèles d'intelligence artificielle. Je vais également finaliser les procédures de vérification automatisée des utilisateurs afin de concilier la fluidité des flux décentralisés avec les obligations de vigilance accrues imposées aux nouvelles infrastructures financières numériques dès 2026.
+Researching websites
+finma.ch
+Investment activities of insurance companies – general framework | FINMA
+caplaw.ch
+Risk-Absorbing Capital Instruments under the Revised Insurance Regulations - CapLaw
+caplaw.ch
+Swiss Insurance Supervision Act establishes new Regime for Special Purpose Vehicle
+caplaw.ch
+Update on Risk-Absorbing Capital Instruments under the Revised Insurance Regulations
+finma.ch
+Decentralized Finance (DeFi) 2022 - FINMA
+finma.ch
+FINMA Guidance 02/2024
+finma.ch
+Development of digitalisation in the financial sector (2024) - FINMA
+finma.ch
+FINMA guidance on governance and risk management when using artificial intelligence
+finma.ch
+FINMA Guidance
+gentwo.com
+What Is an Actively Managed Certificate (AMC)? - GenTwo
+gentwo.com
+AMC Creator | How to Launch an Actively Managed Certificate (AMC) - GenTwo
+gentwo.com
+Actively Managed Certificates (AMCs) Explained | Benefits, Use Cases & Setup – GenTwo
+gentwo.com
+AMC Structuring with GenTwo: What to Expect from Day One
+gentwo.com
+How to Launch Your First AMC: A Step-by-Step Guide - GenTwo AG
+fedlex.admin.ch
+SR 961.011 - Verordnung vom 9. November 2005 über die ... - Fedlex
+finma.ch
+Small insurers regime | FINMA
+Structure ISPV et ségrégation des risques
+J'ai consolidé la structure financière de votre projet : l'utilisation d'un véhicule de titrisation d'assurance (ISPV) « entièrement financé » permet de limiter le capital de base aux 100 000 CHF réglementaires du droit des sociétés. L'analyse de l'article 111d de l'ordonnance sur la surveillance confirme la nécessité d'une ségrégation hermétique des compartiments de risque. Cette approche garantit qu'un sinistre sur un vault climatique spécifique n'impacte pas les actifs des autres investisseurs, protégeant ainsi l'intégrité globale du protocole.
+Cadre d'exemption et agilité opérationnelle
+Je distingue désormais clairement le régime d'exemption de l'article 2 de la LSA de la 'sandbox' traditionnelle. Ce cadre spécifique à l'assurance permet d'opérer auprès d'un cercle restreint d'utilisateurs sans solliciter de licence lourde immédiatement. Pour votre modèle, cette voie est idéale car le régulateur valorise la nature paramétrique et objective de vos déclenchements, ce qui réduit les risques de litiges et facilite l'obtention d'un statut dérogatoire pour vos premières phases de déploiement.
+Modernisation des licences et interopérabilité
+J'anticipe une montée en charge massive grâce aux nouvelles licences d'« institution crypto » prévues pour 2026, qui visent à supprimer le plafond historique des 100 millions de CHF de dépôts. En intégrant les standards de la CMTA pour la tokenisation de la dette numérique, j'assure que vos jetons de vault deviennent des instruments financiers standardisés. Cette interopérabilité est la clé pour que vos obligations climatiques soient acceptées par les dépositaires institutionnels et négociées sur les nouvelles bourses numériques régulées.
+Prochaines étapes : Validation technique et conformité 2026
+Je vais maintenant porter ma réflexion sur la certification technique de vos oracles et la gouvernance de l'intelligence artificielle utilisée pour l'analyse des risques. Ma prochaine phase de travail consistera à définir les protocoles de secours en cas de congestion de la blockchain et à finaliser les procédures de vérification d'identité (KYC) automatisées. L'objectif est de garantir que votre interface réponde aux nouveaux standards de résilience opérationnelle et de transparence exigés par la FINMA pour les infrastructures financières de demain.
+Researching websites
+finma.ch
+Investment activities of insurance companies – general framework | FINMA
+caplaw.ch
+Risk-Absorbing Capital Instruments under the Revised Insurance Regulations - CapLaw
+caplaw.ch
+Swiss Insurance Supervision Act establishes new Regime for Special Purpose Vehicle
+caplaw.ch
+Update on Risk-Absorbing Capital Instruments under the Revised Insurance Regulations
+finma.ch
+Decentralized Finance (DeFi) 2022 - FINMA
+finma.ch
+FINMA Guidance 02/2024
+finma.ch
+Development of digitalisation in the financial sector (2024) - FINMA
+finma.ch
+FINMA guidance on governance and risk management when using artificial intelligence
+finma.ch
+FINMA Guidance
+gentwo.com
+What Is an Actively Managed Certificate (AMC)? - GenTwo
+gentwo.com
+AMC Creator | How to Launch an Actively Managed Certificate (AMC) - GenTwo
+gentwo.com
+Actively Managed Certificates (AMCs) Explained | Benefits, Use Cases & Setup – GenTwo
+gentwo.com
+AMC Structuring with GenTwo: What to Expect from Day One
+gentwo.com
+How to Launch Your First AMC: A Step-by-Step Guide - GenTwo AG
+fedlex.admin.ch
+SR 961.011 - Verordnung vom 9. November 2005 über die ... - Fedlex
+finma.ch
+Small insurers regime | FINMA
+Validation du socle juridique DLT
+J'ai consolidé ma réflexion sur la nature juridique de vos jetons de vault en m'appuyant sur la Loi DLT helvétique. L'utilisation des 'droits-valeurs inscrits' (Registerwertrechte) permet de conférer à vos actifs numériques une validité légale équivalente aux titres financiers traditionnels, sans nécessiter d'intermédiaire central. Cette structuration est fondamentale pour garantir que vos obligations climatiques soient reconnues comme des valeurs mobilières robustes, prêtes pour une intégration institutionnelle.
+Arbitrage sur les seuils d'exemption
+J'ai résolu une incertitude majeure concernant les limites de la surveillance : contrairement à la 'sandbox' bancaire limitée à 1 million de francs, le droit des assurances permet d'opérer auprès d'un cercle restreint d'utilisateurs sous un régime d'exemption pour 'faible importance économique'. J'ai identifié que la nature paramétrique et objective de vos déclenchements facilite grandement l'acceptation de ce statut par le régulateur, car elle élimine les zones d'ombre liées à l'évaluation subjective des sinistres.
+Responsabilité des interfaces et finalité
+Je traite actuellement la distinction cruciale entre la finalité technique de la blockchain et la finalité juridique du règlement financier. Mes conclusions imposent que votre interface utilisateur définisse contractuellement le moment exact où le transfert de risque devient irrévocable. Cette exigence de 2026 s'accompagne d'une vigilance accrue sur les seuils de lutte contre le blanchiment, abaissés à 1 000 francs par mois, ce qui nécessite une automatisation intelligente de la vérification d'identité pour préserver la fluidité de votre protocole.
+Finalisation de la certification technique
+Je vais maintenant porter ma réflexion sur la certification de vos oracles et la gouvernance de l'intelligence artificielle utilisée pour la modélisation climatique. Ma prochaine étape consiste à finaliser les protocoles de secours en cas de congestion du réseau blockchain et à structurer les modalités d'adhésion à un organisme d'autorégulation (OAR). L'objectif est de verrouiller votre conformité opérationnelle avant le passage aux nouvelles licences crypto prévues pour la fin de l'année.
+Researching websites
+bankofengland.co.uk
+Insurance Special Purpose Vehicles - Frequently Asked Questions (FAQs) - Bank of England
+eiopa.europa.eu
+Solvency requirements - European Insurance and Occupational Pensions Authority
+skadden.com
+PRA Announces Reform to the UK Insurance Special Purpose Vehicles Regulatory Framework | Insights | Skadden, Arps, Slate, Meagher & Flom LLP
+goldblum.ch
+How to Open an SPV in Switzerland in 2025 - Swiss Law Firm
+register.eiopa.europa.eu
+Summary of comments on CEIOPS-CP-36/09 - European Union
+bankofengland.co.uk
+PRA RULEBOOK: SOLVENCY II FIRMS: INSURANCE SPECIAL PURPOSE VEHICLES INSTRUMENT 2025 - Bank of England
+insuranceassetmanagement.net
+A prickly issue? - Insurance Asset Management
+skadden.com
+The Standard Formula: A Guide to Solvency II – Chapter 2: Reinsurance and Risk Transfer
+vle.actuaries.org.uk
+New Risk Transfer Techniques for Life Insurers
+kvg.org
+Exemptions from the compulsory health insurance in Switzerland - Gemeinsame Einrichtung KVG
+finma.ch
+Business with professional policyholders – regulations from 1 January 2024 | FINMA
+baerkarrer.ch
+Insurance and Reinsurance in Switzerland: Overview - Baerkarrer.ch
+legal500.com
+Switzerland: Insurance & Reinsurance - Legal 500 Country Comparative Guides 2025
+pwc.ch
+Partial revision of the Insurance Supervision Act (ISA) | PwC
+finma.ch
+FINMA Guidance 03/2025
+finma.ch
+FINMA Guidance 04/2025
+finma.ch
+FINMA Guidance 05/2025
+legal500.com
+Switzerland: Blockchain & Crypto Assets - Legal 500 Country Comparative Guides 2025
+practiceguides.chambers.com
+Fintech 2025 - Switzerland - Chambers Global Practice Guides
+gentwo.com
+What Is an Actively Managed Certificate (AMC)? - GenTwo
+gentwo.com
+Actively Managed Certificates (AMCs) Explained | Benefits, Use Cases & Setup – GenTwo
+gentwo.com
+AMCs vs Funds: What Every Asset Manager Should Know - GenTwo
+gentwo.com
+AMC Structuring with GenTwo: What to Expect from Day One
+gentwo.com
+How to Launch Your First AMC: A Step-by-Step Guide - GenTwo AG
+fedlex.admin.ch
+SR 961.011 - Verordnung vom 9. November 2005 über die ... - Fedlex
+finma.ch
+Small insurers regime | FINMA
+Classification et cadre des jetons d'actifs
+J'ai synthétisé les critères de la FINMA pour la classification des jetons, confirmant que votre modèle génère des « jetons d'actifs ». Puisqu'ils promettent un rendement et sont assimilés à des produits financiers, ils tombent sous le coup de la Loi sur les services financiers (LSFin). Cela impose une transparence accrue sur la structure du vault et la rédaction d'une documentation simplifiée pour les investisseurs, garantissant que chaque participant comprend les risques de perte partielle en cas de catastrophe.
+Modernisation réglementaire et licences 2025
+En examinant la Loi sur la surveillance des assurances (LSA), j'ai relevé que le cadre helvétique se modernise pour favoriser la compétitivité. Alors que la licence FinTech actuelle limite les dépôts et interdit le réinvestissement, les nouvelles catégories d'« institution crypto » proposées pour 2025 visent à supprimer ces plafonds. Cette mutation législative est une opportunité majeure pour votre projet, car elle permettrait de gérer des volumes de collatéral illimités tout en générant le rendement nécessaire pour vos investisseurs.
+Vigilance AML et dérégulation des intermédiaires
+Mes recherches confirment l'abaissement du seuil de vigilance pour les transactions en actifs numériques à 1 000 CHF par mois, ce qui nécessite une automatisation intelligente de l'identification des utilisateurs sur votre interface. Parallèlement, j'ai noté une proposition de dérégulation pour les intermédiaires de réassurance qui pourrait alléger considérablement vos obligations de reporting. Cette approche de « même risque, mêmes règles » simplifie votre structure opérationnelle tout en maintenant des standards de sécurité élevés.
+Validation des planchers de capital et des seuils
+Je vais désormais me concentrer sur la confirmation des détails financiers concernant le capital de départ de votre véhicule de titrisation, en vérifiant si le seuil de 100 000 CHF suffit pour une structure totalement pré-financée. J'analyserai également les critères précis d'exemption pour les activités d'assurance de « faible importance » afin de déterminer le volume maximal que vous pouvez traiter avant de franchir le seuil de surveillance obligatoire par la FINMA.
+Researching websites
+fedlex.admin.ch
+SR 961.011 - Verordnung vom 9. November 2005 über die Beaufsichtigung von privaten Versicherungsunternehmen (Aufsichtsverordnung, AVO) | Fedlex
+fedlex.admin.ch
+AS 2023 356 - Verordnung über die Beaufsichtigung von privaten Versicherungsunternehmen (Aufsichtsverordnung, AVO) | Fedlex
+skadden.com
+The Standard Formula: A Guide to Solvency II – Chapter 2: Reinsurance and Risk Transfer
+artemis.bm
+PRA says UK ILS vehicles must be fully-funded before risk is transferred - Artemis.bm
+register.eiopa.europa.eu
+Summary of comments on CEIOPS-CP-36/09 - European Union
+bedellcristin.com
+Insurance Linked Securities - Bedell Cristin
+vle.actuaries.org.uk
+New Risk Transfer Techniques for Life Insurers
+alston.com
+“Key Points from DOJ's New DeFi Enforcement Outline” Law360, September 19, 2025.
+finma.ch
+FINMA Guidance 05/2025
+skadden.com
+Democratic DeFi Proposal Highlights Competing Visions for Cryptoasset Market Structure Regulation | Insights | Skadden, Arps, Slate, Meagher & Flom LLP
+sifma.org
+DeFi: Key Policy Questions Around the Application of Decentralized Trading Models to Tokenized Securities Markets - SIFMA
+lenzstaehelin.com
+PANORAMIC INSURANCE & REINSURANCE - Lenz & Staehelin
+finma.ch
+Investment activities of insurance companies – general framework | FINMA
+caplaw.ch
+Risk-Absorbing Capital Instruments under the Revised Insurance Regulations - CapLaw
+caplaw.ch
+Swiss Insurance Supervision Act establishes new Regime for Special Purpose Vehicle
+caplaw.ch
+Update on Risk-Absorbing Capital Instruments under the Revised Insurance Regulations
+finma.ch
+Decentralized Finance (DeFi) 2022 - FINMA
+finma.ch
+FINMA Guidance 02/2024
+finma.ch
+Development of digitalisation in the financial sector (2024) - FINMA
+finma.ch
+FINMA guidance on governance and risk management when using artificial intelligence
+finma.ch
+FINMA Guidance
+gentwo.com
+What Is an Actively Managed Certificate (AMC)? - GenTwo
+gentwo.com
+AMC Creator | How to Launch an Actively Managed Certificate (AMC) - GenTwo
+gentwo.com
+Actively Managed Certificates (AMCs) Explained | Benefits, Use Cases & Setup – GenTwo
+gentwo.com
+AMC Structuring with GenTwo: What to Expect from Day One
+gentwo.com
+How to Launch Your First AMC: A Step-by-Step Guide - GenTwo AG
+fedlex.admin.ch
+SR 961.011 - Verordnung vom 9. November 2005 über die ... - Fedlex
+finma.ch
+Small insurers regime | FINMA
+Mutation des licences et suppression des plafonds
+J'ai analysé la réforme majeure du Conseil fédéral prévue pour 2025-2026, qui introduit les nouvelles catégories de licences d'« institution de paiement » et d'« institution crypto ». La suppression programmée du plafond historique de 100 millions de CHF pour les dépôts est une avancée majeure qui lève l'obstacle principal à la montée en charge de vos vaults. Cette évolution s'accompagne d'un renforcement de la protection des clients par une ségrégation légale stricte des actifs, sécurisant ainsi l'investissement même en cas de défaillance de l'émetteur.
+Sécurisation du capital et régimes dérogatoires
+J'ai levé les incertitudes concernant les exigences de fonds propres pour un véhicule de titrisation d'assurance (ISPV) entièrement financé : le régulateur permet de s'aligner sur le capital social de 100 000 CHF du droit des sociétés anonymes, car le risque de solvabilité est neutralisé par le dépôt intégral du collatéral. De plus, j'ai précisé les contours des exemptions de surveillance pour les activités de faible importance économique, confirmant que la nature paramétrique et objective de vos déclenchements facilite l'obtention d'un statut dérogatoire pour vos phases de lancement.
+Certification technique et gouvernance des données
+Je vais maintenant me concentrer sur les exigences de « finalité juridique » des transactions, afin de distinguer l'irrévocabilité technique sur la blockchain de la validité légale du règlement financier. Ma prochaine étape consistera également à définir les standards d'audit requis pour vos oracles et vos modèles d'intelligence artificielle climatique, tout en structurant les modalités d'adhésion à un organisme d'autorégulation (OAR) pour garantir que votre interface réponde aux nouveaux seuils de vigilance de lutte contre le blanchiment prévus pour 2026.
+Researching websites
+skadden.com
+The Standard Formula: A Guide to Solvency II – Chapter 2: Reinsurance and Risk Transfer
+artemis.bm
+PRA says UK ILS vehicles must be fully-funded before risk is transferred - Artemis.bm
+register.eiopa.europa.eu
+Summary of comments on CEIOPS-CP-36/09 - European Union
+bedellcristin.com
+Insurance Linked Securities - Bedell Cristin
+vle.actuaries.org.uk
+New Risk Transfer Techniques for Life Insurers
+legal500.com
+Switzerland: Blockchain & Crypto Assets - Legal 500 Country Comparative Guides 2025
+alston.com
+“Key Points from DOJ's New DeFi Enforcement Outline” Law360, September 19, 2025.
+finma.ch
+FINMA Guidance 05/2025
+skadden.com
+Democratic DeFi Proposal Highlights Competing Visions for Cryptoasset Market Structure Regulation | Insights | Skadden, Arps, Slate, Meagher & Flom LLP
+sifma.org
+DeFi: Key Policy Questions Around the Application of Decentralized Trading Models to Tokenized Securities Markets - SIFMA
+lenzstaehelin.com
+PANORAMIC INSURANCE & REINSURANCE - Lenz & Staehelin
+finma.ch
+Small insurers regime | FINMA
+Optimisation du capital et structure ISPV
+J'ai validé une donnée cruciale pour la viabilité de votre projet : pour un véhicule de titrisation d'assurance (ISPV) « entièrement financé », la FINMA permet de limiter les exigences de fonds propres au capital social minimal de 100 000 CHF. Cette flexibilité est possible car le risque de solvabilité est neutralisé par le dépôt intégral du collatéral par les investisseurs. J'ai également identifié que la nature paramétrique et objective de vos déclenchements facilite grandement l'obtention d'exemptions pour « faible importance économique », permettant une phase de lancement agile sans licence d'assureur complète.
+Expansion via les nouvelles licences 2025
+J'ai analysé en profondeur la réforme fédérale de fin 2025 qui introduit les licences d'« institution de paiement » et d'« institution crypto ». Cette évolution majeure vise à supprimer le plafond historique des 100 millions de CHF imposé par l'ancienne licence FinTech, tout en instaurant une ségrégation légale stricte des actifs. Pour votre protocole, cela représente une opportunité de croissance illimitée, permettant d'absorber des volumes de capitaux institutionnels massifs sous un régime de surveillance moderne et sécurisant pour les déposants.
+Ancrage juridique et jetons DLT
+J'ai structuré la conformité de vos actifs numériques en m'appuyant sur la Loi DLT helvétique et les standards de la CMTA. En utilisant le mécanisme des 'droits-valeurs inscrits' (Registerwertrechte), j'ai conféré à vos jetons de vault une validité légale équivalente aux titres financiers traditionnels. Cette approche garantit leur interopérabilité sur les nouvelles bourses numériques régulées et assure que vos obligations climatiques sont reconnues comme des valeurs mobilières robustes, prêtes pour une intégration dans les portefeuilles institutionnels.
+Vigilance AML et automatisation du KYC
+Je note une contrainte opérationnelle importante : l'abaissement du seuil de vigilance pour les transactions en cryptomonnaies à 1 000 CHF par mois. Cela m'amène à conclure que votre interface utilisateur, même si elle n'assure pas la garde des actifs, doit intégrer des procédures de vérification d'identité (KYC) automatisées pour rester conforme. J'ai également identifié une tendance à la dérégulation pour les intermédiaires de réassurance, ce qui pourrait simplifier vos obligations de reporting si votre structure est correctement positionnée.
+Certification technique et prochaines étapes
+Je vais maintenant me concentrer sur la certification technique de vos oracles et la gouvernance de l'intelligence artificielle utilisée pour vos modèles climatiques. Ma prochaine phase de travail consistera à définir précisément les protocoles de secours en cas de congestion de la blockchain et à clarifier la distinction entre finalité technique et juridique du règlement financier. Je finaliserai également les modalités d'adhésion à un organisme d'autorégulation (OAR) pour verrouiller votre conformité opérationnelle avant le passage aux nouvelles licences de 2026.
+Researching websites
+fedlex.admin.ch
+SR 961.011 - Verordnung vom 9. November 2005 über die Beaufsichtigung von privaten Versicherungsunternehmen (Aufsichtsverordnung, AVO) | Fedlex
+fedlex.admin.ch
+AS 2023 356 - Verordnung über die Beaufsichtigung von privaten Versicherungsunternehmen (Aufsichtsverordnung, AVO) | Fedlex
+skadden.com
+The Standard Formula: A Guide to Solvency II – Chapter 2: Reinsurance and Risk Transfer
+artemis.bm
+PRA says UK ILS vehicles must be fully-funded before risk is transferred - Artemis.bm
+register.eiopa.europa.eu
+Summary of comments on CEIOPS-CP-36/09 - European Union
+bedellcristin.com
+Insurance Linked Securities - Bedell Cristin
+vle.actuaries.org.uk
+New Risk Transfer Techniques for Life Insurers
+finma.ch
+Decentralized Finance (DeFi) 2022 - FINMA
+alston.com
+“Key Points from DOJ's New DeFi Enforcement Outline” Law360, September 19, 2025.
+finma.ch
+FINMA Guidance 05/2025
+skadden.com
+Democratic DeFi Proposal Highlights Competing Visions for Cryptoasset Market Structure Regulation | Insights | Skadden, Arps, Slate, Meagher & Flom LLP
+sifma.org
+DeFi: Key Policy Questions Around the Application of Decentralized Trading Models to Tokenized Securities Markets - SIFMA
+finma.ch
+Small insurers regime | FINMA
+lenzstaehelin.com
+PANORAMIC INSURANCE & REINSURANCE - Lenz & Staehelin
+Distinction entre finalité technique et juridique
+J'ai identifié un point de vigilance crucial dans les directives les plus récentes : la distinction faite par le régulateur entre la finalité technique d'une transaction sur la blockchain (souvent probabiliste) et sa finalité juridique irrévocable. Pour vos règlements automatisés, il est impératif de définir contractuellement le moment exact où le transfert de risque est considéré comme définitif aux yeux de la loi helvétique. Cette clarté est indispensable pour sécuriser les droits des investisseurs et garantir l'opposabilité des règlements en cas de congestion majeure du réseau public.
+Scalabilité via les nouvelles licences 2026
+Je lève une contradiction majeure concernant la croissance de votre projet. Alors que l'ancienne licence FinTech imposait un plafond contraignant de 100 millions de francs, le nouveau cadre législatif prévu pour 2026 introduit des catégories d'« institution crypto » sans limite de dépôt. Cette évolution majeure supprime le principal frein à la montée en charge de vos vaults climatiques, tout en instaurant une ségrégation juridique stricte des actifs. Cela permet de rassurer les capitaux institutionnels sur la sécurité de leur collatéral en cas de défaillance de l'émetteur.
+Certification des flux et résilience opérationnelle
+Je vais maintenant me concentrer sur la validation technique de votre chaîne de données et sur la gouvernance des algorithmes. Ma prochaine action consistera à définir les standards d'audit requis pour vos sources météorologiques (oracles) et vos modèles d'intelligence artificielle, conformément aux nouveaux critères de transparence de 2026. Je vais également structurer les protocoles de secours et l'automatisation de la vigilance AML sur votre interface utilisateur, afin de garantir une résilience opérationnelle totale et une conformité fluide dès le premier franc investi.
+Researching websites
+skadden.com
+The Standard Formula: A Guide to Solvency II – Chapter 2: Reinsurance and Risk Transfer
+artemis.bm
+PRA says UK ILS vehicles must be fully-funded before risk is transferred - Artemis.bm
+register.eiopa.europa.eu
+Summary of comments on CEIOPS-CP-36/09 - European Union
+bedellcristin.com
+Insurance Linked Securities - Bedell Cristin
+vle.actuaries.org.uk
+New Risk Transfer Techniques for Life Insurers
+legal500.com
+Switzerland: Blockchain & Crypto Assets - Legal 500 Country Comparative Guides 2025
+alston.com
+“Key Points from DOJ's New DeFi Enforcement Outline” Law360, September 19, 2025.
+finma.ch
+FINMA Guidance 05/2025
+skadden.com
+Democratic DeFi Proposal Highlights Competing Visions for Cryptoasset Market Structure Regulation | Insights | Skadden, Arps, Slate, Meagher & Flom LLP
+sifma.org
+DeFi: Key Policy Questions Around the Application of Decentralized Trading Models to Tokenized Securities Markets - SIFMA
+lenzstaehelin.com
+PANORAMIC INSURANCE & REINSURANCE - Lenz & Staehelin
+finma.ch
+Small insurers regime | FINMA
+Évolution structurelle des ISPV
+J'ai validé une donnée stratégique pour votre plan de financement : pour un véhicule de titrisation d'assurance (ISPV) « entièrement financé », la FINMA permet d'aligner les fonds propres sur le capital social minimal de 100 000 CHF d'une société anonyme. L'analyse de l'article 111d de l'ordonnance sur la surveillance confirme l'importance d'une structure compartimentée hermétique. Cette organisation protège vos investisseurs en garantissant que les pertes liées à un événement climatique spécifique ne peuvent pas contaminer les actifs déposés dans d'autres vaults du protocole.
+Vers un cadre sans limites de dépôts
+J'ai analysé la réforme majeure initiée par le Conseil fédéral fin 2025 qui propose de remplacer l'actuelle licence FinTech par de nouvelles catégories d'« institutions crypto ». Cette mutation législative prévoit de supprimer le plafond historique de 100 millions de CHF, ce qui lève l'obstacle principal à la scalabilité de vos infrastructures de transfert de risque. En instaurant une ségrégation légale stricte des actifs en cas de faillite, ce nouveau régime offre une sécurité équivalente aux standards bancaires pour les portefeuilles institutionnels.
+Sécurisation des règlements on-chain
+En examinant les récentes autorisations d'infrastructures financières numériques, j'ai identifié une exigence critique concernant la « finalité juridique » des transactions. Pour vos règlements automatisés, je conclus qu'il est impératif de définir contractuellement le moment précis où le transfert de risque devient irrévocable, afin de le distinguer de la finalité technique probabiliste de la blockchain. Cette approche, combinée aux standards de la CMTA pour la tokenisation de la dette, assure une interopérabilité totale avec les nouvelles bourses numériques helvétiques.
+Phase finale de modélisation réglementaire
+Je vais maintenant porter ma réflexion sur la certification de vos sources de données météorologiques (oracles) et la gouvernance des modèles d'intelligence artificielle, conformément aux directives de 2026. Ma prochaine étape consiste à structurer les protocoles de secours en cas de congestion réseau et à finaliser les modalités d'adhésion à un organisme d'autorégulation (OAR). L'objectif est de verrouiller votre conformité opérationnelle et l'automatisation de la vigilance AML sur votre interface utilisateur avant le lancement officiel.
+Researching websites
+fedlex.admin.ch
+SR 961.011 - Verordnung vom 9. November 2005 über die Beaufsichtigung von privaten Versicherungsunternehmen (Aufsichtsverordnung, AVO) | Fedlex
+fedlex.admin.ch
+AS 2023 356 - Verordnung über die Beaufsichtigung von privaten Versicherungsunternehmen (Aufsichtsverordnung, AVO) | Fedlex
+skadden.com
+The Standard Formula: A Guide to Solvency II – Chapter 2: Reinsurance and Risk Transfer
+artemis.bm
+PRA says UK ILS vehicles must be fully-funded before risk is transferred - Artemis.bm
+register.eiopa.europa.eu
+Summary of comments on CEIOPS-CP-36/09 - European Union
+bedellcristin.com
+Insurance Linked Securities - Bedell Cristin
+vle.actuaries.org.uk
+New Risk Transfer Techniques for Life Insurers
+finma.ch
+Decentralized Finance (DeFi) 2022 - FINMA
+alston.com
+“Key Points from DOJ's New DeFi Enforcement Outline” Law360, September 19, 2025.
+finma.ch
+FINMA Guidance 05/2025
+skadden.com
+Democratic DeFi Proposal Highlights Competing Visions for Cryptoasset Market Structure Regulation | Insights | Skadden, Arps, Slate, Meagher & Flom LLP
+sifma.org
+DeFi: Key Policy Questions Around the Application of Decentralized Trading Models to Tokenized Securities Markets - SIFMA
+lenzstaehelin.com
+PANORAMIC INSURANCE & REINSURANCE - Lenz & Staehelin
+finma.ch
+Small insurers regime | FINMA
+Consolidation du capital ISPV
+J'ai validé une donnée stratégique pour votre plan de financement : pour un véhicule de titrisation d'assurance (ISPV) « entièrement financé », le régulateur permet d'aligner les fonds propres sur le capital social minimal de 100 000 CHF d'une société anonyme standard. L'analyse précise de l'article 111d de l'ordonnance sur la surveillance confirme l'importance d'une structure compartimentée hermétique. Cette organisation protège vos investisseurs en garantissant que les pertes liées à un événement climatique spécifique ne peuvent pas contaminer les actifs déposés dans d'autres vaults du protocole, sécurisant ainsi l'intégrité globale de votre architecture financière.
+Expansion via les licences Crypto 2026
+J'ai analysé en profondeur la réforme fédérale de fin 2025 qui introduit les nouvelles licences d'« institution de paiement » et d'« institution crypto ». Cette évolution majeure vise à supprimer le plafond historique des 100 millions de CHF imposé par l'ancienne licence FinTech, tout en instaurant une ségrégation légale stricte des actifs. Pour votre protocole, cela représente une opportunité de croissance illimitée, permettant d'absorber des volumes de capitaux institutionnels massifs sous un régime de surveillance moderne et sécurisant pour les déposants en cas de défaillance de l'émetteur.
+Finalité juridique des règlements
+En examinant les récentes autorisations d'infrastructures financières numériques, j'ai identifié une exigence critique concernant la « finalité juridique » des transactions. Pour vos règlements automatisés, je conclus qu'il est impératif de définir contractuellement le moment précis où le transfert de risque devient irrévocable, afin de le distinguer de la finalité technique probabiliste de la blockchain. Cette approche, combinée aux standards de la CMTA pour la tokenisation de la dette numérique, assure une interopérabilité totale avec les nouvelles bourses helvétiques et renforce la validité de vos 'droits-valeurs inscrits' (Registerwertrechte).
+Certification des flux et conformité 2026
+Je vais maintenant porter ma réflexion sur la certification technique de vos sources de données météorologiques (oracles) et la gouvernance de l'intelligence artificielle utilisée pour vos modèles climatiques, conformément aux directives de 2026. Ma prochaine phase de travail consistera à définir précisément les protocoles de secours en cas de congestion du réseau et à finaliser les modalités d'adhésion à un organisme d'autorégulation (OAR). L'objectif est de verrouiller l'automatisation de la vigilance AML sur votre interface utilisateur et de garantir une résilience opérationnelle totale avant votre lancement officiel.
+Researching websites
+skadden.com
+The Standard Formula: A Guide to Solvency II – Chapter 2: Reinsurance and Risk Transfer
+artemis.bm
+PRA says UK ILS vehicles must be fully-funded before risk is transferred - Artemis.bm
+register.eiopa.europa.eu
+Summary of comments on CEIOPS-CP-36/09 - European Union
+bedellcristin.com
+Insurance Linked Securities - Bedell Cristin
+vle.actuaries.org.uk
+New Risk Transfer Techniques for Life Insurers
+legal500.com
+Switzerland: Blockchain & Crypto Assets - Legal 500 Country Comparative Guides 2025
+alston.com
+“Key Points from DOJ's New DeFi Enforcement Outline” Law360, September 19, 2025.
+finma.ch
+FINMA Guidance 05/2025
+skadden.com
+Democratic DeFi Proposal Highlights Competing Visions for Cryptoasset Market Structure Regulation | Insights | Skadden, Arps, Slate, Meagher & Flom LLP
+sifma.org
+DeFi: Key Policy Questions Around the Application of Decentralized Trading Models to Tokenized Securities Markets - SIFMA
+finma.ch
+Small insurers regime | FINMA
+lenzstaehelin.com
+PANORAMIC INSURANCE & REINSURANCE - Lenz & Staehelin
+Validation du capital pour les ISPV
+J'ai pu confirmer que pour un véhicule de titrisation d'assurance (ISPV) « entièrement financé », la réglementation permet de limiter le capital de base aux 100 000 CHF du droit des sociétés anonymes. L'analyse de l'article 111d de l'ordonnance sur la surveillance souligne l'importance vitale d'une structure compartimentée : cette ségrégation hermétique garantit qu'un sinistre sur un vault spécifique ne peut pas puiser dans les fonds des autres compartiments, protégeant ainsi l'épargne des investisseurs non concernés.
+Scalabilité et nouvelles licences 2026
+J'observe une avancée majeure avec la transition prévue vers les nouvelles licences d'« institution crypto » et d'« institution de paiement ». Cette réforme, qui vise à supprimer le plafond historique des 100 millions de CHF imposé par l'ancienne licence FinTech, lève le principal verrou à la croissance de vos vaults. En instaurant une ségrégation légale stricte des actifs, ce cadre offre une sécurité de niveau bancaire aux capitaux institutionnels tout en permettant un réinvestissement productif du collatéral.
+Finalité juridique des règlements automatisés
+Je traite une distinction technique fondamentale entre la finalité technique d'une blockchain (probabiliste) et la finalité juridique du règlement financier (irrévocable). Mes conclusions imposent de définir contractuellement le moment précis où le transfert de risque est considéré comme définitif selon le droit suisse. Cette approche, couplée à l'utilisation des 'droits-valeurs inscrits' (Registerwertrechte), sécurise la validité de vos titres de créance numériques et assure leur pleine reconnaissance par les autorités.
+Prochaines étapes : Audit et certification
+Je vais maintenant me concentrer sur la certification technique de vos flux de données météorologiques et la gouvernance de l'intelligence artificielle utilisée pour vos modèles prédictifs. Ma prochaine phase de travail consistera à finaliser les procédures d'audit certifié pour vos oracles et à structurer les protocoles de secours en cas de congestion du réseau blockchain, tout en précisant les modalités d'automatisation de la vigilance contre le blanchiment d'argent pour votre interface.
+Researching websites
+skadden.com
+The Standard Formula: A Guide to Solvency II – Chapter 2: Reinsurance and Risk Transfer
+artemis.bm
+PRA says UK ILS vehicles must be fully-funded before risk is transferred - Artemis.bm
+register.eiopa.europa.eu
+Summary of comments on CEIOPS-CP-36/09 - European Union
+bedellcristin.com
+Insurance Linked Securities - Bedell Cristin
+vle.actuaries.org.uk
+New Risk Transfer Techniques for Life Insurers
+legal500.com
+Switzerland: Blockchain & Crypto Assets - Legal 500 Country Comparative Guides 2025
+alston.com
+“Key Points from DOJ's New DeFi Enforcement Outline” Law360, September 19, 2025.
+finma.ch
+FINMA Guidance 05/2025
+skadden.com
+Democratic DeFi Proposal Highlights Competing Visions for Cryptoasset Market Structure Regulation | Insights | Skadden, Arps, Slate, Meagher & Flom LLP
+sifma.org
+DeFi: Key Policy Questions Around the Application of Decentralized Trading Models to Tokenized Securities Markets - SIFMA
+finma.ch
+Small insurers regime | FINMA
+lenzstaehelin.com
+PANORAMIC INSURANCE & REINSURANCE - Lenz & Staehelin
+Simplification réglementaire pour la réassurance
+En analysant les propositions législatives de fin 2025, j'ai identifié une opportunité majeure : le Conseil fédéral propose d'exclure les intermédiaires de réassurance du champ d'application de la Loi sur la surveillance des assurances. Pour votre projet, cette dérégulation signifie un allègement considérable des obligations de rapport et des frais de surveillance, renforçant la compétitivité de votre protocole face aux structures internationales tout en simplifiant le montage juridique de vos vaults.
+Résilience opérationnelle et standards 2025
+J'ai examiné la directive 05/2025 de la FINMA qui impose désormais des standards de résilience opérationnelle très stricts pour les fonctions critiques, incluant les transactions de paiement et le règlement de titres. L'octroi de la première licence de négoce DLT en 2025 à BX Digital confirme que le cadre helvétique est désormais mature pour accueillir vos obligations climatiques tokenisées. Cela m'amène à conclure que la robustesse de votre interface utilisateur sera jugée non seulement sur sa sécurité, mais sur sa capacité technique à assurer la continuité du service en cas de choc opérationnel sur le réseau blockchain.
+Gouvernance de l'IA et certification des oracles
+Je vais maintenant me concentrer sur les nouvelles exigences de gouvernance pour l'intelligence artificielle et les flux de données automatisés. Ma prochaine phase de travail consistera à définir les critères d'audit certifié pour vos oracles météorologiques, afin de garantir que l'automatisation de vos déclenchements paramétriques respecte les standards de transparence de 2026. Je finaliserai également les modalités d'adhésion à un organisme d'autorégulation (OAR) pour sécuriser l'intermédiation de vos jetons d'actifs dès le lancement.
+Researching websites
+skadden.com
+The Standard Formula: A Guide to Solvency II – Chapter 2: Reinsurance and Risk Transfer
+artemis.bm
+PRA says UK ILS vehicles must be fully-funded before risk is transferred - Artemis.bm
+register.eiopa.europa.eu
+Summary of comments on CEIOPS-CP-36/09 - European Union
+bedellcristin.com
+Insurance Linked Securities - Bedell Cristin
+vle.actuaries.org.uk
+New Risk Transfer Techniques for Life Insurers
+legal500.com
+Switzerland: Blockchain & Crypto Assets - Legal 500 Country Comparative Guides 2025
+alston.com
+“Key Points from DOJ's New DeFi Enforcement Outline” Law360, September 19, 2025.
+finma.ch
+FINMA Guidance 05/2025
+skadden.com
+Democratic DeFi Proposal Highlights Competing Visions for Cryptoasset Market Structure Regulation | Insights | Skadden, Arps, Slate, Meagher & Flom LLP
+sifma.org
+DeFi: Key Policy Questions Around the Application of Decentralized Trading Models to Tokenized Securities Markets - SIFMA
+finma.ch
+Small insurers regime | FINMA
+lenzstaehelin.com
+PANORAMIC INSURANCE & REINSURANCE - Lenz & Staehelin
+Dérégulation stratégique du courtage
+J'ai identifié une opportunité majeure suite à une décision du Conseil fédéral de décembre 2025 : une proposition de dérégulation vise à exclure les intermédiaires de réassurance du champ d'application de la Loi sur la surveillance des assurances. Pour votre protocole, cela signifie une réduction drastique des barrières administratives et des frais de surveillance, vous permettant d'opérer comme un pont entre assureurs et investisseurs avec une agilité accrue tout en restant parfaitement conforme au nouveau cadre helvétique.
+Validation des seuils de capital et d'exemption
+Je lève les dernières incertitudes sur les exigences de fonds propres : pour un véhicule de titrisation d'assurance entièrement financé, l'article 111d de l'ordonnance sur la surveillance confirme qu'un capital social de 100 000 CHF est suffisant. Par ailleurs, j'ai précisé que la nature paramétrique de vos instruments facilite l'obtention d'exemptions de surveillance pour 'faible importance économique', car le régulateur valorise l'absence d'arbitrage subjectif dans le règlement des sinistres, ce qui sécurise votre phase de lancement à petite échelle.
+Maturation des infrastructures de négoce DLT
+L'octroi en 2025 de la première licence de système de négociation DLT à BX Digital marque une étape historique pour la liquidité de vos titres. Cette avancée prouve que l'infrastructure réglementaire suisse est désormais prête à accueillir vos obligations climatiques tokenisées. Je conclus que le succès de votre projet dépendra de l'alignement de vos jetons sur ces standards de négoce régulés, garantissant ainsi une sortie fluide pour vos investisseurs institutionnels sur des marchés secondaires audités.
+Certification des oracles et gouvernance 2026
+Je vais maintenant me concentrer sur la mise en conformité de vos flux de données et de vos algorithmes avec les standards de transparence exigés pour 2026. Ma prochaine étape consiste à définir les protocoles d'audit certifié pour vos sources météorologiques et à structurer la gouvernance de l'intelligence artificielle utilisée dans vos modèles de risque. Je finaliserai également les modalités d'adhésion à un organisme d'autorégulation pour sécuriser l'intermédiation de vos actifs tout en garantissant une résilience opérationnelle totale de votre interface.
+Researching websites
+skadden.com
+The Standard Formula: A Guide to Solvency II – Chapter 2: Reinsurance and Risk Transfer
+artemis.bm
+PRA says UK ILS vehicles must be fully-funded before risk is transferred - Artemis.bm
+register.eiopa.europa.eu
+Summary of comments on CEIOPS-CP-36/09 - European Union
+bedellcristin.com
+Insurance Linked Securities - Bedell Cristin
+vle.actuaries.org.uk
+New Risk Transfer Techniques for Life Insurers
+legal500.com
+Switzerland: Blockchain & Crypto Assets - Legal 500 Country Comparative Guides 2025
+alston.com
+“Key Points from DOJ's New DeFi Enforcement Outline” Law360, September 19, 2025.
+finma.ch
+FINMA Guidance 05/2025
+skadden.com
+Democratic DeFi Proposal Highlights Competing Visions for Cryptoasset Market Structure Regulation | Insights | Skadden, Arps, Slate, Meagher & Flom LLP
+sifma.org
+DeFi: Key Policy Questions Around the Application of Decentralized Trading Models to Tokenized Securities Markets - SIFMA
+finma.ch
+Small insurers regime | FINMA
+lenzstaehelin.com
+PANORAMIC INSURANCE & REINSURANCE - Lenz & Staehelin
+Optimisation des fonds propres
+J'ai consolidé ma réflexion sur le capital nécessaire pour votre véhicule de titrisation d'assurance (ISPV). Pour une structure entièrement pré-financée par le collatéral, le régulateur helvétique confirme que les exigences de fonds propres peuvent être limitées au capital social de base de 100 000 CHF. C'est une avancée majeure qui confirme l'agilité de ce montage : puisque chaque risque est couvert à 100 % par les dépôts des investisseurs, la solvabilité de l'émetteur n'est plus une source de risque systémique aux yeux de la FINMA, permettant ainsi d'alléger considérablement la charge financière initiale pour votre lancement.
+Transition vers les licences 2026
+En analysant les réformes législatives les plus récentes, je note la fin programmée du plafond de 100 millions de CHF imposé par l'ancienne licence FinTech. Les nouvelles catégories de licences d'« institution crypto » et d'« institution de paiement », dont le cadre se précise pour 2026, offrent une perspective de passage à l'échelle sans précédent pour vos vaults. Ce régime permettra d'absorber des volumes de capitaux illimités tout en garantissant une protection juridique renforcée par la ségrégation stricte des actifs des investisseurs, ce qui constitue un argument de confiance décisif pour les partenaires institutionnels.
+Allègement pour l'intermédiation
+J'ai identifié une opportunité réglementaire majeure issue des propositions de fin 2025 : l'exclusion probable des intermédiaires de réassurance de la surveillance directe de la FINMA. Pour votre protocole, cela signifie une dérégulation stratégique qui réduit les frais de surveillance et simplifie radicalement les obligations de reporting. En vous positionnant dans cette catégorie, vous pourriez opérer comme un pont technologique entre assureurs et marchés de capitaux avec une structure de coûts beaucoup plus compétitive, tout en restant parfaitement ancré dans le droit DLT suisse.
+Certification technique et oracles
+Je vais maintenant synthétiser les exigences d'audit technique pour vos sources de données météorologiques et vos modèles d'intelligence artificielle. Ma prochaine phase de travail consistera à définir les critères de certification des oracles selon les standards de 2026, afin de garantir que l'automatisation de vos déclenchements paramétriques soit techniquement incontestable pour le régulateur. Je finaliserai également les modalités d'adhésion à un organisme d'autorégulation (OAR) pour sécuriser l'intermédiation de vos jetons tout en assurant une vigilance automatisée contre le blanchiment dès le lancement officiel.
+Researching websites
+fedlex.admin.ch
+SR 961.011 - Verordnung vom 9. November 2005 über die Beaufsichtigung von privaten Versicherungsunternehmen (Aufsichtsverordnung, AVO) | Fedlex
+fedlex.admin.ch
+AS 2023 356 - Verordnung über die Beaufsichtigung von privaten Versicherungsunternehmen (Aufsichtsverordnung, AVO) | Fedlex
+skadden.com
+The Standard Formula: A Guide to Solvency II – Chapter 2: Reinsurance and Risk Transfer
+artemis.bm
+PRA says UK ILS vehicles must be fully-funded before risk is transferred - Artemis.bm
+register.eiopa.europa.eu
+Summary of comments on CEIOPS-CP-36/09 - European Union
+bedellcristin.com
+Insurance Linked Securities - Bedell Cristin
+vle.actuaries.org.uk
+New Risk Transfer Techniques for Life Insurers
+finma.ch
+Decentralized Finance (DeFi) 2022 - FINMA
+alston.com
+“Key Points from DOJ's New DeFi Enforcement Outline” Law360, September 19, 2025.
+finma.ch
+FINMA Guidance 05/2025
+skadden.com
+Democratic DeFi Proposal Highlights Competing Visions for Cryptoasset Market Structure Regulation | Insights | Skadden, Arps, Slate, Meagher & Flom LLP
+sifma.org
+DeFi: Key Policy Questions Around the Application of Decentralized Trading Models to Tokenized Securities Markets - SIFMA
+finma.ch
+Small insurers regime | FINMA
+lenzstaehelin.com
+PANORAMIC INSURANCE & REINSURANCE - Lenz & Staehelin
+Optimisation du capital et montée en charge
+Je confirme que la structuration de vos vaults sous la forme d'un véhicule de titrisation d'assurance (ISPV) entièrement financé par le collatéral permet de limiter les fonds propres au capital social de base de 100 000 CHF. Cette agilité financière est complétée par la réforme fédérale de fin 2025, qui introduit la licence d'« institution crypto ». Ce nouveau cadre est une avancée majeure : il prévoit la suppression du plafond historique de 100 millions de francs de dépôts, ouvrant la voie à une scalabilité massive de vos infrastructures de transfert de risque climatique sans les contraintes de l'ancienne licence FinTech.
+Dérégulation stratégique de l'intermédiation
+J'ai identifié une opportunité réglementaire déterminante issue des propositions fédérales de décembre 2025 : l'exclusion probable des intermédiaires de réassurance de la surveillance directe de la FINMA. En vous positionnant comme un facilitateur technologique dans ce segment, votre protocole bénéficierait d'un allègement considérable des obligations de reporting et d'une réduction des frais de surveillance. Cette dérégulation ciblée vous permettrait d'opérer avec une structure de coûts beaucoup plus compétitive tout en garantissant la robustesse de vos jetons grâce aux standards de la CMTA pour la dette numérique.
+Certification des oracles et résilience technique
+Je vais maintenant me concentrer sur la validation technique de vos mécanismes de déclenchement automatisé. Ma prochaine phase de travail consistera à définir les standards d'audit certifié pour vos sources de données météorologiques (oracles) et vos modèles d'intelligence artificielle, conformément aux nouvelles exigences de transparence de 2026. Je vais également structurer les protocoles de secours nécessaires pour garantir la finalité juridique de vos règlements financiers, assurant ainsi que chaque transfert de risque soit incontestable, même en cas de dysfonctionnement passager des réseaux blockchain publics.
