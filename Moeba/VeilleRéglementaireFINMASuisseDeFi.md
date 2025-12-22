@@ -14,9 +14,9 @@ Ce rapport a pour objectif de fournir une analyse exhaustive, rigoureuse et nuan
 
 Neutralité Technologique et Approche Fondée sur les Principes
 
-Pour comprendre l'environnement dans lequel un Cat Bond DeFi doit opérer, il est impératif de saisir la doctrine fondamentale de la FINMA. Contrairement à d'autres juridictions qui ont opté pour des cadres législatifs entièrement nouveaux et spécifiques aux crypto-actifs (comme le règlement MiCA dans l'Union européenne), la Suisse privilégie une approche fondée sur des principes (principle-based) et la neutralité technologique.1
+Pour comprendre l'environnement dans lequel un Cat Bond DeFi doit opérer, il est impératif de saisir la doctrine fondamentale de la FINMA. Contrairement à d'autres juridictions qui ont opté pour des cadres législatifs entièrement nouveaux et spécifiques aux crypto-actifs (comme le règlement MiCA dans l'Union européenne), la Suisse privilégie une approche fondée sur des principes (principle-based) et la neutralité technologique.¹
 
-Le principe directeur est "same business, same risks, same rules" (même activité, mêmes risques, mêmes règles). Cela signifie que l'utilisation de la technologie blockchain ou de contrats intelligents (smart contracts) ne soustrait pas un projet aux obligations réglementaires existantes. La FINMA examine la substance économique ("substance over form") plutôt que la forme technique. Si un token a la fonction économique d'une obligation, il sera traité comme une valeur mobilière, indépendamment de son support cryptographique.4
+Le principe directeur est "same business, same risks, same rules" (même activité, mêmes risques, mêmes règles). Cela signifie que l'utilisation de la technologie blockchain ou de contrats intelligents (smart contracts) ne soustrait pas un projet aux obligations réglementaires existantes. La FINMA examine la substance économique ("substance over form") plutôt que la forme technique. Si un token a la fonction économique d'une obligation, il sera traité comme une valeur mobilière, indépendamment de son support cryptographique.⁴
 
 Dans le contexte d'un Cat Bond, cela implique une double contrainte : le projet doit satisfaire aux exigences prudentielles de l'assurance (car il y a transfert de risque) et aux exigences de transparence des marchés de capitaux (car il y a émission de titres), tout en gérant les risques spécifiques liés à la technologie DLT (blanchiment d'argent, cyber-risques, volatilité).
 
@@ -38,33 +38,33 @@ Cette architecture soulève des questions juridiques complexes touchant la LSA (
 
 ## 2. Le Cadre de la Surveillance des Assurances (LSA et AVO)
 
-La pierre angulaire de la régulation d'un Cat Bond est la Loi sur la surveillance des assurances (LSA). Jusqu'à récemment, la Suisse souffrait d'un désavantage concurrentiel par rapport aux Bermudes ou à Guernesey, faute d'un régime adapté aux véhicules de titrisation. La révision de la LSA, entrée en vigueur le 1er janvier 2024, a radicalement changé la donne en introduisant un cadre spécifique pour les véhicules à usage spécifique d'assurance (VUSA).6
+La pierre angulaire de la régulation d'un Cat Bond est la Loi sur la surveillance des assurances (LSA). Jusqu'à récemment, la Suisse souffrait d'un désavantage concurrentiel par rapport aux Bermudes ou à Guernesey, faute d'un régime adapté aux véhicules de titrisation. La révision de la LSA, entrée en vigueur le 1er janvier 2024, a radicalement changé la donne en introduisant un cadre spécifique pour les véhicules à usage spécifique d'assurance (VUSA).⁶
 
 ### 2.1 Le Véhicule à Usage Spécifique d'Assurance (VUSA / ISPV)
 
-L'article 30e de la LSA révisée définit le VUSA comme une société qui n'est pas une entreprise d'assurance traditionnelle, mais qui reprend des risques d'entreprises d'assurance (réassurance) et finance intégralement ces risques par l'émission d'instruments financiers.8
+L'article 30e de la LSA révisée définit le VUSA comme une société qui n'est pas une entreprise d'assurance traditionnelle, mais qui reprend des risques d'entreprises d'assurance (réassurance) et finance intégralement ces risques par l'émission d'instruments financiers.⁸
 
 Cette définition est cruciale pour le projet DeFi. Elle permet de créer une entité ad hoc (SPV - Special Purpose Vehicle) qui agit comme un transformateur de risques. Contrairement à un assureur classique qui mutualise les risques et s'appuie sur la loi des grands nombres, le VUSA isole un risque spécifique et le finance à 100% par le marché des capitaux.
 
 #### 2.1.1 L'Exigence du "Fully Funded" (Financement Intégral)
 
-L'élément central du régime VUSA est l'exigence de financement intégral ("fully funded"). L'article 111d de l'Ordonnance sur la surveillance (AVO) précise que le VUSA doit disposer à tout moment d'actifs dont la valeur couvre l'exposition maximale au risque.9
+L'élément central du régime VUSA est l'exigence de financement intégral ("fully funded"). L'article 111d de l'Ordonnance sur la surveillance (AVO) précise que le VUSA doit disposer à tout moment d'actifs dont la valeur couvre l'exposition maximale au risque.⁹
 
 Dans un contexte DeFi, cette exigence de "fully funded" impose des contraintes techniques strictes sur le collatéral :
 
-- **Volatilité des Actifs :** Si le collatéral est détenu en crypto-actifs volatils (ex: ETH, BTC), la volatilité du sous-jacent pourrait entraîner une sous-capitalisation du véhicule par rapport au risque couvert. La FINMA appliquera vraisemblablement le "Prudent Person Principle" (Principe de la personne prudente), exigeant que les actifs soient investis de manière à garantir la sécurité, la liquidité et la rentabilité.10
+- **Volatilité des Actifs :** Si le collatéral est détenu en crypto-actifs volatils (ex: ETH, BTC), la volatilité du sous-jacent pourrait entraîner une sous-capitalisation du véhicule par rapport au risque couvert. La FINMA appliquera vraisemblablement le "Prudent Person Principle" (Principe de la personne prudente), exigeant que les actifs soient investis de manière à garantir la sécurité, la liquidité et la rentabilité.¹⁰
 
-- **Stablecoins et CBDC :** Pour satisfaire à l'exigence de financement intégral sans sur-collatéralisation massive, le projet devra probablement utiliser des stablecoins de haute qualité (adossés à des réserves fiat auditées) ou, idéalement, une monnaie numérique de banque centrale de gros (wCBDC), telle qu'explorée dans le projet Helvetia de la BNS.3
+- **Stablecoins et CBDC :** Pour satisfaire à l'exigence de financement intégral sans sur-collatéralisation massive, le projet devra probablement utiliser des stablecoins de haute qualité (adossés à des réserves fiat auditées) ou, idéalement, une monnaie numérique de banque centrale de gros (wCBDC), telle qu'explorée dans le projet Helvetia de la BNS.³
 
-- **Subordination :** Les conditions d'émission des tokens doivent explicitement stipuler que les créances des investisseurs sont subordonnées aux obligations de réassurance. En cas de sinistre, le cédant est payé en priorité. Cette subordination doit être encodée dans le smart contract régissant la distribution des fonds.9
+- **Subordination :** Les conditions d'émission des tokens doivent explicitement stipuler que les créances des investisseurs sont subordonnées aux obligations de réassurance. En cas de sinistre, le cédant est payé en priorité. Cette subordination doit être encodée dans le smart contract régissant la distribution des fonds.⁹
 
 #### 2.1.2 Capital Minimum et Fonds d'Organisation
 
-Bien que le risque soit couvert par les investisseurs, le VUSA doit être constitué sous forme de société anonyme (SA) ou de coopérative.12
+Bien que le risque soit couvert par les investisseurs, le VUSA doit être constitué sous forme de société anonyme (SA) ou de coopérative.¹²
 
-- **Capital-actions :** Le capital minimum légal pour une SA est de 100 000 CHF. Cependant, la FINMA dispose d'un pouvoir d'appréciation pour fixer le capital minimum réglementaire en fonction du plan d'affaires. Pour les réassureurs captifs ou les véhicules entièrement collatéralisés, ce montant peut être maintenu proche du minimum légal, contrairement aux assureurs traditionnels (qui nécessitent entre 3 et 20 millions CHF).9
+- **Capital-actions :** Le capital minimum légal pour une SA est de 100 000 CHF. Cependant, la FINMA dispose d'un pouvoir d'appréciation pour fixer le capital minimum réglementaire en fonction du plan d'affaires. Pour les réassureurs captifs ou les véhicules entièrement collatéralisés, ce montant peut être maintenu proche du minimum légal, contrairement aux assureurs traditionnels (qui nécessitent entre 3 et 20 millions CHF).⁹
 
-- **Fonds d'organisation :** Le VUSA doit disposer d'un fonds d'organisation (généralement 20% du capital minimum) pour couvrir les frais de constitution et d'exploitation initiale. Des exemptions sont possibles si l'activité est limitée à des preneurs d'assurance professionnels.9
+- **Fonds d'organisation :** Le VUSA doit disposer d'un fonds d'organisation (généralement 20% du capital minimum) pour couvrir les frais de constitution et d'exploitation initiale. Des exemptions sont possibles si l'activité est limitée à des preneurs d'assurance professionnels.⁹
 
 ### 2.2 Exemptions pour Preneurs d'Assurance Professionnels (Art. 30a LSA)
 
@@ -78,13 +78,13 @@ En vertu de l'article 30a LSA, les entreprises qui ne concluent des contrats d'a
 
 - Certaines exigences en matière de solvabilité, pour autant que le transfert de risque soit transparent et compris par les contreparties.
 
-Pour un projet DeFi, cette exemption est stratégique. Elle réduit la lourdeur administrative et les coûts de capital immobilisé, permettant au véhicule de se concentrer sur la mécanique technique de la titrisation. Le VUSA doit toutefois soumettre une demande formelle à la FINMA et documenter le statut professionnel de ses clients.15
+Pour un projet DeFi, cette exemption est stratégique. Elle réduit la lourdeur administrative et les coûts de capital immobilisé, permettant au véhicule de se concentrer sur la mécanique technique de la titrisation. Le VUSA doit toutefois soumettre une demande formelle à la FINMA et documenter le statut professionnel de ses clients.¹⁵
 
 ### 2.3 Régime des Petits Assureurs (Art. 1c AVO)
 
-Il existe également un régime allégé pour les "petits assureurs" (catégories de surveillance 4 et 5), caractérisé par des exigences de reporting réduites (exemption du rapport ORSA, réduction de l'audit).16
+Il existe également un régime allégé pour les "petits assureurs" (catégories de surveillance 4 et 5), caractérisé par des exigences de reporting réduites (exemption du rapport ORSA, réduction de l'audit).¹⁶
 
-Cependant, il est crucial de noter que ce régime exclut les assureurs directs qui bénéficient déjà des exemptions pour preneurs d'assurance professionnels (Art. 30a LSA). Ainsi, un projet Cat Bond devra choisir sa voie réglementaire : soit se structurer comme un petit assureur généraliste (peu probable pour un VUSA), soit, ce qui est recommandé, opter pour le statut de VUSA avec exemption pour clients professionnels.15
+Cependant, il est crucial de noter que ce régime exclut les assureurs directs qui bénéficient déjà des exemptions pour preneurs d'assurance professionnels (Art. 30a LSA). Ainsi, un projet Cat Bond devra choisir sa voie réglementaire : soit se structurer comme un petit assureur généraliste (peu probable pour un VUSA), soit, ce qui est recommandé, opter pour le statut de VUSA avec exemption pour clients professionnels.¹⁵
 
 ---
 
@@ -96,7 +96,7 @@ La "tokenisation" du Cat Bond transforme un contrat de réassurance en un actif 
 
 ### 3.1 Qualification des Tokens : Asset Tokens
 
-Selon le guide pratique de la FINMA sur les ICOs, les tokens émis dans le cadre d'un Cat Bond sont classifiés comme des **Asset Tokens** (jetons d'actifs).1
+Selon le guide pratique de la FINMA sur les ICOs, les tokens émis dans le cadre d'un Cat Bond sont classifiés comme des **Asset Tokens** (jetons d'actifs).¹
 
 - **Nature Juridique :** Ils représentent une créance de dette envers l'émetteur (le VUSA) et un droit conditionnel au remboursement du principal et au paiement d'intérêts (coupons).
 
@@ -104,7 +104,7 @@ Selon le guide pratique de la FINMA sur les ICOs, les tokens émis dans le cadre
 
 ### 3.2 Les Droits-Valeurs Inscrits (Registerwertrechte)
 
-La Loi DLT a introduit l'article 973d dans le Code des Obligations, créant une nouvelle catégorie de titres : les droits-valeurs inscrits.3
+La Loi DLT a introduit l'article 973d dans le Code des Obligations, créant une nouvelle catégorie de titres : les droits-valeurs inscrits.³
 
 - **Mécanisme :** Contrairement aux titres intermédiés classiques qui nécessitent un dépositaire central, les droits-valeurs inscrits existent uniquement sur la blockchain. Le transfert du token équivaut juridiquement au transfert de la créance, sans exigence de cession écrite.
 
@@ -114,7 +114,7 @@ La Loi DLT a introduit l'article 973d dans le Code des Obligations, créant une 
 
 ### 3.3 Systèmes de Négociation DLT (DLT Trading Facility)
 
-Si le projet prévoit non seulement l'émission mais aussi une plateforme de négoce secondaire pour permettre aux investisseurs de revendre leurs positions Cat Bond, il pourrait nécessiter une licence de **Système de négociation DLT** (Art. 73a LIMF).19
+Si le projet prévoit non seulement l'émission mais aussi une plateforme de négoce secondaire pour permettre aux investisseurs de revendre leurs positions Cat Bond, il pourrait nécessiter une licence de **Système de négociation DLT** (Art. 73a LIMF).¹⁹
 
 - **Innovation :** Cette licence permet à une entité d'offrir simultanément des services de négoce, de compensation et de règlement, et ce, directement aux investisseurs finaux (y compris les particuliers), sans passer par des intermédiaires bancaires.
 
@@ -132,13 +132,13 @@ Une distinction fondamentale doit être opérée entre un produit structuré et 
 
 ### 4.1 Produit Structuré vs Fonds de Placement
 
-- **Produit Structuré :** Un Cat Bond standard, qui lie le remboursement à un événement unique ou à un index paramétrique, est généralement considéré comme un produit structuré (instrument de dette). Les produits structurés ne nécessitent pas d'autorisation de la FINMA au titre de la LPCC, bien qu'ils doivent respecter les règles de transparence de la LSFin.21
+- **Produit Structuré :** Un Cat Bond standard, qui lie le remboursement à un événement unique ou à un index paramétrique, est généralement considéré comme un produit structuré (instrument de dette). Les produits structurés ne nécessitent pas d'autorisation de la FINMA au titre de la LPCC, bien qu'ils doivent respecter les règles de transparence de la LSFin.²¹
 
-- **Placement Collectif (Fonds) :** Si le véhicule lève des fonds auprès de multiples investisseurs pour les investir selon une stratégie de diversification (par exemple, un "panier" de risques catastrophiques géré activement), il risque d'être requalifié en fonds de placement. Cela exigerait une direction de fonds, une banque dépositaire et une autorisation produit de la FINMA.23
+- **Placement Collectif (Fonds) :** Si le véhicule lève des fonds auprès de multiples investisseurs pour les investir selon une stratégie de diversification (par exemple, un "panier" de risques catastrophiques géré activement), il risque d'être requalifié en fonds de placement. Cela exigerait une direction de fonds, une banque dépositaire et une autorisation produit de la FINMA.²³
 
 ### 4.2 Le Piège des "Liquidity Pools" DeFi
 
-Dans la DeFi, les "Liquidity Pools" (piscines de liquidité) où les utilisateurs déposent des actifs qui sont ensuite alloués automatiquement à différentes stratégies sont souvent assimilables à des placements collectifs du point de vue suisse.25
+Dans la DeFi, les "Liquidity Pools" (piscines de liquidité) où les utilisateurs déposent des actifs qui sont ensuite alloués automatiquement à différentes stratégies sont souvent assimilables à des placements collectifs du point de vue suisse.²⁵
 
 - **Risque :** Si le projet Cat Bond permet aux utilisateurs de déposer de l'USDC dans un pool qui souscrit automatiquement à plusieurs risques de réassurance, la FINMA pourrait considérer cela comme une activité de fonds non autorisée.
 
