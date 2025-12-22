@@ -58,7 +58,7 @@ Basé sur les chiffres du README.
 
     *20,000,000 - 4,000,000 = 16,000,000 USDC*
 
-3. Détermination du Ratio (|SENIOR_LOSS_RATIO|) :
+3. Détermination du Ratio (SENIOR_LOSS_RATIO) :
 
     *16,000,000 / 36,000,000 ≃ 0.444444...*
 
