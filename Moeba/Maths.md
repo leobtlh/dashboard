@@ -9,10 +9,10 @@ Voici la correspondance entre les concepts financiers et les variables technique
 | **Concept Financier**              | **Variable Solidity (Code)** | **Valeur Exemple (USDC)** | **Description**                                                                                       |
 |------------------------------------|------------------------------|---------------------------|-------------------------------------------------------------------------------------------------------|
 | **Capacité Totale**                | `MAX_VAULT_CAPACITY`         | `40,000,000`              | Le montant total d'argent dans le coffre (Assureur + Investisseurs).                                  |
-| **Tranche Junior (Assureur)**      | `INSURER_FIRST_LOSS_CAPITAL` | `4,000,000`               | Le capital déposé par l'assureur. C'est le premier à être consommé en cas de sinistre ("First Loss"). |
-| **Tranche Senior (Investisseurs)** | `INVESTOR_LIQUIDITY`         | `36,000,000`              | Le capital des utilisateurs. Calculé dynamiquement : `TotalAssets` - `JuniorTranche`.                 |
-| **Montant du Sinistre**            | `ACTUAL_CLAIM_AMOUNT`        | `20,000,000`              | Le montant que le protocole doit payer pour couvrir la catastrophe.                                   |
-| **Ratio de Perte (Haircut)**       | `SENIOR_LOSS_RATIO`          | `0.4444...`               | Le pourcentage de perte appliqué aux parts des investisseurs (Format `1e18`).                         |
+| **Tranche Junior (Assureur)**      | `insurerJuniorCapital` | `4,000,000`               | Le capital déposé par l'assureur. C'est le premier à être consommé en cas de sinistre ("First Loss"). |
+| **Tranche Senior (Investisseurs)** | Calculé dynamiquement         | `36,000,000`              | Le capital des utilisateurs. Calculé dynamiquement : `TotalAssets()` - `insurerJuniorCapital`.                 |
+| **Montant du Sinistre**            | `MAX_COVERAGE_AMOUNT`        | `20,000,000`              | Le montant que le protocole doit payer pour couvrir la catastrophe.                                   |
+| **Ratio de Perte (Haircut)**       | `seniorLossRatio`          | `0.4444...`               | Le pourcentage de perte appliqué aux parts des investisseurs (Format `1e18`).                         |
 
 ## 2. Algorithme de Calcul du "Soft Default"
 
@@ -22,13 +22,13 @@ Lorsqu'une catastrophe est validée par l'Oracle (`triggerCatastrophe`), le cont
 
 L'assureur agit comme un "bouclier". On soustrait sa part du montant total du sinistre.
 
-*InvestorLossAmount = max(0, ACTUAL_CLAIM_AMOUNT - INSURER_FIRST_LOSS_CAPITAL)*
+`InvestorLossAmount` = max(0, `actualClaimAmount` - `insurerJuniorCapital`)
 
 ### Étape B : Calcul du Ratio de Perte (Haircut)
 
 On détermine quel pourcentage du capital des investisseurs a été consommé.
 
-*SENIOR_LOSS_RATIO = InvestorLossAmount / INVESTOR_LIQUIDITY*
+`seniorLossRatio` = `InvestorLossAmount` / `SeniorEquity`
 
 Note technique : Dans Solidity, ce calcul est effectué avec une précision de 18 décimales (`* 1e18`) pour éviter les virgules flottantes.
 
@@ -40,25 +40,25 @@ Basé sur les chiffres du README.
 
 - `MAX_VAULT_CAPACITY` = 40M$
 
-- `INSURER_FIRST_LOSS_CAPITAL` = 4M$ (10%)
+- `insurerJuniorCapital` = 4M$ (10%)
 
-- `INVESTOR_LIQUIDITY` = 36M$ (90%)
+- `SeniorEquity` = 36M$ (90%)
 
 ### L'Événement
 
 - L'Oracle détecte un vent > 250km/h.
 
-- `ACTUAL_CLAIM_AMOUNT` est fixé à **20M$**.
+- `actualClaimAmount` est fixé à **20M$**.
 
 ### Exécution du Calcul
 
-1. Absorption par l'Assureur : Les premiers 4M$ du sinistre sont payés par `INSURER_FIRST_LOSS_CAPITAL`.
+1. Absorption par l'Assureur : Les premiers 4M$ du sinistre sont payés par `insurerJuniorCapital`.
 
 2. Reste à charge (Investisseurs) :
 
     *20,000,000 - 4,000,000 = 16,000,000 USDC*
 
-3. Détermination du Ratio (`SENIOR_LOSS_RATIO`) :
+3. Détermination du Ratio (`seniorLossRatio`) :
 
     *16,000,000 / 36,000,000 ≃ 0.444444...*
 
@@ -70,7 +70,7 @@ Voici la formule utilisée dans la fonction `previewRedeem` ou `withdraw` pour s
 
 Soit `GROSS_USER_ASSETS` le montant total de l'utilisateur (Principal + Intérêts Yield) avant le sinistre.
 
-`FINAL_PAYOUT` _= GROSS_USER_ASSETS * (1 - SENIOR_LOSS_RATIO)_
+`FINAL_PAYOUT` = `GROSS_USER_ASSETS` * (1 - `seniorLossRatio`)
 
 ### Exemple Utilisateur
 
@@ -78,7 +78,7 @@ Un utilisateur a **10,000 USDC** dans le vault.
 
 Le Yield a généré 50 USDC d'intérêts → `GROSS_USER_ASSETS` = 10,050 USDC.
 
-La catastrophe survient (`SENIOR_LOSS_RATIO` = 0.4444).
+La catastrophe survient (`seniorLossRatio` = 0.4444).
 
 `FINAL_PAYOUT` _= 10,050 * (1 - 0.4444)_
 
