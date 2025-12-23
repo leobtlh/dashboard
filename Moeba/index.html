@@ -17,6 +17,9 @@
     </head>
 
     <body>
+        <!-- Overlay pour l'effet modal -->
+        <div class="modal-overlay" id="modalOverlay"></div>
+
         <!-- PAGE 1 : HERO & ACCROCHE -->
         <section class="page page-hero">
             <header class="site-header">
@@ -28,7 +31,7 @@
                     <div class="nav-actions">
                         <a class="nav-link" href="#">Whitepaper</a>
                         <button class="nav-btn-icon" id="themeSwitch">☀/☾</button>
-                        <a class="btn-primary" href="app.html">Launch dApp</a>
+                        <a class="btn-primary" href="app.html" target="_blank">Launch dApp</a>
                     </div>
                 </nav>
             </header>
@@ -68,24 +71,63 @@
 
                 <div class="bento-grid">
                     <!-- Carte 1 : Tranches -->
-                    <article class="card card-large">
-                        <div class="card-icon"><img src="img/greenShield.png" alt="GREEN_SHIELD" class="logo-img"/></div>
+                    <article class="card card-large" data-card="1">
+                        <div class="card-header">
+                            <div class="card-icon"><img src="img/greenShield.png" alt="GREEN_SHIELD" class="logo-img"/></div>
+                            <button class="close-btn" aria-label="Fermer">×</button>
+                        </div>
                         <h3>Skin in the Game</h3>
                         <p>L'assureur doit verrouiller une <strong>Tranche Junior</strong> qui absorbe les premières pertes. Les investisseurs sont en <strong>Tranche Senior</strong> protégée.</p>
+
+                        <!-- Détails cachés (Source: README.md / UserStories.md) -->
+                        <div class="card-details">
+                            <h4>Mécanisme de Tranches</h4>
+                            <p>Pour aligner les intérêts, l'assureur (Sponsor) dépose <strong>10% du capital (4M$)</strong> en Tranche Junior. C'est du capital "First Loss".</p>
+                            <p>Les investisseurs apportent les <strong>90% restants (36M$)</strong> en Tranche Senior. En cas de sinistre mineur, seule la part de l'assureur est touchée. Votre capital n'est entamé que si le sinistre dépasse le coussin de sécurité de l'assureur.</p>
+                        </div>
                     </article>
 
                     <!-- Carte 2 : Simulation -->
-                    <article class="card">
-                        <div class="card-icon"><img src="img/blueGraph.png" alt="BLUE_GRAPH" class="logo-img"/></div>
+                    <article class="card" data-card="2">
+                        <div class="card-header">
+                            <div class="card-icon"><img src="img/blueGraph.png" alt="BLUE_GRAPH" class="logo-img"/></div>
+                            <button class="close-btn" aria-label="Fermer">×</button>
+                        </div>
                         <h3>Protection Capital</h3>
                         <p>En cas de catastrophe majeure, le mécanisme limite la perte à <strong>~45%</strong> (au lieu de 100% sur les Cat Bonds classiques).</p>
+
+                        <!-- Détails cachés (Source: Maths.md) -->
+                        <div class="card-details">
+                            <h4>Simulation de Sinistre (Soft Default)</h4>
+                            <p>Exemple concret (Ouragan > Cat 4) :</p>
+                            <ul>
+                                <li>Sinistre à payer : <strong>20M$</strong></li>
+                                <li>L'assureur paie les premiers <strong>4M$</strong>.</li>
+                                <li>Reste à charge pour le pool investisseurs : <strong>16M$</strong>.</li>
+                            </ul>
+                            <p>Sur un pool de 36M$, cela représente une perte ("Haircut") de <strong>44.44%</strong>. Vous récupérez donc <strong>55.56%</strong> de votre mise, contrairement aux produits traditionnels où la perte serait totale.</p>
+                        </div>
                     </article>
 
                     <!-- Carte 3 : Yield -->
-                    <article class="card">
-                        <div class="card-icon"><img src="img/yellowGold.png" alt="YELLOW_GOLD" class="logo-img"/></div>
+                    <article class="card" data-card="3">
+                        <div class="card-header">
+                            <div class="card-icon"><img src="img/yellowGold.png" alt="YELLOW_GOLD" class="logo-img"/></div>
+                            <button class="close-btn" aria-label="Fermer">×</button>
+                        </div>
                         <h3>Double Yield</h3>
                         <p><strong>5% Base</strong> (RWA/Bons du Trésor)<br>+ <strong>10% Prime</strong> d'Assurance.</p>
+
+                        <!-- Détails cachés (Source: README.md) -->
+                        <div class="card-details">
+                            <h4>Composition du Rendement</h4>
+                            <p>Votre argent travaille deux fois :</p>
+                            <ol>
+                                <li><strong>Base Yield (RWA) :</strong> 80% des fonds du Vault sont placés en Bons du Trésor US (actifs sûrs), générant ~5% APR.</li>
+                                <li><strong>Insurance Premium :</strong> L'assureur paie une prime pour sa couverture, ajoutant ~10% APR.</li>
+                            </ol>
+                            <p>Objectif total : <strong>~15% APR</strong> décorrélé des marchés crypto.</p>
+                        </div>
                     </article>
                 </div>
             </main>
@@ -98,22 +140,56 @@
                 <p class="section-desc">Construit pour durer sous la supervision des standards les plus stricts.</p>
 
                 <div class="bento-grid">
-                    <article class="card card-wide">
-                        <div class="card-icon"><img src="img/swissFlag.jpeg" alt="SWISS_FLAG" class="logo-img"/></div>
+                    <article class="card card-wide" data-card="4">
+                        <div class="card-header">
+                            <div class="card-icon"><img src="img/swissFlag.jpeg" alt="SWISS_FLAG" class="logo-img"/></div>
+                            <button class="close-btn" aria-label="Fermer">×</button>
+                        </div>
                         <h3>Véhicule VUSA (ISPV)</h3>
                         <p>Structure conforme à l'article 30e de la LSA. Le protocole agit comme un transformateur de risques entièrement financé par le marché des capitaux, sans risque de contrepartie assureur.</p>
+
+                        <!-- Détails cachés (Source: VeilleRéglementaireFINMASuisseDeFi.md) -->
+                        <div class="card-details">
+                            <h4>Innovation Réglementaire (LSA Art. 30e)</h4>
+                            <p>Le projet utilise le statut de <strong>Véhicule à Usage Spécifique d'Assurance (VUSA)</strong>. Contrairement à un assureur classique, le risque est financé à 100% par le collatéral déposé ("Fully Funded").</p>
+                            <p>Cela élimine le risque de faillite de l'institution : l'argent pour payer les sinistres est déjà dans le Smart Contract.</p>
+                        </div>
                     </article>
 
-                    <article class="card">
-                        <div class="card-icon"><img src="img/pinkLaw.png" alt="PINK_LAW" class="logo-img"/></div>
+                    <article class="card" data-card="5">
+                        <div class="card-header">
+                            <div class="card-icon"><img src="img/pinkLaw.png" alt="PINK_LAW" class="logo-img"/></div>
+                            <button class="close-btn" aria-label="Fermer">×</button>
+                        </div>
                         <h3>Conformité DLT</h3>
                         <p>Tokens qualifiés de "Droits-Valeurs Inscrits" selon l'art. 973d du Code des Obligations.</p>
+
+                        <!-- Détails cachés (Source: Veille Réglementaire) -->
+                        <div class="card-details">
+                            <h4>Tokens = Titres Légaux</h4>
+                            <p>Grâce à la Loi DLT suisse, les tokens émis par le Vault ne sont pas de simples jetons utilitaires, mais des <strong>Droits-Valeurs Inscrits</strong>.</p>
+                            <p>La blockchain fait foi de registre de propriété. Le transfert du token équivaut juridiquement au transfert de la créance, sans papier ni notaire.</p>
+                        </div>
                     </article>
 
-                    <article class="card">
-                        <div class="card-icon"><img src="img/blueLoop.png" alt="BLUE_LOOP" class="logo-img"/></div>
+                    <article class="card" data-card="6">
+                        <div class="card-header">
+                            <div class="card-icon"><img src="img/blueLoop.png" alt="BLUE_LOOP" class="logo-img"/></div>
+                            <button class="close-btn" aria-label="Fermer">×</button>
+                        </div>
                         <h3>Oracles Certifiés</h3>
                         <p>Déclenchement paramétrique (IoT/Météo) auditable on-chain pour une transparence totale.</p>
+
+                        <!-- Détails cachés (Source: UserStories.md) -->
+                        <div class="card-details">
+                            <h4>Automatisation & Transparence</h4>
+                            <p>Le paiement ne dépend pas d'un expert humain. Il est déclenché par des données :</p>
+                            <ul>
+                                <li>Vitesse du vent > 250km/h</li>
+                                <li>Magnitude sismique</li>
+                            </ul>
+                            <p>Le système agrège <strong>3 sources indépendantes</strong> pour éviter toute manipulation. Si le seuil est franchi, le Smart Contract exécute le paiement instantanément.</p>
+                        </div>
                     </article>
                 </div>
             </main>

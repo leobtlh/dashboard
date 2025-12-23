@@ -80,6 +80,8 @@ a { text-decoration: none; color: inherit; }
     color: var(--text-muted);
     transition: color 0.2s;
 }
+
+.nav-btn-icon:hover,
 .nav-link:hover { color: var(--accent); }
 
 .nav-btn-icon {
@@ -198,9 +200,13 @@ a { text-decoration: none; color: inherit; }
     border-radius: 24px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     backdrop-filter: blur(12px);
+    cursor: pointer; /* Indique que c'est cliquable */
+    position: relative;
+    overflow: hidden;
 }
 
-.card:hover {
+/* Hover normal (quand non-expandé) */
+.card:not(.expanded):hover {
     transform: translateY(-5px);
     box-shadow: 0 20px 40px rgba(0,0,0,0.1);
     border-color: var(--accent);
@@ -208,6 +214,12 @@ a { text-decoration: none; color: inherit; }
 
 .card-large { grid-column: span 2; }
 .card-wide { grid-column: span 3; }
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
 
 .card-icon {
     font-size: 2rem;
@@ -221,6 +233,19 @@ a { text-decoration: none; color: inherit; }
     border-radius: 12px;
 }
 
+/* Bouton fermer (caché par défaut) */
+.close-btn {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+    line-height: 1;
+    padding: 0.5rem;
+}
+.close-btn:hover { color: var(--text-main); }
+
 .card h3 {
     font-size: 1.25rem;
     margin-bottom: 0.75rem;
@@ -233,12 +258,85 @@ a { text-decoration: none; color: inherit; }
     line-height: 1.5;
 }
 
+/* --- CARD DETAILS (HIDDEN DEFAULT) --- */
+.card-details {
+    display: none;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--card-border);
+    animation: fadeIn 0.4s ease-out;
+}
+
+.card-details h4 {
+    color: var(--accent);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.card-details ul, .card-details ol {
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-muted);
+}
+.card-details li { margin-bottom: 0.5rem; }
+
+/* --- CARD EXPANDED STATE --- */
+.card.expanded {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90vw;
+    max-width: 600px;
+    height: auto;
+    max-height: 85vh;
+    z-index: 1000;
+    overflow-y: auto;
+    box-shadow: 0 50px 100px rgba(0,0,0,0.5);
+    border-color: var(--accent);
+    cursor: default; /* Plus de curseur main */
+    background: var(--bg-secondary); /* Fond opaque obligatoire */
+}
+
+.card.expanded .card-details {
+    display: block;
+}
+
+.card.expanded .close-btn {
+    display: block;
+}
+
+/* MODAL OVERLAY */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(15, 23, 42, 0.85); /* Dark slate semi-transparent */
+    backdrop-filter: blur(5px);
+    z-index: 999;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
 /* --- PAGE 3: LINKS COLUMNS (NOUVEAU STYLE) --- */
 .links-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-/*    background: var(--bg-main);
-    border: 0px solid var(--card-border);*/
     border-radius: 24px;
     backdrop-filter: blur(12px);
     overflow: hidden; /* Pour que les coins arrondis fonctionnent avec les bordures */
