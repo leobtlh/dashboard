@@ -47,4 +47,36 @@ En tant que Smart Contract du Protocole (HPIV), Je veux recevoir et agréger les
 
 4. **Redondance et Consensus (Sécurité) :** Pour éviter une manipulation (ex: piratage d'une seule sonde), l'oracle doit agréger au moins 3 sources différentes pour confirmer une donnée (ex: 3 stations météo différentes) avant de valider l'événement.
 
+## US 8 : Création et Amorçage
+En tant que **Sponsor (Assureur)**, Je veux déployer un Smart Contract de Vault en définissant :
 
+1. Les paramètres physiques (ex: Vent > 250km/h).
+
+2. Le montant de ma "Junior Tranche" (First Loss).
+
+3. Le montant de la "Prime" (Yield) que je verse immédiatement. _Afin d'initialiser la capacité de couverture et d'attirer des liquidités._
+
+## US 9 : Transparence des Risques
+En tant qu'**Investisseur potentiel**, Je veux voir clairement la distinction entre :
+
+- Le "Capital à Risque" (Junior + Senior) utilisé pour payer les sinistres.
+
+- La "Réserve de Prime" (Yield) qui est sanctuarisée et ne sert jamais à payer les sinistres. _Afin de comprendre que mon rendement est garanti même en cas de catastrophe totale._
+
+## US 10 : Protection du Capital (Soft Default)
+En tant qu'**Investisseur**, Je veux que le paiement du sinistre consomme en priorité la Tranche Junior de l'assureur avant de toucher à ma Tranche Senior. _Afin de minimiser mes pertes ("Haircut") lors de sinistres mineurs ou moyens._
+
+## US 11 : Principe Indemnitaire (Dual Trigger)
+En tant qu'**Investisseur**, Je veux que le paiement final soit basé sur le montant réel des dommages (`actualClaimAmount`) et non forcé au maximum de la capacité. _Afin d'éviter que l'assureur ne siphonne la liquidité (20M$) pour un événement qui n'a causé que peu de dégâts (1M$)._
+
+## US 12 : Conformité (KYC)
+En tant qu'**Investisseur Qualifié**, Je veux connecter mon portefeuille et prouver mon identité (Whitelisting), _Afin d'être autorisé par le Smart Contract à déposer des fonds et à échanger mes parts sur le marché secondaire, conformément à la réglementation LBA suisse._
+
+## US 13 : Réclamation (Claim)
+En tant qu'**Investisseur post-catastrophe**, Je veux réclamer mon solde restant via une transaction unique qui me verse :
+
+1. Le reliquat de mon capital (si `SeniorLoss` < 100%).
+
+2. Ma part intégrale de la prime d'assurance (Yield).
+
+3. Les rendements générés par le placement en Bons du Trésor (RWA).

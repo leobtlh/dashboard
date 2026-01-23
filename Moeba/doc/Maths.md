@@ -1,87 +1,115 @@
-# HPIV Protocol : Logique Mathématique & Variables
+# HPIV Protocol — Logique Mathématique & Variables
 
-Ce document détaille les formules exactes utilisées dans le Smart Contract `HPIVVault.sol` pour le calcul du mécanisme de "Soft Default".
+Ce document décrit précisément la **logique mathématique**, les **variables financières** et les **formules** implémentées dans le Smart Contract `HPIVVault.sol`.
+Il formalise le mécanisme de **Soft Default**, la gestion des tranches de risque et la protection du rendement des investisseurs.
 
-## 1. Dictionnaire des Variables (Mapping Code)
+---
 
-Voici la correspondance entre les concepts financiers et les variables techniques du contrat.
+## 1. Dictionnaire des Variables (Mapping Code ↔ Finance)
 
-| **Concept Financier**              | **Variable Solidity (Code)** | **Valeur Exemple (USDC)** | **Description**                                                                                       |
-|------------------------------------|------------------------------|---------------------------|-------------------------------------------------------------------------------------------------------|
-| **Capacité Totale**                | `MAX_VAULT_CAPACITY`         | `40,000,000`              | Le montant total d'argent dans le coffre (Assureur + Investisseurs).                                  |
-| **Tranche Junior (Assureur)**      | `insurerJuniorCapital` | `4,000,000`               | Le capital déposé par l'assureur. C'est le premier à être consommé en cas de sinistre ("First Loss"). |
-| **Tranche Senior (Investisseurs)** | Calculé dynamiquement         | `36,000,000`              | Le capital des utilisateurs. Calculé dynamiquement : `TotalAssets()` - `insurerJuniorCapital`.                 |
-| **Montant du Sinistre**            | `MAX_COVERAGE_AMOUNT`        | `20,000,000`              | Le montant que le protocole doit payer pour couvrir la catastrophe.                                   |
-| **Ratio de Perte (Haircut)**       | `seniorLossRatio`          | `0.4444...`               | Le pourcentage de perte appliqué aux parts des investisseurs (Format `1e18`).                         |
+Ce tableau établit la correspondance entre les **concepts financiers** et les **variables Solidity** utilisées dans le protocole.
 
-## 2. Algorithme de Calcul du "Soft Default"
+| Concept Financier              | Variable Solidity      | Valeur Exemple (USDC) | Description                                                                |
+| ------------------------------ | ---------------------- | --------------------- | -------------------------------------------------------------------------- |
+| Capacité Totale du Vault       | `MAX_VAULT_CAPACITY`   | 40,330,000            | Capital total présent dans le vault (capital à risque + réserve de primes) |
+| Capital à Risque               | `RiskCapital`          | 40,000,000            | Capital mobilisable pour payer les sinistres (tranches Senior + Junior)    |
+| Tranche Junior (Assureur)      | `insurerJuniorCapital` | 4,000,000             | Capital de première perte déposé par l’assureur                            |
+| Tranche Senior (Investisseurs) | `SeniorEquity`         | 36,000,000            | Capital des investisseurs exposé au risque                                 |
+| Réserve de Prime               | `premiumReserve`       | 330,000               | Réserve sanctuarisée dédiée au rendement, non affectée par les sinistres   |
+| Plafond de Couverture          | `MAX_COVERAGE_AMOUNT`  | 40,000,000            | Montant maximum théorique que le protocole peut indemniser                 |
 
-Lorsqu'une catastrophe est validée par l'Oracle (`triggerCatastrophe`), le contrat exécute la logique de "Waterfall" (Cascade) suivante.
+La réserve de prime (`premiumReserve`) est strictement exclue du capital à risque et ne peut jamais être utilisée pour indemniser un sinistre.
 
-### Étape A : Calcul de la perte nette pour les investisseurs
+---
 
-L'assureur agit comme un "bouclier". On soustrait sa part du montant total du sinistre.
+## 2. Mécanisme Indemnitaire à Double Déclencheur (Dual Trigger)
 
-`InvestorLossAmount` = max(0, `actualClaimAmount` - `insurerJuniorCapital`)
+Le paiement d’un sinistre n’est pas binaire. Il repose sur deux conditions cumulatives :
 
-### Étape B : Calcul du Ratio de Perte (Haircut)
+1. **Déclencheur physique**
+   Validation on-chain d’un événement mesurable (ex. ouragan catégorie > 4, vent > 250 km/h), via oracle.
 
-On détermine quel pourcentage du capital des investisseurs a été consommé.
+2. **Perte financière réelle**
+   Montant effectivement subi par l’assureur, déclaré sous la variable `actualClaimAmount`.
 
-`seniorLossRatio` = `InvestorLossAmount` / `SeniorEquity`
+### 2.1 Formule du Payout à l’Assureur
 
-Note technique : Dans Solidity, ce calcul est effectué avec une précision de 18 décimales (`* 1e18`) pour éviter les virgules flottantes.
+Le paiement effectif est plafonné par la capacité réelle du protocole.
 
-## 3. Simulation Numérique (Scénario Ouragan)
+```
+Payout = min(RiskCapital, actualClaimAmount)
+```
 
-Basé sur les chiffres du README.
+---
 
-### État Initial
+## 3. Mécanisme de Soft Default (Waterfall de Pertes)
 
-- `MAX_VAULT_CAPACITY` = 40M$
+Une fois le `Payout` déterminé, la perte est répartie par priorité entre les tranches.
 
-- `insurerJuniorCapital` = 4M$ (10%)
+### 3.1 Étape A — Absorption Junior (Assureur)
 
-- `SeniorEquity` = 36M$ (90%)
+```
+JuniorLoss = min(insurerJuniorCapital, Payout)
+```
 
-### L'Événement
+### 3.2 Étape B — Absorption Senior (Investisseurs)
 
-- L'Oracle détecte un vent > 250km/h.
+```
+SeniorLoss = Payout - JuniorLoss
+```
 
-- `actualClaimAmount` est fixé à **20M$**.
+### 3.3 Étape C — Ratio de Perte (Haircut Investisseurs)
 
-### Exécution du Calcul
+```
+SeniorLossRatio = SeniorLoss / SeniorEquity
+```
 
-1. Absorption par l'Assureur : Les premiers 4M$ du sinistre sont payés par `insurerJuniorCapital`.
+---
 
-2. Reste à charge (Investisseurs) :
+## 4. Simulation Numérique — Scénario de Dégâts Limités
 
-    *20,000,000 - 4,000,000 = 16,000,000 USDC*
+### 4.1 État Initial du Vault
 
-3. Détermination du Ratio (`seniorLossRatio`) :
+* RiskCapital = 40,000,000 USDC
+* insurerJuniorCapital = 4,000,000 USDC
+* SeniorEquity = 36,000,000 USDC
+* premiumReserve = 330,000 USDC
 
-    *16,000,000 / 36,000,000 ≃ 0.444444...*
+### 4.2 Événement Déclencheur
 
-Soit **44.44%**.
+* Déclencheur oracle : validé
+* Perte réelle déclarée (actualClaimAmount) : 5,000,000 USDC
 
-## 4. Impact pour un Utilisateur (User Payout)
+### 4.3 Exécution du Calcul
 
-Voici la formule utilisée dans la fonction `previewRedeem` ou `withdraw` pour savoir combien un utilisateur récupère.
+```
+Payout = min(40,000,000 ; 5,000,000) = 5,000,000
+JuniorLoss = min(4,000,000 ; 5,000,000) = 4,000,000
+SeniorLoss = 5,000,000 − 4,000,000 = 1,000,000
+SeniorLossRatio = 1,000,000 / 36,000,000 ≈ 2.77 %
+```
 
-Soit `GROSS_USER_ASSETS` le montant total de l'utilisateur (Principal + Intérêts Yield) avant le sinistre.
+### 4.4 Bilan Investisseur
 
-`FINAL_PAYOUT` = `GROSS_USER_ASSETS` * (1 - `seniorLossRatio`)
+* Perte limitée à environ 2.77 % du capital
+* Conservation intégrale de la réserve de prime
+* Possibilité d’un rendement net positif malgré le sinistre
 
-### Exemple Utilisateur
+---
 
-Un utilisateur a **10,000 USDC** dans le vault.
+## 5. Calcul du Payout Final Utilisateur
 
-Le Yield a généré 50 USDC d'intérêts → `GROSS_USER_ASSETS` = 10,050 USDC.
+```
+FINAL_PAYOUT = GROSS_USER_ASSETS × (1 − SeniorLossRatio)
+```
 
-La catastrophe survient (`seniorLossRatio` = 0.4444).
+---
 
-`FINAL_PAYOUT` _= 10,050 * (1 - 0.4444)_
+## 6. Conclusion Mathématique
 
-`FINAL_PAYOUT` _= 10,050 * 0.5556 = **5,583.78** USDC_
+| Modèle                  | Gain Potentiel | Perte Maximale |
+| ----------------------- | -------------- | -------------- |
+| Cat Bonds traditionnels | ~15 %          | 100 %          |
+| HPIV (Soft Default)     | ~15 %          | ≈ 44 %         |
 
-**Conclusion :** L'utilisateur a sauvé ~55% de son capital au lieu de tout perdre.
+Ce modèle transforme un produit à risque binaire en produit à risque asymétrique contrôlé.

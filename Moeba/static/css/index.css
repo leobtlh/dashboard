@@ -35,7 +35,7 @@ body {
   background-color: var(--bg-main);
   color: var(--text-main);
   height: 100vh;
-  overflow: hidden; /* Nécessaire pour ton script de scroll */
+  overflow: hidden; /* Nécessaire pour le script de scroll */
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -79,6 +79,14 @@ a { text-decoration: none; color: inherit; }
     font-weight: 500;
     color: var(--text-muted);
     transition: color 0.2s;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: inherit;
 }
 
 .nav-btn-icon:hover,
@@ -280,30 +288,65 @@ a { text-decoration: none; color: inherit; }
 }
 .card-details li { margin-bottom: 0.5rem; }
 
-/* --- CARD EXPANDED STATE --- */
+/* --- CARD EXPANDED STATE (MODIFICATIONS TAILLE) --- */
 .card.expanded {
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+
+    /* MODIF 1 : Largeur forcée pour prendre presque tout l'écran */
     width: 90vw;
-    max-width: 600px;
-    height: auto;
-    max-height: 85vh;
+    height: 90vh;
+
+    /* MODIF 2 : Max-width très large pour écrans larges */
+    max-width: 1250px;
+    max-height: 80vh;
+
     z-index: 1000;
     overflow-y: auto;
-    box-shadow: 0 50px 100px rgba(0,0,0,0.5);
+    box-shadow: 0 50px 100px rgba(0,0,0,0.6);
     border-color: var(--accent);
-    cursor: default; /* Plus de curseur main */
-    background: var(--bg-secondary); /* Fond opaque obligatoire */
+    cursor: default;
+    background: var(--bg-secondary);
+    padding: 4rem; /* Espace interne augmenté */
+
+    /* MODIF 3 : Reset des grid-column qui pourraient interférer si non sortis du flux */
+    grid-column: auto;
+    margin: 0;
+}
+
+/* Adaptation de la typographie pour la grande carte */
+.card.expanded h3 {
+    font-size: 2.5rem; /* Titre beaucoup plus gros */
+    margin-bottom: 2rem;
+}
+
+.card.expanded p {
+    font-size: 1.2rem; /* Texte principal plus lisible */
+    line-height: 1.8;
 }
 
 .card.expanded .card-details {
     display: block;
+    margin-top: 3rem;
+}
+
+.card.expanded .card-details h4 {
+    font-size: 1.5rem;
+}
+
+.card.expanded .card-details p,
+.card.expanded .card-details li {
+    font-size: 1.1rem;
 }
 
 .card.expanded .close-btn {
     display: block;
+    font-size: 2.5rem; /* Croix plus grosse */
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
 }
 
 /* MODAL OVERLAY */
@@ -401,4 +444,10 @@ a { text-decoration: none; color: inherit; }
 
     .stats-row { gap: 1.5rem; }
     .page { padding-bottom: 80px; } /* Espace pour scroll mobile */
+
+    .card.expanded {
+        width: 95vw !important;
+        height: 90vh !important;
+        padding: 2rem;
+    }
 }
