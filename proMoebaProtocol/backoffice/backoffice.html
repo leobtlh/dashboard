@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mœba Protocol | Backoffice</title>
+    <link rel="icon" href="../img/IconMoeba.png" type="image/png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        slate: { 850: '#1e293b', 950: '#020617' }
+                    },
+                    animation: {
+                        'slide-up': 'slideUp 0.3s ease-out forwards',
+                        'fade-in': 'fadeIn 0.2s ease-out forwards',
+                        'zoom-in': 'zoomIn 0.2s ease-out forwards',
+                    },
+                    keyframes: {
+                        slideUp: {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        zoomIn: {
+                            '0%': { transform: 'scale(0.95)', opacity: '0' },
+                            '100%': { transform: 'scale(1)', opacity: '1' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <script crossorigin src="https://unpkg.com/react@18.2.0/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/5.7.2/ethers.umd.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body class="bg-slate-50 dark:bg-slate-950 transition-colors duration-300">
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState, useEffect } = React;
+
+        // Configuration Similaire
+        const FACTORY_ADDRESS_LIVE = "0x0000000000000000000000000000000000000000";
+        const FACTORY_ABI_ADMIN = [
+            "function owner() view returns (address)",
+            "function pendingRequestAddresses(uint256 index) view returns (address)",
+            "function getPendingRequests() view returns (address[])",
+            "function insurerRequests(address insurer) view returns (string companyName, string kybHash, uint8 status, uint256 requestDate)",
+            "function setInsurerStatus(address insurer, bool status) external"
+        ];
+
+        // --- WHITELIST ADMIN ---
+        // Seules ces adresses peuvent accéder au backoffice
+        const ADMIN_WHITELIST = [
+            "0x5B757b308b8842698035C53b8ea0844240ac485B",
+            "0x912F9886Fb676750943fDeFC4c30d3cA927C3a72"
+        ].map(a => a.toLowerCase());
+
+        // --- ICONS GENERIQUES ---
+        const IconWrapper = ({ children, className }) => (<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>{children}</svg>);
+        const Shield = ({ className }) => <IconWrapper className={className}><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></IconWrapper>;
+        const Check = ({ className }) => <IconWrapper className={className}><polyline points="20 6 9 17 4 12"/></IconWrapper>;
+        const X = ({ className }) => <IconWrapper className={className}><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></IconWrapper>;
+        const ExternalLink = ({ className }) => <IconWrapper className={className}><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></IconWrapper>;
+        const Loader = ({ className }) => <IconWrapper className={className}><line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="4.93" y1="4.93" x2="7.76" y2="7.76"/><line x1="16.24" y1="16.24" x2="19.07" y2="19.07"/><line x1="2" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="22" y2="12"/><line x1="4.93" y1="19.07" x2="7.76" y2="16.24"/><line x1="16.24" y1="7.76" x2="19.07" y2="4.93"/></IconWrapper>;
+        const Lock = ({ className }) => <IconWrapper className={className}><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></IconWrapper>;
+        const Trash2 = ({ className }) => <IconWrapper className={className}><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></IconWrapper>;
+        const ChevronDown = ({ className }) => <IconWrapper className={className}><polyline points="6 9 12 15 18 9"/></IconWrapper>;
+        const Wallet = ({ className }) => <IconWrapper className={className}><path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"/><path d="M3 5v14a2 2 0 0 0 2 2h16v-5"/><path d="M18 12a2 2 0 0 0 0 4h4v-4Z"/></IconWrapper>;
+        const LogOut = ({ className }) => <IconWrapper className={className}><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></IconWrapper>;
+
+        // --- ICONS WALLETS SPECIFIQUES ---
+        const RabbyIcon = () => (
+            <svg viewBox="0 0 32 32" className="w-8 h-8 rounded-lg" fill="none">
+                <rect width="32" height="32" rx="8" fill="#8B93FF"/>
+                <path d="M10 16c0-4 3-7 6-7s6 3 6 7-3 7-6 7-6-3-6-7z" fill="white"/>
+                <circle cx="14" cy="15" r="1" fill="#8B93FF"/>
+                <circle cx="18" cy="15" r="1" fill="#8B93FF"/>
+                <path d="M15 19h2" stroke="#8B93FF" strokeLinecap="round"/>
+            </svg>
+        );
+        const ZerionIcon = () => (
+            <svg viewBox="0 0 32 32" className="w-8 h-8 rounded-lg" fill="none">
+                 <rect width="32" height="32" rx="8" fill="#2962FF"/>
+                 <path d="M10 22L22 10M10 10h12v12" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+        );
+        const MetaMaskIcon = () => (
+            <svg viewBox="0 0 32 32" className="w-8 h-8 rounded-lg" fill="none">
+                <rect width="32" height="32" rx="8" fill="#F6851B" fillOpacity="0.1"/>
+                <path d="M26 11l-3 6-5-1-2 5-2-5-5 1-3-6 5-3 5-5 5 3z" fill="#F6851B" stroke="#E2761B" strokeWidth="1.5" strokeLinejoin="round"/>
+            </svg>
+        );
+        const WalletConnectIcon = () => (
+             <svg viewBox="0 0 32 32" className="w-8 h-8 rounded-lg" fill="none">
+                <rect width="32" height="32" rx="8" fill="#3B99FC"/>
+                <path d="M8 14c4-4 12-4 16 0" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+                <path d="M16 19v.01" stroke="white" strokeWidth="3" strokeLinecap="round"/>
+             </svg>
+        );
+
+        function BackofficeApp() {
+            const [account, setAccount] = useState('');
+            const [isConnected, setIsConnected] = useState(false);
+            const [isAuthorized, setIsAuthorized] = useState(false);
+            const [requests, setRequests] = useState([]);
+            // --- State pour Investisseurs (KYC) ---
+            const [investorRequests, setInvestorRequests] = useState([]);
+            const [loading, setLoading] = useState(false);
+
+            // GESTION MODALE WALLET
+            const [showWalletSelector, setShowWalletSelector] = useState(false);
+            const [showOtherWallets, setShowOtherWallets] = useState(false);
+            const [showWalletMenu, setShowWalletMenu] = useState(false);
+
+            // Mock Data par défaut
+            const [mockRequests, setMockRequests] = useState([
+//                 { address: "0x123...abc", companyName: "Zurich Insurance Group", kybHash: "ipfs://Qmb...", status: 1, date: Date.now() },
+//                 { address: "0x456...def", companyName: "Allianz Global", kybHash: "https://doc...", status: 3, date: Date.now() - 86400000 }
+            ]);
+
+            // --- Mock Data Investisseurs ---
+            const [mockInvestorRequests, setMockInvestorRequests] = useState([
+//                 {
+//                     address: "0xsimulatedUser1...",
+//                     fullName: "Jean Dupont",
+//                     email: "jean@dupont.ch",
+//                     idHash: "ID_FR_123456",
+//                     status: 1,
+//                     date: Date.now() - 3600000
+//                 }
+            ]);
+
+            // --- NOUVELLE LOGIQUE CONNEXION (IDENTIQUE APP) ---
+            const handleWalletSelect = async (walletType) => {
+                 setShowWalletSelector(false);
+
+                 if (!window.ethers) {
+                      alert("Erreur technique : Librairie Web3 non chargée.");
+                      return;
+                 }
+
+                 let providerInput = null;
+
+                 // Logique de sélection du provider
+                 if (walletType === 'zerion') {
+                     if (window.zerionWallet) providerInput = window.zerionWallet;
+                     else if (window.ethereum && window.ethereum.isZerion) providerInput = window.ethereum;
+                     else providerInput = window.ethereum;
+                 } else if (walletType === 'rabby') {
+                     if (window.ethereum && window.ethereum.isRabby) providerInput = window.ethereum;
+                     else providerInput = window.ethereum;
+                 } else if (walletType === 'metamask') {
+                     if (window.ethereum) providerInput = window.ethereum;
+                 } else if (walletType === 'walletconnect') {
+                     alert("Intégration WalletConnect complète à venir.");
+                     if (window.ethereum) providerInput = window.ethereum;
+                 } else {
+                     providerInput = window.ethereum;
+                 }
+
+                 if (!providerInput) {
+                     alert("Aucun wallet compatible détecté.");
+                     return;
+                 }
+
+                 try {
+                      const accounts = await providerInput.request({ method: 'eth_requestAccounts' });
+
+                      if (!accounts || accounts.length === 0) {
+                          alert("Aucun compte sélectionné.");
+                          return;
+                      }
+
+                      const provider = new ethers.providers.Web3Provider(providerInput);
+                      const signer = provider.getSigner();
+                      const address = await signer.getAddress();
+                      const connectedAccount = address.toLowerCase();
+
+                      setAccount(connectedAccount);
+                      setIsConnected(true);
+
+                      // VÉRIFICATION WHITELIST ADMIN
+                      if (ADMIN_WHITELIST.includes(connectedAccount)) {
+                          setIsAuthorized(true);
+                          fetchRequests();
+                      } else {
+                          setIsAuthorized(false);
+                      }
+
+                 } catch (error) {
+                      console.error("Erreur connexion:", error);
+                      alert(`Echec connexion: ${error.message || error}`);
+                 }
+            };
+
+            const disconnectWallet = () => {
+                 setIsConnected(false);
+                 setAccount('');
+                 setIsAuthorized(false);
+                 setShowWalletMenu(false);
+            };
+
+            const fetchRequests = async () => {
+                setLoading(true);
+
+                // --- 1. CHARGEMENT ASSUREURS (KYB) ---
+                const storedRequests = localStorage.getItem('moeba_insurer_requests');
+                let localRequests = [];
+                if (storedRequests) {
+                    try {
+                        localRequests = JSON.parse(storedRequests);
+                        localRequests = localRequests.map(req => ({ ...req, date: req.date || Date.now() }));
+                    } catch(e) {}
+                }
+                const combined = [...localRequests];
+                mockRequests.forEach(mock => {
+                    if (!combined.find(c => c.address === mock.address)) combined.push(mock);
+                });
+                setRequests(combined.sort((a,b) => b.date - a.date));
+
+                // --- 2. AJOUT : CHARGEMENT INVESTISSEURS (KYC) ---
+                const storedInvRequests = localStorage.getItem('moeba_investor_requests');
+                let localInvRequests = [];
+                if (storedInvRequests) {
+                    try {
+                        localInvRequests = JSON.parse(storedInvRequests);
+                        localInvRequests = localInvRequests.map(req => ({ ...req, date: req.date || Date.now() }));
+                    } catch(e) {}
+                }
+                // Fusion Mock + Local
+                const combinedInv = [...localInvRequests];
+                mockInvestorRequests.forEach(mock => {
+                    if (!combinedInv.find(c => c.address === mock.address)) combinedInv.push(mock);
+                });
+                setInvestorRequests(combinedInv.sort((a,b) => b.date - a.date));
+
+                setLoading(false);
+            };
+
+            const handleDecision = async (reqAddress, decision) => {
+                if (!confirm(`Confirmer ${decision ? 'l\'approbation' : 'le rejet'} de ${reqAddress} ?`)) return;
+
+                setLoading(true);
+                try {
+                    // Update LocalStorage
+                    const storedRequests = localStorage.getItem('moeba_insurer_requests');
+                    if (storedRequests) {
+                        let localRequests = JSON.parse(storedRequests);
+                        const index = localRequests.findIndex(r => r.address.toLowerCase() === reqAddress.toLowerCase());
+
+                        if (index >= 0) {
+                            localRequests[index].status = decision ? 2 : 3;
+                            localStorage.setItem('moeba_insurer_requests', JSON.stringify(localRequests));
+                        }
+                    }
+
+                    // Update UI
+                    setRequests(requests.map(r => {
+                        if (r.address.toLowerCase() === reqAddress.toLowerCase()) {
+                            return { ...r, status: decision ? 2 : 3 };
+                        }
+                        return r;
+                    }));
+
+                } catch (err) {
+                    console.error(err);
+                    alert("Erreur transaction");
+                }
+                setLoading(false);
+            };
+
+            // --- Gestion Décision Investisseur ---
+            const handleInvestorDecision = async (reqAddress, decision) => {
+                if (!confirm(`Confirmer ${decision ? 'l\'approbation' : 'le rejet'} de l'investisseur ${reqAddress} ?`)) return;
+
+                setLoading(true);
+                try {
+                    // 1. Mise à jour de la demande (Request Status)
+                    const storedInv = localStorage.getItem('moeba_investor_requests');
+                    let currentList = [];
+                    if (storedInv) currentList = JSON.parse(storedInv);
+
+                    // Si c'est un mock qui n'est pas dans le storage, on l'ajoute pour pouvoir changer son statut
+                    const index = currentList.findIndex(r => r.address.toLowerCase() === reqAddress.toLowerCase());
+
+                    if (index >= 0) {
+                        currentList[index].status = decision ? 2 : 3;
+                    } else {
+                        // Cas où on approuve un Mock : on le crée dans le storage
+                        const mock = mockInvestorRequests.find(m => m.address === reqAddress);
+                        if (mock) currentList.push({ ...mock, status: decision ? 2 : 3 });
+                    }
+
+                    localStorage.setItem('moeba_investor_requests', JSON.stringify(currentList));
+
+                    // 2. SI APPROUVÉ : Mise à jour de la Whitelist officielle (celle vérifiée par App.html)
+                    if (decision) {
+                        const whitelist = JSON.parse(localStorage.getItem('moeba_investor_whitelist') || '[]');
+                        if (!whitelist.includes(reqAddress.toLowerCase())) {
+                            whitelist.push(reqAddress.toLowerCase());
+                            localStorage.setItem('moeba_investor_whitelist', JSON.stringify(whitelist));
+                        }
+                    }
+
+                    // 3. Rafraîchir l'UI
+                    fetchRequests();
+
+                } catch (err) {
+                    console.error(err);
+                    alert("Erreur lors de la mise à jour");
+                }
+                setLoading(false);
+            };
+
+            // --- FONCTION RESET MEMORY ---
+            const resetMemory = () => {
+                if (confirm("ATTENTION (DEV) : Reset complet des données locales ?")) {
+                    localStorage.removeItem('moeba_insurer_requests');
+
+                    localStorage.removeItem('moeba_investor_requests');
+                    localStorage.removeItem('moeba_investor_whitelist');
+
+                    alert("Mémoire locale effacée.");
+                    fetchRequests();
+                }
+            };
+
+            return (
+                <div className="min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 font-sans p-8">
+
+                    {/* --- MODAL SELECTEUR WALLET (inchangé) --- */}
+                    {showWalletSelector && (
+                        <div className="fixed inset-0 z-[200] flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm animate-fade-in" onClick={() => setShowWalletSelector(false)}>
+                            <div className="bg-white dark:bg-slate-900 rounded-2xl shadow-2xl w-full max-w-sm border border-slate-200 dark:border-slate-700 overflow-hidden animate-zoom-in" onClick={e => e.stopPropagation()}>
+                                <div className="p-6 border-b border-slate-100 dark:border-slate-800 flex justify-between items-center">
+                                    <h3 className="font-bold text-lg text-slate-900 dark:text-white">Connecter Admin</h3>
+                                    <button onClick={() => setShowWalletSelector(false)} className="p-1 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full transition-colors">
+                                        <X className="h-5 w-5 text-slate-500" />
+                                    </button>
+                                </div>
+
+                                <div className="p-4 space-y-3">
+                                    <button onClick={() => handleWalletSelect('rabby')} className="w-full flex items-center gap-4 p-4 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors border border-transparent hover:border-slate-200 dark:hover:border-slate-700 group">
+                                        <RabbyIcon />
+                                        <span className="font-bold text-slate-700 dark:text-slate-200 group-hover:text-blue-600 dark:group-hover:text-blue-400">Rabby Wallet</span>
+                                    </button>
+
+                                    <button onClick={() => handleWalletSelect('zerion')} className="w-full flex items-center gap-4 p-4 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors border border-transparent hover:border-slate-200 dark:hover:border-slate-700 group">
+                                        <ZerionIcon />
+                                        <span className="font-bold text-slate-700 dark:text-slate-200 group-hover:text-blue-600 dark:group-hover:text-blue-400">Zerion Wallet</span>
+                                    </button>
+
+                                    <div className="border-t border-slate-100 dark:border-slate-800 pt-2 mt-2">
+                                        <button onClick={() => setShowOtherWallets(!showOtherWallets)} className="w-full flex items-center justify-between p-3 rounded-lg text-sm font-medium text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200 transition-colors">
+                                            <span>Autres Wallets</span>
+                                            <ChevronDown className={`h-4 w-4 transition-transform duration-300 ${showOtherWallets ? 'rotate-180' : ''}`} />
+                                        </button>
+
+                                        {showOtherWallets && (
+                                            <div className="space-y-2 mt-2 animate-slide-up">
+                                                <button onClick={() => handleWalletSelect('metamask')} className="w-full flex items-center gap-3 p-3 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group">
+                                                    <MetaMaskIcon />
+                                                    <span className="font-medium text-slate-700 dark:text-slate-300">MetaMask</span>
+                                                </button>
+                                                <button onClick={() => handleWalletSelect('walletconnect')} className="w-full flex items-center gap-3 p-3 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors group">
+                                                    <WalletConnectIcon />
+                                                    <span className="font-medium text-slate-700 dark:text-slate-300">WalletConnect</span>
+                                                </button>
+                                            </div>
+                                        )}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    )}
+
+                    {/* --- HEADER (inchangé) --- */}
+                    <header className="flex justify-between items-center mb-10 max-w-full mx-auto">
+                        <div className="flex items-center gap-4">
+                                <img src="../img/MoebaLogo.png" alt="Logo" className="h-10 w-auto" />
+                                <h1 className="text-2xl font-bold">Backoffice Protocol</h1>
+                        </div>
+                        <div className="flex items-center gap-4">
+                            <button
+                                onClick={resetMemory}
+                                className="p-2 text-slate-400 hover:text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20 rounded-lg transition-colors flex items-center gap-2 text-sm font-medium border border-transparent hover:border-red-200 dark:hover:border-red-800"
+                                title="Effacer la mémoire locale pour les tests"
+                            >
+                                <Trash2 className="h-4 w-4" /> Reset Data (Dev)
+                            </button>
+
+                            {!isConnected ? (
+                                <button
+                                    onClick={() => setShowWalletSelector(true)}
+                                    className="px-6 py-2 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-lg font-bold hover:opacity-90 transition-opacity flex items-center gap-2"
+                                >
+                                    <Wallet className="h-4 w-4" /> Connecter Admin
+                                </button>
+                            ) : (
+                                <div className="relative">
+                                    <button
+                                        onClick={() => setShowWalletMenu(!showWalletMenu)}
+                                        className={`px-4 py-2 rounded-lg font-mono text-sm border flex items-center gap-2 ${isAuthorized ? 'bg-green-100 text-green-800 border-green-200' : 'bg-red-100 text-red-800 border-red-200'}`}
+                                    >
+                                        {isAuthorized ? <Shield className="h-4 w-4"/> : <Lock className="h-4 w-4"/>}
+                                        {account.substring(0,6)}...{account.substring(account.length - 4)}
+                                    </button>
+
+                                    {showWalletMenu && (
+                                        <div className="absolute right-0 top-full mt-2 w-48 bg-white dark:bg-slate-800 rounded-xl shadow-xl border border-slate-200 dark:border-slate-700 p-2 z-50 flex flex-col gap-1">
+                                        <button
+                                            onClick={disconnectWallet}
+                                            className="flex items-center gap-2 px-3 py-2 text-sm text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-900/20 rounded-lg transition-colors w-full text-left"
+                                        >
+                                            <LogOut className="h-4 w-4" /> <span>Disconnect</span>
+                                        </button>
+                                        </div>
+                                    )}
+                                </div>
+                            )}
+                        </div>
+                    </header>
+
+                    {/* --- MAIN CONTENT --- */}
+                    <main className="max-w-[89%] mx-auto">
+                        {!isConnected ? (
+                            <div className="text-center py-20 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm">
+                                <div className="mx-auto w-16 h-16 bg-slate-100 dark:bg-slate-800 rounded-full flex items-center justify-center mb-4 text-slate-400">
+                                    <Lock className="h-8 w-8" />
+                                </div>
+                                <h3 className="text-xl font-bold mb-2">Accès Restreint</h3>
+                                <p className="text-slate-500">Veuillez connecter un portefeuille administrateur pour accéder au panneau.</p>
+                            </div>
+                        ) : !isAuthorized ? (
+                            <div className="text-center py-20 bg-red-50 dark:bg-red-900/20 rounded-2xl border border-red-200 dark:border-red-800">
+                                <div className="mx-auto w-16 h-16 bg-red-100 dark:bg-red-900/40 rounded-full flex items-center justify-center mb-4 text-red-600 dark:text-red-400">
+                                    <X className="h-8 w-8" />
+                                </div>
+                                <h3 className="text-xl font-bold text-red-700 dark:text-red-400 mb-2">Accès Refusé</h3>
+                                <p className="text-red-600 dark:text-red-300">L'adresse <span className="font-mono font-bold">{account}</span> n'est pas autorisée.</p>
+                            </div>
+                        ) : (
+                            <div className="space-y-8 animate-fade-in">
+
+                                {/* --- TABLEAU KYB (ASSUREURS) - EXISTANT --- */}
+                                <div className="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm overflow-hidden">
+                                    <div className="p-6 border-b border-slate-100 dark:border-slate-700 flex justify-between items-center bg-slate-50 dark:bg-slate-900/50">
+                                        <h2 className="font-bold text-lg flex items-center gap-2">
+                                            <Shield className="h-5 w-5 text-indigo-600" /> Demandes d'Enregistrement (KYB)
+                                        </h2>
+                                        {loading ? (
+                                            <span className="flex items-center gap-2 text-sm text-slate-500"><Loader className="h-4 w-4 animate-spin" /> Mise à jour...</span>
+                                        ) : (
+                                            <button onClick={fetchRequests} className="text-sm text-blue-600 hover:underline">Rafraîchir</button>
+                                        )}
+                                    </div>
+
+                                    <div className="overflow-x-auto">
+                                        <table className="w-full text-left">
+                                            <thead>
+                                                <tr className="border-b border-slate-100 dark:border-slate-700 text-sm text-slate-500 dark:text-slate-400">
+                                                    <th className="p-4 font-medium">Date</th>
+                                                    <th className="p-4 font-medium">Assureur (Adresse)</th>
+                                                    <th className="p-4 font-medium">Société</th>
+                                                    <th className="p-4 font-medium">Documents (KYB)</th>
+                                                    <th className="p-4 font-medium">Statut</th>
+                                                    <th className="p-4 font-medium text-right">Actions</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody className="divide-y divide-slate-100 dark:divide-slate-700">
+                                                {requests.map((req, i) => (
+                                                    <tr key={i} className="hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors">
+                                                        <td className="p-4 text-sm text-slate-500">{new Date(req.date).toLocaleDateString()} <span className="text-xs">{new Date(req.date).toLocaleTimeString()}</span></td>
+                                                        <td className="p-4 font-mono text-sm">{req.address}</td>
+                                                        <td className="p-4 font-bold">{req.companyName}</td>
+                                                        <td className="p-4">
+                                                            <a href="#" className="flex items-center gap-1 text-blue-600 hover:underline text-sm font-mono truncate max-w-[150px]">
+                                                                {req.kybHash} <ExternalLink className="h-3 w-3" />
+                                                            </a>
+                                                        </td>
+                                                        <td className="p-4">
+                                                            {req.status === 1 && <span className="px-2 py-1 bg-amber-100 text-amber-700 rounded text-xs font-bold">PENDING</span>}
+                                                            {req.status === 2 && <span className="px-2 py-1 bg-green-100 text-green-700 rounded text-xs font-bold">APPROVED</span>}
+                                                            {req.status === 3 && <span className="px-2 py-1 bg-red-100 text-red-700 rounded text-xs font-bold">REJECTED</span>}
+                                                        </td>
+                                                        <td className="p-4 text-right">
+                                                            {req.status === 1 && (
+                                                                <div className="flex justify-end gap-2">
+                                                                    <button
+                                                                        onClick={() => handleDecision(req.address, true)}
+                                                                        className="p-2 bg-green-100 hover:bg-green-200 text-green-700 rounded-lg transition-colors" title="Valider">
+                                                                        <Check className="h-4 w-4" />
+                                                                    </button>
+                                                                    <button
+                                                                        onClick={() => handleDecision(req.address, false)}
+                                                                        className="p-2 bg-red-100 hover:bg-red-200 text-red-700 rounded-lg transition-colors" title="Rejeter">
+                                                                        <X className="h-4 w-4" />
+                                                                    </button>
+                                                                </div>
+                                                            )}
+                                                            {req.status !== 1 && <span className="text-xs text-slate-400">Traité</span>}
+                                                        </td>
+                                                    </tr>
+                                                ))}
+                                                {requests.length === 0 && (
+                                                    <tr>
+                                                        <td colSpan="6" className="p-12 text-center text-slate-500">
+                                                            Aucune demande en attente ou archivée.
+                                                        </td>
+                                                    </tr>
+                                                )}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+                                {/* --- TABLEAU KYC (INVESTISSEURS) - NOUVEAU --- */}
+                                <div className="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm overflow-hidden mt-8">
+                                    <div className="p-6 border-b border-slate-100 dark:border-slate-700 flex justify-between items-center bg-slate-50 dark:bg-slate-900/50">
+                                        <h2 className="font-bold text-lg flex items-center gap-2">
+                                            <Wallet className="h-5 w-5 text-emerald-600" /> Vérification Identité (KYC)
+                                        </h2>
+                                        {loading ? (
+                                            <span className="flex items-center gap-2 text-sm text-slate-500">Mise à jour...</span>
+                                        ) : (
+                                            <span className="text-sm text-slate-400">Section Investisseurs</span>
+                                        )}
+                                    </div>
+
+                                    <div className="overflow-x-auto">
+                                        <table className="w-full text-left">
+                                            <thead>
+                                                <tr className="border-b border-slate-100 dark:border-slate-700 text-sm text-slate-500 dark:text-slate-400">
+                                                    <th className="p-4 font-medium">Date</th>
+                                                    <th className="p-4 font-medium">Investisseur (Adresse)</th>
+                                                    <th className="p-4 font-medium">Identité & Contact</th>
+                                                    <th className="p-4 font-medium">Document ID</th>
+                                                    <th className="p-4 font-medium">Statut</th>
+                                                    <th className="p-4 font-medium text-right">Actions</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody className="divide-y divide-slate-100 dark:divide-slate-700">
+                                                {investorRequests.map((req, i) => (
+                                                    <tr key={i} className="hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors">
+                                                        <td className="p-4 text-sm text-slate-500">
+                                                            {new Date(req.date).toLocaleDateString()} <br/>
+                                                            <span className="text-xs">{new Date(req.date).toLocaleTimeString()}</span>
+                                                        </td>
+                                                        <td className="p-4 font-mono text-sm">{req.address}</td>
+                                                        <td className="p-4">
+                                                            <div className="font-bold text-slate-900 dark:text-slate-200">{req.fullName}</div>
+                                                            <div className="text-xs text-slate-500">{req.email}</div>
+                                                        </td>
+                                                        <td className="p-4">
+                                                            <span className="bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded text-xs font-mono border border-slate-200 dark:border-slate-700">
+                                                                {req.idHash}
+                                                            </span>
+                                                        </td>
+                                                        <td className="p-4">
+                                                            {req.status === 1 && <span className="px-2 py-1 bg-amber-100 text-amber-700 rounded text-xs font-bold">PENDING</span>}
+                                                            {req.status === 2 && <span className="px-2 py-1 bg-emerald-100 text-emerald-700 rounded text-xs font-bold">VERIFIED</span>}
+                                                            {req.status === 3 && <span className="px-2 py-1 bg-red-100 text-red-700 rounded text-xs font-bold">REJECTED</span>}
+                                                        </td>
+                                                        <td className="p-4 text-right">
+                                                            {req.status === 1 ? (
+                                                                <div className="flex justify-end gap-2">
+                                                                    <button
+                                                                        onClick={() => handleInvestorDecision(req.address, true)}
+                                                                        className="p-2 bg-emerald-100 hover:bg-emerald-200 text-emerald-700 rounded-lg transition-colors" title="Valider KYC">
+                                                                        <Check className="h-4 w-4" />
+                                                                    </button>
+                                                                    <button
+                                                                        onClick={() => handleInvestorDecision(req.address, false)}
+                                                                        className="p-2 bg-red-100 hover:bg-red-200 text-red-700 rounded-lg transition-colors" title="Rejeter KYC">
+                                                                        <X className="h-4 w-4" />
+                                                                    </button>
+                                                                </div>
+                                                            ) : (
+                                                                <span className="text-xs text-slate-400">Traité</span>
+                                                            )}
+                                                        </td>
+                                                    </tr>
+                                                ))}
+                                                {investorRequests.length === 0 && (
+                                                    <tr>
+                                                        <td colSpan="6" className="p-12 text-center text-slate-500">
+                                                            Aucune demande d'investisseur (KYC).
+                                                        </td>
+                                                    </tr>
+                                                )}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+                            </div>
+                        )}
+                    </main>
+                </div>
+            );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<BackofficeApp />);
+    </script>
+</body>
+</html>

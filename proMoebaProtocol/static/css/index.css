@@ -1,0 +1,907 @@
+:root {
+  /* Palette de base (Mode Sombre par défaut pour l'impact) */
+  --bg-main: #0f172a;       /* Dark Blue/Slate */
+  --bg-nav: #0F1B2A;       /* Dark Blue/Slate */
+  --bg-secondary: #1e293b;  /* Lighter Slate */
+  --accent: #B5E833;        /* MOEBA Green */
+  --accent-hover: #C2FC2D;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --card-bg: rgba(30, 41, 59, 0.7);
+  --card-border: rgba(255, 255, 255, 0.1);
+
+  /* Layout */
+  --container-width: full;
+  --header-height: 65px;
+}
+
+/* Light Mode Override (activé par JS) */
+body:not(.dark-theme) {
+    --bg-main: #f0f9ff;
+    --bg-nav: #F2FCFC;
+    --bg-secondary: #e0f2fe;
+    --text-main: #0f172a;
+    --text-muted: #475569;
+    --card-bg: #F2FFFC;
+    --card-border: rgba(0, 0, 0, 0.05);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-main); /* Garde juste la couleur de base */
+  color: var(--text-main);
+  height: 100vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  width: 100%;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* NOUVEAU : Couche séparée pour les étoiles */
+body::before {
+  content: '';
+  position: fixed;
+  top: var(--header-height); /* COMMENCE APRÈS LE HEADER */
+  left: 0;
+  width: 100%;
+  height: calc(100% - var(--header-height));
+  z-index: 0;
+  pointer-events: none;
+
+  /* --- FOND : VOIE LACTÉE (déplacé ici) --- */
+  background-image:
+      radial-gradient(white, rgba(255,255,255,.1) 0.5px, transparent 1px),
+      radial-gradient(white, rgba(255,255,255,.1) 0.5px, transparent 1px),
+      radial-gradient(#B5E833, rgba(181,232,51,.4) 1px, transparent 2px),
+      radial-gradient(#B5E833, rgba(181,232,51,.6) 1.5px, transparent 2.5px),
+      radial-gradient(rgba(255,255,255,1), rgba(255,255,255,.2) 1px, transparent 2px),
+      radial-gradient(#B5E833, rgba(181,232,51,.2) 2px, transparent 5px),
+      radial-gradient(white, rgba(181,232,51,.5) 3px, transparent 6px),
+      radial-gradient(circle at top left, rgba(181,232,51, 0.03), transparent 70%);
+
+  background-size:
+      700px 700px,
+      130px 130px,
+      230px 230px,
+      310px 310px,
+      430px 430px,
+      550px 550px,
+      900px 900px,
+      100% 100%;
+
+  background-position:
+      10px 10px,
+      50px 80px,
+      120px 160px,
+      200px 20px,
+      30px 300px,
+      400px 400px,
+      150px 500px,
+      0 0;
+}
+
+/* Si le body contient un élément avec la classe "expanded", on coupe le scroll */
+body:has(.card.expanded) {
+    overflow: hidden !important;
+    padding-right: 0; /* Optionnel : empêche le petit saut si la scrollbar disparaît */
+}
+
+a { text-decoration: none; color: inherit; }
+
+/* --- HEADER --- */
+.site-header {
+    position: fixed;
+    background-color: var(--bg-nav);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--header-height);
+    z-index: 2000; /* Au-dessus du body::before */
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--card-border);
+}
+
+.nav {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo-moeba { height: 48px; width: auto; }
+.logo-img { height: 48px; width: auto; border-radius: 12px; }
+.logo-text { font-weight: 800; font-size: 1.25rem; letter-spacing: -0.02em; }
+
+.nav-actions { display: flex; align-items: center; gap: 1.5rem; }
+
+.stick {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    transition: color 0.2s;
+}
+.nav-link {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    transition: color 0.2s;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: inherit;
+}
+
+.nav-btn-icon:hover,
+.nav-link:hover { color: var(--accent); }
+
+.nav-btn-icon {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    height: 30px;
+    width: 30px;
+    justify-content: center;
+    padding: 0 8px 0 0;
+    border-radius: 50%;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.hide-menu {
+    display: none;
+    padding: 30px 0 30px 5px;
+}
+
+.menu-toggle {
+    color: var(--text-muted);
+    transition: color 0.2s;
+    background: none;
+    border: none;
+    padding: 30px 370px 30px 5px;
+    margin: 0;
+    font: inherit;
+    cursor: pointer;
+}
+
+.menu-container:hover .hide-menu {
+    display: block;
+}
+
+.menu-container:hover .menu-toggle {
+    display: none;
+}
+
+.hide-menu {
+    display: none;
+    animation: fadeIn 0.2s ease-in-out;
+}
+
+.menu-language {
+    color: var(--text-muted);
+    transition: color 0.2s;
+    background: none;
+    border: none;
+    margin: 0;
+    font: inherit;
+    cursor: pointer;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.btn-primary {
+    background-color: var(--accent);
+    color: #0f172a;
+    padding: 0.8rem 1.2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1.1rem;
+
+    transition: transform 0.2s, background-color 0.2s, border-color 0.2s, color 0.2s;
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-hover);
+    transform: scale(1.05);
+}
+
+/* --- PAGES LAYOUT --- */
+.page {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  /* Petits gradients subtils pour casser l'uniformité */
+  background: radial-gradient(circle at 10% 20%, rgba(161, 199, 64, 0.05) 0%, transparent 40%);
+}
+
+.content-wrapper {
+    width: 78%;
+    max-width: var(--container-width);
+    padding: 0 2rem;
+    margin-top: var(--header-height); /* Compenser le header fixe */
+}
+
+/* --- DECORATION MOUTONS & CROCO --- */
+.bg-sheep {
+    position: absolute;
+    bottom: 0;
+    width: 300px;
+    max-width: 20vw;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.85;
+
+    /* NOUVEAU : Animation */
+    animation: animalFloat 7s ease-in-out infinite;
+    will-change: transform; /* Optimisation performance */
+}
+
+.bg-sheep-left {
+    left: 2rem;
+    /* On peut ajouter un petit délai pour décaler le départ */
+    animation-delay: 0s;
+}
+
+/* MODIFICATION CROCO */
+.bg-croco-right {
+    position: absolute;
+    bottom: 0;
+    right: 0 !important;
+    width: 750px !important;
+    max-width: 60vw !important;
+    z-index: 0;
+    opacity: 0.85;
+    pointer-events: none;
+
+    /* NOUVEAU : Animation (plus lente et inversée) */
+    animation: animalFloat 9s ease-in-out infinite reverse;
+    transform-origin: bottom right; /* L'ancrage du mouvement */
+    will-change: transform;
+}
+
+/* Le contenu doit passer au-dessus des images de fond */
+.page-advanced .content-wrapper {
+    position: relative;
+    /* On reste en auto pour éviter les problèmes de stacking context */
+    z-index: auto;
+}
+
+
+/* --- PAGE 1: HERO --- */
+.hero-content {
+    text-align: left;
+    max-width: 800px;
+}
+
+.badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background: rgba(161, 199, 64, 0.15);
+    color: var(--accent);
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    border: 1px solid rgba(161, 199, 64, 0.3);
+}
+
+.main-title {
+    font-size: 4rem;
+    line-height: 1.1;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(to right, var(--text-main), var(--text-muted));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+    font-size: 1.25rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 3rem;
+    max-width: 600px;
+}
+
+.stats-row {
+    display: flex;
+    gap: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--card-border);
+}
+
+.stat-item { display: flex; flex-direction: column; }
+.stat-value { font-size: 2rem; font-weight: 800; color: var(--accent); }
+.stat-label { font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; }
+
+/* --- PAGES 2: BENTO GRID --- */
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.section-desc {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    margin-bottom: 3rem;
+    max-width: 600px;
+}
+
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    padding: 2rem;
+    border-radius: 24px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    backdrop-filter: none;
+    cursor: pointer; /* Indique que c'est cliquable */
+    position: relative;
+    overflow: hidden;
+}
+
+/* Hover normal (quand non-expandé) */
+.card:not(.expanded):hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    border-color: var(--accent);
+}
+
+.card-large { grid-column: span 2; }
+.card-wide { grid-column: span 3; }
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.card-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    background: var(--card-bg);
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+}
+
+/* Bouton fermer (caché par défaut) */
+.close-btn {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+    line-height: 1;
+    padding: 0.5rem;
+}
+.close-btn:hover { color: var(--text-main); }
+
+.card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+    color: var(--text-main);
+}
+
+.card p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+
+/* --- CARD DETAILS (HIDDEN DEFAULT) --- */
+.card-details {
+    display: none;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--card-border);
+    animation: fadeIn 0.4s ease-out;
+}
+
+.card-details h4 {
+    color: var(--accent);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.card-details ul, .card-details ol {
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-muted);
+}
+.card-details li { margin-bottom: 0.5rem; }
+
+/* --- CARD EXPANDED STATE (MODIFICATIONS TAILLE & LOGIQUE FORTE) --- */
+.card.expanded {
+    position: fixed;
+    inset: 0;
+    margin: auto;
+
+    width: 75vw;
+    height: 75vh;
+    max-width: 1600px;
+    max-height: 95vh;
+
+    background: var(--bg-secondary);
+    padding: 4rem;
+    border-radius: 24px;
+
+    z-index: 1001;
+    overflow-y: auto;
+
+    animation: none !important;
+    transform: none !important;
+    backdrop-filter: blur(0px) !important;
+    -webkit-backdrop-filter: blur(0px) !important;
+    filter: none !important;
+    will-change: auto !important;
+
+    isolation: isolate;
+}
+
+
+/* Adaptation de la typographie pour la grande carte */
+.card.expanded h3 {
+    font-size: 2.5rem; /* Titre beaucoup plus gros */
+    margin-bottom: 2rem;
+}
+
+.card.expanded p {
+    font-size: 1.2rem; /* Texte principal plus lisible */
+    line-height: 1.8;
+}
+
+.card.expanded .card-details {
+    display: block;
+    margin-top: 3rem;
+}
+
+.card.expanded .card-details h4 {
+    font-size: 1.5rem;
+}
+
+.card.expanded .card-details p,
+.card.expanded .card-details li {
+    font-size: 1.1rem;
+}
+
+.card.expanded .close-btn {
+    display: block;
+    font-size: 2.5rem; /* Croix plus grosse */
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+}
+
+/* MODAL OVERLAY */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+/*    background: rgba(15, 23, 42, 0.85);
+    backdrop-filter: blur(5px);*/
+    z-index: 999;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+/* --- PAGE 3: LINKS COLUMNS (NOUVEAU STYLE) --- */
+.links-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-radius: 24px;
+    backdrop-filter: blur(12px);
+    overflow: hidden; /* Pour que les coins arrondis fonctionnent avec les bordures */
+}
+
+.link-col {
+    padding: 3rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    border-right: 1px solid var(--card-border);
+}
+
+/* Pas de bordure à droite pour la dernière colonne */
+.link-col:last-child {
+    border-right: none;
+}
+
+.link-col h3 {
+    font-size: 1.25rem;
+    color: var(--text-main);
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.link-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.link-list a {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 0.2s, transform 0.2s;
+    display: inline-block;
+}
+
+.link-list a:hover {
+    color: var(--accent);
+    transform: translateX(5px); /* Petit effet de glissement au survol */
+}
+
+.site-footer {
+    margin-top: 4rem;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.8rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .main-title { font-size: 2.5rem; }
+    .bento-grid { grid-template-columns: 1fr; }
+    .card-large, .card-wide { grid-column: span 1; }
+
+    .links-container { grid-template-columns: 1fr; }
+    .link-col { border-right: none; border-bottom: 1px solid var(--card-border); }
+    .link-col:last-child { border-bottom: none; }
+
+    .stats-row { gap: 1.5rem; }
+    .page { padding-bottom: 80px; } /* Espace pour scroll mobile */
+
+    .card.expanded {
+        width: 95vw !important;
+        height: 90vh !important;
+        padding: 2rem;
+    }
+
+    /* Ajustement du croco sur mobile pour éviter qu'il ne cache tout */
+    .bg-croco-right {
+        max-width: 80vw !important;
+    }
+}
+
+/* --- ANIMATION "ALIVE" V3 (ORBITE FLUIDE SANS PAUSE) --- */
+
+/* L'astuce pour la fluidité totale :
+   1. On utilise 'linear' pour que la vitesse soit constante (pas de freinage).
+   2. On définit beaucoup de points clés pour dessiner un cercle parfait.
+*/
+
+/* Animation 1 : Orbite sens Horaire (Clockwise) */
+@keyframes orbitCW {
+    0%   { transform: translate(0px, -6px); }
+    15%  { transform: translate(4px, -4px); }
+    25%  { transform: translate(6px, 0px); }
+    35%  { transform: translate(4px, 4px); }
+    50%  { transform: translate(0px, 6px); }
+    65%  { transform: translate(-4px, 4px); }
+    75%  { transform: translate(-6px, 0px); }
+    85%  { transform: translate(-4px, -4px); }
+    100% { transform: translate(0px, -6px); }
+}
+
+/* Animation 2 : Orbite sens Anti-Horaire (Counter-Clockwise) */
+@keyframes orbitCCW {
+    0%   { transform: translate(0px, -6px); }
+    15%  { transform: translate(-4px, -4px); }
+    25%  { transform: translate(-6px, 0px); }
+    35%  { transform: translate(-4px, 4px); }
+    50%  { transform: translate(0px, 6px); }
+    65%  { transform: translate(4px, 4px); }
+    75%  { transform: translate(6px, 0px); }
+    85%  { transform: translate(4px, -4px); }
+    100% { transform: translate(0px, -6px); }
+}
+
+/* Pulsation lumineuse synchronisée */
+@keyframes subtleGlow {
+    0%, 100% { border-color: rgba(255, 255, 255, 0.1); }
+    50%      { border-color: rgba(161, 199, 64, 0.3); }
+}
+
+/* --- CONFIGURATION DES CARTES --- */
+
+.card:not(.expanded) {
+    will-change: transform;
+    animation-timing-function: linear, ease-in-out;
+    animation-iteration-count: infinite;
+    backdrop-filter: blur(12px);
+}
+
+/* Cartes PAIRES */
+.card:not(.expanded):nth-child(even) {
+    animation-name: orbitCW, subtleGlow;
+    animation-duration: 4s, 2s;
+}
+
+/* Cartes IMPAIRES */
+.card:not(.expanded):nth-child(odd) {
+    animation-name: orbitCCW, subtleGlow;
+    animation-duration: 5s, 3s;
+}
+
+
+/* DÉLAIS NÉGATIFS */
+.card:nth-child(1):not(.expanded) { animation-delay: -1s, 0s; }
+.card:nth-child(2):not(.expanded) { animation-delay: -4s, -1s; }
+.card:nth-child(3):not(.expanded) { animation-delay: -2s, -2s; }
+.card:nth-child(4):not(.expanded) { animation-delay: -6s, -0.5s; }
+.card:nth-child(5):not(.expanded) { animation-delay: -3s, -3s; }
+.card:nth-child(6):not(.expanded) { animation-delay: -7s, -1.5s; }
+.card:nth-child(7):not(.expanded) { animation-delay: -5s, -2.5s; }
+.card:nth-child(8):not(.expanded) { animation-delay: -0.5s, -1s; }
+
+
+/* --- INTERACTION FLUIDE (Hover) --- */
+.card:not(.expanded):hover {
+    /* On touche à rien sur l'animation (elle continue) */
+
+    /* On applique juste les styles visuels */
+    box-shadow: 0 30px 50px rgba(0,0,0,0.3) !important;
+    border-color: var(--accent) !important;
+    cursor: pointer;
+    z-index: 10;
+}
+
+/* EXPANDED : TOUT DÉSACTIVÉ - FIX MANIÈRE FORTE */
+/* Ce bloc écrase tout le reste */
+.card.expanded {
+    isolation: isolate;
+    position: fixed;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+
+    width: 75vw !important;
+    height: 75vh !important;
+    max-width: 1600px !important;
+    max-height: 95vh;
+
+    z-index: 1000;
+    overflow-y: auto;
+    box-shadow: 0 50px 100px rgba(0,0,0,0.6);
+    border-color: var(--accent);
+    cursor: default;
+    background: var(--bg-secondary) !important; /* FORCE OPAQUE */
+    padding: 4rem;
+
+    grid-column: auto !important;
+    margin: 0 !important;
+
+    /* KILL ALL ANIMATIONS & TRANSITIONS (Manière Forte) */
+    animation: none !important;
+    transition: none !important; /* CRUCIAL: Empêche l'interpolation du flou */
+    animation-delay: 0s !important;
+    will-change: auto !important;
+
+    /* KILL ALL FILTERS (Force 0px pour stabilité GPU) */
+    backdrop-filter: blur(0px) !important;
+    -webkit-backdrop-filter: blur(0px) !important;
+    filter: blur(0px) !important;
+    -webkit-filter: blur(0px) !important;
+    perspective: none !important;
+}
+
+
+/* --- MOEBA LOADER (ORGANIC BREATHING CELL - FINITE VERSION) --- */
+.loader-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--bg-main);
+    z-index: 10000; /* Au-dessus de tout */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.8s ease-out, visibility 0.8s;
+}
+
+.loader-overlay.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+/* La cellule qui respire : Cycle de 3 secondes, joue une fois puis s'arrête */
+.organic-cell {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--accent), var(--accent-hover));
+    /* Forme de départ (invisible) */
+    transform: scale(0);
+    opacity: 0;
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+
+    /* Animation unique : Apparition -> Respiration -> Stabilisation -> Fin */
+    animation: moebaIntro 3s ease-in-out forwards;
+
+    box-shadow: 0 0 50px rgba(181, 232, 51, 0.15);
+    will-change: border-radius, transform, opacity;
+}
+
+/* Noyau interne subtil */
+.organic-cell::after {
+    content: '';
+    position: absolute;
+    top: 20%;
+    left: 20%;
+    width: 60%;
+    height: 60%;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.15);
+    filter: blur(8px);
+    /* Animation douce pour le noyau */
+    animation: moebaInternal 3s ease-in-out forwards;
+}
+
+/* KEYFRAMES INTRO (3 secondes) */
+@keyframes moebaIntro {
+    0% {
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+        transform: scale(0) rotate(0deg);
+        opacity: 0;
+    }
+    20% {
+        /* Apparition rapide + Rotation Linéaire (72deg) */
+        opacity: 1;
+        transform: scale(0.8) rotate(72deg);
+    }
+    50% {
+        /* Inspiration (Gros) + Rotation Linéaire (180deg) */
+        border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+        transform: scale(1.3) rotate(180deg);
+    }
+    80% {
+        /* Expiration (Normal) + Rotation Linéaire (288deg) */
+        border-radius: 70% 30% 50% 60% / 30% 60% 40% 60%;
+        transform: scale(1.0) rotate(288deg);
+        opacity: 1;
+    }
+    100% {
+        /* EXPLOSION FINALE : Échelle géante pour simuler l'explosion */
+        border-radius: 50%;
+        transform: scale(20) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@keyframes moebaInternal {
+    0% { transform: translate(0, 0); opacity: 0; }
+    50% { opacity: 0.6; }
+    100% { transform: translate(5px, -5px); opacity: 0.4; }
+}
+
+/* ========================================================== */
+/* --- NOUVEAU : ORBE DE FOND PERMANENT (Demande Utilisateur) --- */
+/* ========================================================== */
+.organic-orb-bg {
+    position: fixed;
+    top: -150px;     /* Légèrement en haut */
+    right: -150px;   /* À droite de l'écran */
+    width: 500px;    /* Taille Agrandie */
+    height: 500px;
+    background: linear-gradient(135deg, var(--accent), var(--accent-hover));
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    opacity: 0.15;   /* Opacité réduite pour le fond */
+    z-index: 1;      /* Juste au-dessus du fond étoilé, mais sous le contenu */
+    pointer-events: none; /* Ne bloque pas les clics */
+    filter: blur(40px); /* Flou pour effet d'ambiance */
+
+    /* Animation infinie et fluide */
+    animation: moebaFloatBg 15s ease-in-out infinite;
+    will-change: border-radius, transform;
+}
+
+/* Noyau de l'orbe de fond */
+.organic-orb-bg::after {
+    content: '';
+    position: absolute;
+    top: 20%;
+    left: 20%;
+    width: 60%;
+    height: 60%;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.15);
+    filter: blur(8px);
+    animation: moebaInternalBg 15s ease-in-out infinite;
+}
+
+/* S'assurer que le contenu passe bien devant (z-index supérieur) */
+.page {
+    position: relative;
+    z-index: 2; /* Contenu au premier plan */
+}
+
+/* Animation Fluide Infinie (Boucle) */
+@keyframes moebaFloatBg {
+    0% {
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+        transform: rotate(0deg) scale(1);
+    }
+    50% {
+        border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+        transform: rotate(180deg) scale(1.1); /* Légère respiration */
+    }
+    100% {
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+        transform: rotate(360deg) scale(1);
+    }
+}
+
+@keyframes moebaInternalBg {
+    0% { transform: translate(0, 0); opacity: 0.4; }
+    50% { opacity: 0.6; }
+    100% { transform: translate(10px, -10px); opacity: 0.4; }
+}
+
+/* Animation de flottement pour les animaux */
+@keyframes animalFloat {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-15px) rotate(1.5deg); /* Monte et penche légèrement */
+    }
+}

@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation Moeba</title>
+    <link rel="icon" href="../img/IconMoeba.png" type="image/png">
+
+    <!-- Lien vers le fichier CSS existant -->
+    <link rel="stylesheet" href="static/css/index.css">
+
+    <!-- FontAwesome pour l'esthétique -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+<body>
+
+    <button class="mobile-menu-toggle" id="menu-toggle"><i class="fa-solid fa-bars"></i> Menu</button>
+
+    <!-- =========================
+         SIDEBAR (NAVIGATION)
+         ========================= -->
+    <nav class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <i class="fa-solid fa-layer-group"></i> Mœba Docs
+        </div>
+        <div class="sidebar-nav">
+            <ul>
+                <!-- 1. VISION & PROJET -->
+                <li><div class="category-title">Le Projet</div></li>
+                <li><a href="#" class="nav-link active" data-target="intro">Introduction & Vision</a></li>
+                <li><a href="#" class="nav-link" data-target="whitepaper-summary">Livre Blanc (Synthèse)</a></li>
+                <li><a href="#" class="nav-link" data-target="roadmap">Roadmap & Futur</a></li>
+
+                <!-- 2. ARCHITECTURE TECHNIQUE -->
+                <li><div class="category-title">Architecture</div></li>
+                <li><a href="#" class="nav-link" data-target="arch-overview">Vue d'ensemble</a></li>
+                <li><a href="#" class="nav-link" data-target="sc-factory">SC: HPIVFactory.sol</a></li>
+                <li><a href="#" class="nav-link" data-target="sc-vault">SC: HPIVVault.sol</a></li>
+                <li><a href="#" class="nav-link" data-target="oracles">Oracles & Données</a></li>
+
+                <!-- 3. FINANCE & MATHS -->
+                <li><div class="category-title">Modèle Financier</div></li>
+                <li><a href="#" class="nav-link" data-target="soft-default">Le Soft Default</a></li>
+                <li><a href="#" class="nav-link" data-target="yield-strategy">Yield & Trésorerie</a></li>
+                <li><a href="#" class="nav-link" data-target="simulation">Simulation Sinistre</a></li>
+
+                <!-- 4. LÉGAL & CONFORMITÉ -->
+                <li><div class="category-title">Cadre Suisse</div></li>
+                <li><a href="#" class="nav-link" data-target="legal-struct">Structure VUSA/ISPV</a></li>
+                <li><a href="#" class="nav-link" data-target="legal-token">Tokenisation (DLT)</a></li>
+                <li><a href="#" class="nav-link" data-target="compliance">KYC/AML & Interfaces</a></li>
+
+                <!-- 5. GOUVERNANCE (NOUVEAU) -->
+                <li><div class="category-title">Gouvernance & Sécurité</div></li>
+                <li><a href="#" class="nav-link" data-target="gov-model">Modèle "Council"</a></li>
+                <li><a href="#" class="nav-link" data-target="gov-multisig">Constitution du Multisig</a></li>
+                <li><a href="#" class="nav-link" data-target="gov-timelock">Timelock & Veto</a></li>
+
+                <!-- 6. GUIDES UTILISATEURS -->
+                <li><div class="category-title">Guides</div></li>
+                <li><a href="#" class="nav-link" data-target="guide-investor">Investisseurs</a></li>
+                <li><a href="#" class="nav-link" data-target="guide-insurer">Assureurs</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- =========================
+         CONTENU PRINCIPAL
+         ========================= -->
+    <main class="main-content">
+        <div class="content-container">
+
+            <!-- =================================================================
+                 SECTION 1: LE PROJET
+            ================================================================= -->
+
+            <article id="intro" class="doc-section active">
+                <span class="badge badge-infra">Version 1.0</span>
+                <h1>Introduction & Vision</h1>
+                <p class="lead">Mœba Protocol est la première infrastructure décentralisée d'assurance paramétrique introduisant le mécanisme de <strong>"Soft Default"</strong> pour démocratiser les Obligations Catastrophe (Cat Bonds).</p>
+
+                <div class="callout callout-info">
+                    <i class="fa-solid fa-bullseye"></i> <strong>Notre Mission :</strong> Combler le déficit de protection climatique mondial en connectant directement le capital des investisseurs DeFi aux besoins de couverture des assureurs, le tout sous la protection du droit Suisse.
+                </div>
+
+                <h2>Le Problème : Le "Tout ou Rien"</h2>
+                <p>Le marché actuel des Cat Bonds (>100 Milliards $) est inaccessible. Pourquoi ?</p>
+                <ul>
+                    <li><strong>Barrière à l'entrée :</strong> Ticket minimum souvent > 10M$.</li>
+                    <li><strong>Risque Binaire :</strong> C'est la roulette russe. Si le vent dépasse 250km/h, vous perdez 100% de votre capital. Si c'est 249km/h, vous ne perdez rien. Ce profil de risque est inacceptable pour la majorité des investisseurs.</li>
+                    <li><strong>Illiquidité :</strong> Fonds bloqués pour 3 ans sans sortie possible.</li>
+                </ul>
+
+                <h2>La Solution Mœba</h2>
+                <p>Nous transformons ce risque binaire en un risque linéaire et géré grâce au <strong>HPIV (Hybrid Parametric Insurance Vault)</strong>.</p>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px;">
+                    <div style="background: white; padding: 20px; border-radius: 8px; border: 1px solid #e2e8f0;">
+                        <h3 style="margin-top:0; color:#dc2626;"><i class="fa-solid fa-xmark"></i> Avant (TradFi)</h3>
+                        <p>Ouragan Catégorie 5 = <strong>Perte de 100%</strong> pour l'investisseur.</p>
+                    </div>
+                    <div style="background: white; padding: 20px; border-radius: 8px; border: 1px solid #A1C740;">
+                        <h3 style="margin-top:0; color:#166534;"><i class="fa-solid fa-check"></i> Avec Mœba</h3>
+                        <p>Ouragan Catégorie 5 = <strong>Perte partielle (ex: 44%)</strong>. Le reste est sauvé par la "Tranche Junior" et la "Sur-Collatéralisation".</p>
+                    </div>
+                </div>
+            </article>
+
+            <article id="whitepaper-summary" class="doc-section">
+                <h1>Livre Blanc (Synthèse)</h1>
+                <p>Basé sur le fichier <code>whitepaper.md</code>, voici les piliers fondamentaux du protocole.</p>
+
+                <h3>1. Le concept de HPIV (Hybrid Parametric Insurance Vault)</h3>
+                <p>Chaque "Vault" est un Smart Contract autonome qui sécurise un risque spécifique (ex: "Florida Wind 2026"). Il est "Hybride" car il mélange deux sources de capital :</p>
+                <ul>
+                    <li><strong>Junior Tranche (First Loss) :</strong> Apportée par l'Assureur. C'est le bouclier qui protège les investisseurs.</li>
+                    <li><strong>Senior Tranche :</strong> Apportée par les Investisseurs. Elle génère du rendement et n'est touchée qu'en dernier recours.</li>
+                </ul>
+
+                <h3>2. Modèle Économique (Double Yield)</h3>
+                <p>Les investisseurs ne parient pas seulement sur l'absence de catastrophe. Ils gagnent un rendement composé :</p>
+                <table class="tech-table">
+                    <tr>
+                        <th>Source</th>
+                        <th>Estimation APR</th>
+                        <th>Origine</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Prime d'Assurance</strong></td>
+                        <td>10% - 15%</td>
+                        <td>Payée par l'assureur pour acheter la protection.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>RWA Yield</strong></td>
+                        <td>~5%</td>
+                        <td>Généré par le placement de 80% du collatéral en Bons du Trésor US (via stratégie DeFi).</td>
+                    </tr>
+                    <tr>
+                        <td><strong>TOTAL</strong></td>
+                        <td><strong>~15% - 20%</strong></td>
+                        <td>Rendement cible décorrélé des marchés crypto.</td>
+                    </tr>
+                </table>
+            </article>
+
+            <article id="roadmap" class="doc-section">
+                <h1>Roadmap & Futur</h1>
+                <p>Le développement suit un calendrier strict aligné sur les réformes réglementaires suisses.</p>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">Q3 2025</div>
+                    <div class="timeline-content">Finalisation des Smart Contracts & Audit de Sécurité (Certik/OpenZeppelin).</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">Q4 2025</div>
+                    <div class="timeline-content">Lancement Testnet (Base Sepolia) avec Oracles Chainlink simulés. Validation du modèle mathématique.</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">Q1 2026</div>
+                    <div class="timeline-content"><strong>Mainnet Launch V1.</strong> Premier Vault Pilote ("Florida Wind") sous exemption réglementaire.</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">Q2 2026</div>
+                    <div class="timeline-content">Intégration des nouvelles licences "Institution Crypto" (Fin 2025) pour supprimer le plafond de 100M CHF.</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">Q4 2026</div>
+                    <div class="timeline-content">Gouvernance DAO complète & Marché Secondaire pour les tokens de Vaults.</div>
+                </div>
+            </article>
+
+
+            <!-- =================================================================
+                 SECTION 2: ARCHITECTURE
+            ================================================================= -->
+
+            <article id="arch-overview" class="doc-section">
+                <span class="badge badge-infra">Infrastructure</span>
+                <h1>Vue d'ensemble de l'Architecture</h1>
+                <p>Mœba est construit sur une architecture EVM (Ethereum Virtual Machine) modulaire. Le système est conçu pour être "Trustless" (sans tiers de confiance) pour l'exécution, mais "Permissioned" (contrôlé) pour la création et la conformité.</p>
+
+                <h3>Diagramme de Flux de Données</h3>
+                <div class="ascii-art">
+   ACTEURS               SMART CONTRACTS                EXTERNE
+   -------               ---------------                -------
+
+1. Assureur  -----> [ HPIVFactory.sol ]
+   (Sponsor)         |
+                     +---> Création Vault "Clone"
+                           |
+2. Investisseur ---------> [ HPIVVault.sol ] <------- 3. Oracle (Chainlink/API)
+   (Liq. Provider)         | (ERC-4626)               (Météo / Séisme)
+                           |
+                           +-- [ Strategy Adapter ] --> 4. DeFi / RWA
+                                                        (Aave / Ondo)
+                </div>
+            </article>
+
+            <article id="sc-factory" class="doc-section">
+                <span class="badge badge-sol">Solidity</span>
+                <h1>Analyse : HPIVFactory.sol</h1>
+                <p>Ce contrat est la "porte d'entrée" sécurisée du protocole. Il empêche la création de vaults frauduleux.</p>
+
+                <h3>Rôles & Sécurité</h3>
+                <ul>
+                    <li><strong>Owner :</strong> L'équipe Mœba (ou DAO future). Peut gérer la whitelist.</li>
+                    <li><strong>Insurer Whitelist :</strong> Seules les adresses validées (KYB - Know Your Business) peuvent appeler la fonction <code>createVault</code>.</li>
+                </ul>
+
+                <h3>Fonction Critique : <code>createVault</code></h3>
+                <p>Elle déploie une nouvelle instance de Vault avec des paramètres immuables. Cela garantit que les règles du jeu ne peuvent pas changer en cours de route.</p>
+                <pre><code class="language-solidity">function createVault(
+    IERC20 _asset,        // ex: USDC
+    address _compliance,  // Module de conformité
+    uint256 _capTotal,    // Capacité Max
+    uint256 _maxCoverage, // Montant assuré
+    ...
+) external returns (address) {
+    require(isWhitelistedInsurer[msg.sender], "Unauthorized");
+    // Déploiement...
+}</code></pre>
+            </article>
+
+            <article id="sc-vault" class="doc-section">
+                <span class="badge badge-sol">Solidity</span> <span class="badge badge-infra">ERC-4626</span>
+                <h1>Analyse : HPIVVault.sol</h1>
+                <p>C'est le cœur du système. Il hérite du standard <strong>ERC-4626 (Tokenized Vault)</strong>, ce qui signifie que les parts du vault sont elles-mêmes des tokens ERC-20 composables.</p>
+
+                <h3>Variables d'État Critiques</h3>
+                <table class="tech-table">
+                    <tr>
+                        <th>Variable</th>
+                        <th>Rôle</th>
+                        <th>Impact Sécurité</th>
+                    </tr>
+                    <tr>
+                        <td class="var-name">insurerJuniorCapital</td>
+                        <td>Capital "First Loss" de l'assureur.</td>
+                        <td>Si ce montant est > 0, les investisseurs sont protégés pour les petits sinistres.</td>
+                    </tr>
+                    <tr>
+                        <td class="var-name">insurerPremiumPaid</td>
+                        <td>Réserve de Prime (Yield).</td>
+                        <td>Sanctuarisée. Elle ne peut JAMAIS être utilisée pour payer un sinistre.</td>
+                    </tr>
+                    <tr>
+                        <td class="var-name">isCatastropheTriggered</td>
+                        <td>Booléen d'état.</td>
+                        <td>Une fois à <code>true</code>, le vault se verrouille et passe en mode "Remboursement".</td>
+                    </tr>
+                </table>
+
+                <h3>Fonction Critique : <code>triggerCatastrophe</code></h3>
+                <p>C'est ici que le "Soft Default" est calculé on-chain.</p>
+                <div class="callout callout-warn">
+                    <strong>Sécurité :</strong> Cette fonction est protégée par <code>onlyRole(ORACLE_ROLE)</code>. Seuls les nœuds oracles certifiés peuvent l'appeler.
+                </div>
+                <pre><code class="language-solidity">function triggerCatastrophe(uint256 measuredValue) external onlyRole(ORACLE_ROLE) {
+    // 1. Calcul du montant du sinistre
+    // 2. Absorption par le Junior Capital
+    // 3. Calcul du ratio de perte pour les Seniors
+    // 4. Emergency Unwind (Rappel des fonds investis en RWA)
+}</code></pre>
+            </article>
+
+            <article id="oracles" class="doc-section">
+                <span class="badge badge-infra">Data</span>
+                <h1>Oracles & Données</h1>
+                <p>La promesse de l'assurance paramétrique repose sur la donnée. Si la donnée est fausse, le contrat échoue.</p>
+
+                <h3>Stratégie Multi-Sources (Consensus)</h3>
+                <p>Pour éviter la manipulation (ex: pirater une sonde météo), le protocole agrège 3 sources :</p>
+                <ol>
+                    <li><strong>Primaire :</strong> NOAA (National Oceanic and Atmospheric Administration).</li>
+                    <li><strong>Secondaire :</strong> ECMWF (European Centre for Medium-Range Weather Forecasts).</li>
+                    <li><strong>Tertiaire :</strong> Données IoT locales (si disponibles).</li>
+                </ol>
+                <p>Le déclenchement (Trigger) nécessite une validation par au moins 2 sources sur 3.</p>
+            </article>
+
+
+            <!-- =================================================================
+                 SECTION 3: FINANCE & MATHS
+            ================================================================= -->
+
+            <article id="soft-default" class="doc-section">
+                <span class="badge badge-math">Mathématiques</span>
+                <h1>Le Mécanisme de Soft Default</h1>
+                <p>Contrairement aux Cat Bonds classiques, Mœba utilise une "Waterfall" (cascade) de paiement pour amortir le choc.</p>
+
+                <h3>La Formule de la Cascade</h3>
+                <div class="formula-box">
+                    Payout = min(RiskCapital, ActualClaim)<br><br>
+                    Perte_Junior = min(JuniorCapital, Payout)<br><br>
+                    Perte_Senior = Payout - Perte_Junior
+                </div>
+
+                <p>Si la catastrophe coûte 3M$ et que l'assureur a mis 4M$ en Junior, alors <strong>Perte_Senior = 0</strong>. Les investisseurs ne paient rien.</p>
+            </article>
+
+            <article id="yield-strategy" class="doc-section">
+                <span class="badge badge-math">Finance</span>
+                <h1>Yield & Gestion de Trésorerie</h1>
+                <p>Pour maximiser le rendement (US Story 5), l'argent ne dort pas.</p>
+
+                <h3>Allocation Dynamique (80/20)</h3>
+                <ul>
+                    <li><strong>20% (Cash Buffer) :</strong> Gardé liquide dans le Smart Contract pour les retraits rapides et les petits sinistres.</li>
+                    <li><strong>80% (Invested Float) :</strong> Envoyé via un adaptateur vers des actifs RWA (Bons du Trésor) ou DeFi Blue-Chip (Aave).</li>
+                </ul>
+
+                <h3>Protection du Yield</h3>
+                <div class="callout callout-success">
+                    <strong>Principe Clé :</strong> La réserve de prime (payée par l'assureur) est exclue du calcul des pertes. Même en cas de catastrophe totale, l'investisseur reçoit son rendement accumulé.
+                </div>
+            </article>
+
+            <article id="simulation" class="doc-section">
+                <span class="badge badge-math">Simulation</span>
+                <h1>Simulation de Sinistre</h1>
+                <p>Démonstration chiffrée basée sur <code>Maths.md</code>.</p>
+
+                <h3>Scénario : L'Ouragan "Milton" (Fictif)</h3>
+                <p>Un investisseur dépose <strong>10,000 USDC</strong> dans le Vault.</p>
+
+                <table class="tech-table">
+                    <tr>
+                        <th>Paramètre</th>
+                        <th>Valeur Vault</th>
+                    </tr>
+                    <tr>
+                        <td>Capacité Totale</td>
+                        <td>40,000,000 USDC</td>
+                    </tr>
+                    <tr>
+                        <td>Junior Capital (Assureur)</td>
+                        <td>4,000,000 USDC (10%)</td>
+                    </tr>
+                    <tr>
+                        <td>Senior Capital (Investisseurs)</td>
+                        <td>36,000,000 USDC</td>
+                    </tr>
+                </table>
+
+                <h3>L'Événement</h3>
+                <p>L'oracle valide des vents à 260 km/h. Dommages estimés : <strong>5,000,000 USDC</strong>.</p>
+
+                <h3>Le Calcul (Qui paie quoi ?)</h3>
+                <ol>
+                    <li><strong>Assureur :</strong> Paie les premiers 4,000,000 USDC. (Son capital est anéanti).</li>
+                    <li><strong>Reste à charge :</strong> 1,000,000 USDC.</li>
+                    <li><strong>Investisseurs :</strong> Paient collectivement 1,000,000 sur leurs 36,000,000.</li>
+                </ol>
+
+                <div class="formula-box">
+                    Haircut % = 1,000,000 / 36,000,000 = <strong>2.77%</strong>
+                </div>
+
+                <h3>Résultat pour l'investisseur</h3>
+                <p>Sur ses 10,000 USDC :</p>
+                <ul>
+                    <li>Il perd 277 USDC (Capital).</li>
+                    <li>Il a gagné ~500 USDC de rendement (Prime + RWA).</li>
+                    <li><strong>Net : +223 USDC.</strong> Il reste positif malgré la catastrophe.</li>
+                </ul>
+            </article>
+
+
+            <!-- =================================================================
+                 SECTION 4: LÉGAL
+            ================================================================= -->
+
+            <article id="legal-struct" class="doc-section">
+                <span class="badge badge-legal">Réglementation</span>
+                <h1>Structure VUSA (ISPV)</h1>
+                <p>L'innovation de Mœba repose sur l'utilisation du cadre suisse des <strong>VUSA (Véhicules à Usage Spécifique d'Assurance)</strong>, modernisé par la révision de la LSA en 2024.</p>
+
+                <h3>Pourquoi pas un Fonds (LPCC) ?</h3>
+                <p>Un fonds de placement traditionnel (LPCC) est lourd et lent. Le VUSA est un véhicule de titrisation.</p>
+                <ul>
+                    <li><strong>Avantage Capital :</strong> Exigence de fonds propres réduite (souvent 100k CHF) car le véhicule est "Fully Funded" (pas de risque de crédit).</li>
+                    <li><strong>Ségrégation :</strong> Chaque Vault est un compartiment étanche. La faillite d'un vault n'affecte pas les autres.</li>
+                </ul>
+            </article>
+
+            <article id="legal-token" class="doc-section">
+                <span class="badge badge-legal">Droit DLT</span>
+                <h1>Tokenisation & Droit DLT</h1>
+                <p>Les tokens émis par Mœba ne sont pas de simples jetons utilitaires. Ce sont des <strong>Droits-Valeurs Inscrits (Registerwertrechte)</strong> selon l'Art. 973d du Code des Obligations.</p>
+
+                <div class="callout callout-info">
+                    <strong>Implication Juridique :</strong> La blockchain est le registre légal. Transférer le token équivaut juridiquement à céder la créance de dette. Cela offre une sécurité absolue aux institutionnels.
+                </div>
+            </article>
+
+            <article id="compliance" class="doc-section">
+                <span class="badge badge-legal">Conformité</span>
+                <h1>KYC/AML & Interfaces</h1>
+                <p>Bien que décentralisé, Mœba respecte les règles suisses contre le blanchiment d'argent (LBA).</p>
+
+                <h3>Responsabilité de l'Interface (Frontend)</h3>
+                <p>Selon les directives FINMA (2025), l'opérateur du frontend (<code>app.html</code>) est responsable si :</p>
+                <ul>
+                    <li>Il facilite l'échange.</li>
+                    <li>Le volume dépasse 1,000 CHF par mois par utilisateur.</li>
+                </ul>
+
+                <h3>Solution Technique</h3>
+                <p>Le Frontend intègre un module de vérification d'identité automatisé. Seules les adresses ayant un "Soulbound Token" de conformité (KYC validé) peuvent interagir avec les smart contracts.</p>
+            </article>
+
+
+            <!-- =================================================================
+                 SECTION 5: GOUVERNANCE (NOUVEAU)
+            ================================================================= -->
+
+            <article id="gov-model" class="doc-section">
+                <span class="badge badge-gov">Modèle Conseil</span>
+                <h1>Gouvernance par Représentation (Tokenless)</h1>
+                <p class="lead">Pour éviter les écueils de la "gouvernance tokenisée" (spéculation, centralisation des baleines, qualification en titre financier), Mœba adopte une gouvernance basée sur la <strong>réputation et l'équilibre des pouvoirs</strong>.</p>
+
+                <div class="callout callout-success">
+                    <i class="fa-solid fa-check"></i> <strong>Philosophie :</strong> Au lieu de "1 Token = 1 Vote", nous utilisons "1 Siège = 1 Intérêt". Cela garantit que chaque partie prenante (Assureurs, Investisseurs, Sécurité) a un droit de veto.
+                </div>
+            </article>
+
+            <article id="gov-multisig" class="doc-section">
+                <span class="badge badge-gov">On-Chain</span>
+                <h1>La Constitution du Multisig (3-sur-5)</h1>
+                <p>Le <code>DAO_ROLE</code> du protocole est détenu par un Gnosis Safe contrôlé par 5 entités distinctes. 3 signatures sont requises pour toute action.</p>
+
+                <div class="gov-grid">
+                    <div class="gov-seat core">
+                        <i class="fa-solid fa-code"></i>
+                        <h4>1. Core Team</h4>
+                        <p>Responsable Technique. Propose les mises à jour et correctifs.</p>
+                    </div>
+                    <div class="gov-seat">
+                        <i class="fa-solid fa-building-shield"></i>
+                        <h4>2. Siège Assureur</h4>
+                        <p>Représentant des Sponsors (ex: Swiss Re). Veille à la justesse des triggers.</p>
+                    </div>
+                    <div class="gov-seat">
+                        <i class="fa-solid fa-money-bill-trend-up"></i>
+                        <h4>3. Siège Investisseur</h4>
+                        <p>Représentant des apporteurs de liquidité (ex: Fonds DeFi). Protège le capital Senior.</p>
+                    </div>
+                    <div class="gov-seat">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <h4>4. Siège Sécurité</h4>
+                        <p>Auditeur tiers (ex: OpenZeppelin). Bloque les changements de code risqués.</p>
+                    </div>
+                    <div class="gov-seat">
+                        <i class="fa-solid fa-scale-balanced"></i>
+                        <h4>5. Siège Légal</h4>
+                        <p>Expert juridique suisse. Assure la conformité continue avec la FINMA.</p>
+                    </div>
+                </div>
+
+                <h3 style="margin-top:20px;">Comment sont-ils choisis ?</h3>
+                <p>Les membres sont sélectionnés via un processus de <strong>"Proof of Reputation"</strong>. Leurs adresses sont publiques (doxxées). Ils signent un accord légal (Off-chain) s'engageant à agir dans l'intérêt du protocole, sous peine de poursuites juridiques en Suisse.</p>
+            </article>
+
+            <article id="gov-timelock" class="doc-section">
+                <span class="badge badge-gov">Sécurité Ultime</span>
+                <h1>Timelock & Droit de Sortie</h1>
+                <p>Pour garantir que ce "Conseil" ne devienne pas tyrannique, nous implémentons un garde-fou technologique inviolable : le <strong>Timelock</strong>.</p>
+
+                <h3>Le Délai de 48 Heures</h3>
+                <p>Même si le Multisig signe une transaction (ex: changer la stratégie d'investissement), celle-ci n'est pas exécutée immédiatement.</p>
+                <div class="ascii-art">
+   [ Multisig 3/5 Signe ] ---> [ TIMELOCK CONTRACT ] ---> [ Attente 48H ] ---> [ Exécution ]
+                                        |
+                                        +---> Investisseurs mécontents
+                                              peuvent retirer leurs fonds (Exit)
+                                              AVANT l'application du changement.
+                </div>
+
+                <p>C'est la garantie ultime de décentralisation : <strong>Le droit de sortie (Fork-free exit)</strong>.</p>
+            </article>
+
+
+            <!-- =================================================================
+                 SECTION 6: GUIDES
+            ================================================================= -->
+
+            <article id="guide-investor" class="doc-section">
+                <h1>Guide Investisseur</h1>
+                <p>Comment placer de la liquidité dans un Cat Bond Mœba.</p>
+
+                <h3>Étape 1 : Connexion & KYC</h3>
+                <p>Connectez votre wallet (MetaMask/Rabby). Si c'est votre première fois, vous serez redirigé vers le partenaire KYC pour valider votre identité.</p>
+
+                <h3>Étape 2 : Sélection du Vault</h3>
+                <p>Dans le Dashboard, filtrez par risque (Vent, Séisme) et par région. Vérifiez le ratio "Junior/Senior". Plus la part Junior est élevée, plus vous êtes protégé.</p>
+
+                <h3>Étape 3 : Dépôt</h3>
+                <p>Approuvez l'USDC et déposez. Vous recevez des tokens <code>HPIV-LP</code> représentant votre part + les intérêts accumulés.</p>
+
+                <h3>Étape 4 : Maturité ou Sinistre</h3>
+                <ul>
+                    <li><strong>Pas de sinistre :</strong> À la date de fin, retirez 100% du capital + Rendement.</li>
+                    <li><strong>Sinistre :</strong> Attendez la résolution de l'oracle, puis retirez le capital restant (Soft Default) + Rendement.</li>
+                </ul>
+            </article>
+
+            <article id="guide-insurer" class="doc-section">
+                <h1>Guide Assureur (Sponsor)</h1>
+                <p>Comment transférer un risque sur la blockchain.</p>
+
+                <h3>Étape 1 : Whitelisting (KYB)</h3>
+                <p>Contactez la DAO Mœba pour vérifier votre entité d'assurance. Une fois validé, votre adresse est ajoutée à la <code>HPIVFactory</code>.</p>
+
+                <h3>Étape 2 : Déploiement du Vault</h3>
+                <p>Utilisez le formulaire "Nouveau Vault". Définissez :</p>
+                <ul>
+                    <li>Le Trigger (ex: Vent > 250km/h).</li>
+                    <li>La Capacité Cible (ex: 40M$).</li>
+                    <li>Votre apport Junior (ex: 4M$).</li>
+                </ul>
+
+                <h3>Étape 3 : Funding Initial</h3>
+                <p>Vous devez déposer la Tranche Junior et la Prime (Yield) <strong>avant</strong> que le vault n'ouvre aux investisseurs. Cela prouve votre engagement ("Skin in the Game").</p>
+            </article>
+
+        </div>
+    </main>
+
+    <!-- Script JS pour la navigation (inchangé) -->
+    <script src="static/js/index.js"></script>
+</body>
+</html>
