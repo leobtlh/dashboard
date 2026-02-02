@@ -1,0 +1,79 @@
+Entreprise,Spécialité,Pourquoi ton profil ?,Localisation
+SwissBorg,Wealth Management,Analyse de yield (Maths) + Dev,Lausanne (Gare)
+Taurus,Custody / Infrastructure,Sécurité & Cryptographie,Lausanne (EPFL Innovation Park)
+Mt Pelerin,Tokenisation / Bridge,Logique financière & Smart Contracts,Genève / Remote
+Allfeat,Music Industry,Application concrète de la Blockchain,Lausanne / Remote
+Aave / Morpho,Lending,Modélisation de risque / Quant Dev,Remote
+
+
+Morpho Labs : Bien qu'ils soient basés à Paris, ils sont très ouverts au remote et ont des liens étroits avec l'écosystème académique. C'est le graal pour un matheux (optimisation du capital).
+
+SwissBorg (Lausanne) : Incontournable. Ils ont des équipes "Quant" et "DeFi" qui travaillent sur l'agrégation de rendement. Ils embauchent souvent des profils EPFL à temps partiel.
+
+Arrakis Finance (Zoug/Remote) : Spécialisés dans la gestion de liquidité concentrée (Uniswap V3). C'est extrêmement "math-heavy".
+
+Mt Pelerin (Genève - Remote possible) : Tu les as cités, ils sont leaders dans la tokenisation d'actions et le on/off ramp. Ton profil hybride info/finance est parfait pour eux.
+
+Taurus SA (Lausanne/Genève) : La référence suisse pour la garde d'actifs numériques (custody). Ils travaillent avec des banques. Moins "DeFi pure" mais très technique et mathématique pour la partie cryptographie.
+
+Metaco (Lausanne - filiale de Ripple) : Infrastructure de niveau institutionnel. Très sélectif, mais ils apprécient les profils d'ingénieurs locaux.
+
+Allfeat (Lausanne) : Comme tu l'as mentionné, ils traitent la gestion des droits d'auteur. C'est une application concrète "Real World Asset" (RWA).
+
+Lykke (Zoug/Remote) : Un exchange qui travaille sur des modèles de trading à haute fréquence et des protocoles de settlement.
+
+ChainSecurity (Zurich/Remote) : Spin-off de l'ETHZ. Ils auditent des smart contracts complexes. Si tu aimes les preuves formelles et la sécurité mathématique, c'est pour toi.
+
+Gain Forest (Lausanne/Remote) : Une entreprise qui utilise la blockchain pour la protection de la nature (NFTs dynamiques basés sur des données réelles).
+
+Lunu (Lausanne) : Travaillent sur des solutions de paiement crypto pour le retail (problème concret de paiement).
+
+Angle Protocol : Un protocole de stablecoin décentralisé qui nécessite énormément de modélisation financière (Quant).
+
+Alquant (Crissier/Lausanne) : Ils utilisent des modèles mathématiques quantitatifs pour gérer des portefeuilles d'actifs, y compris des actifs numériques.
+
+Flovtec (Remote / Zug - mais forte présence en Romandie) : Fournisseur de liquidité (Market Making) pour les protocoles DeFi et les exchanges.
+
+Aktionariat (Remote / Zurich - opère dans toute la Suisse) : Permettre aux PME suisses de tokeniser leurs actions selon la loi DLT suisse.
+
+Ondefy (Lausanne) : Un agrégateur DeFi qui simplifie l'accès aux protocoles de rendement.
+
+Curve Finance (L'équipe est très distribuée, certains en Suisse) : L'AMM le plus efficace pour les stablecoins.
+
+-------------------------------------------------------------------------------------------------------------------------------------
+| Company           | Domaine                           | Lieu              | Contact                                               |
+=====================================================================================================================================
+| Allfeat           | Gestion des droits d'auteur       | Zoug (remote)     | https://www.linkedin.com/in/jcbarat/                  |
+-------------------------------------------------------------------------------------------------------------------------------------
+| SwissBorg         | CEX, agrégation de rendement      | Lausanne          | https://swissborg.com/careers                         |
+-------------------------------------------------------------------------------------------------------------------------------------
+| Morpho Labs       | Lending, Borrowing                | Paris (remote)    | https://morpho.org/jobs/                              |
+-------------------------------------------------------------------------------------------------------------------------------------
+| Arrakis Finance   | Liquidité concentrée (Uniswap V3) | Zoug (remote)     | https://arrakis.finance/careers                       |
+-------------------------------------------------------------------------------------------------------------------------------------
+| Mt Pelerin        | Tokenisation & on/off ramp        | Genève (remote)   | as@mtpelerin.com, hello@mtpelerin.com                 |
+-------------------------------------------------------------------------------------------------------------------------------------
+| Taurus SA         | Custody, garde d'actifs numéric   | Lausanne / Genève | https://www.taurushq.com/careers/ (+41 22 518 90 49)  |
+-------------------------------------------------------------------------------------------------------------------------------------
+| Ripple / Metaco   | Facilitate instant payments       | Genève (remote)   | https://ripple.com/careers/                           |
+-------------------------------------------------------------------------------------------------------------------------------------
+| Lykke             | Exchange with ZERO trading fees   | Zoug (remote)     | https://www.linkedin.com/company/lykke/               |
+-------------------------------------------------------------------------------------------------------------------------------------
+| Angle Protocol    | Stablecoin décentralisé           | Remote            | https://www.linkedin.com/company/angle-labs/          |
+-------------------------------------------------------------------------------------------------------------------------------------
+| ChainSecurity     | Audit de smart contracts          | Zurich (remote)   | https://www.linkedin.com/company/chainsecurity/       |
+-------------------------------------------------------------------------------------------------------------------------------------
+| Gain Forest       | Protection de la nature (NFTs)    | Zurich (remote)   | https://www.linkedin.com/company/gainforest/          |
+-------------------------------------------------------------------------------------------------------------------------------------
+| Lunu Pay          | Solutions de paiement             | Berlin (remote)   | https://lunu.io/fr/careers                            |
+-------------------------------------------------------------------------------------------------------------------------------------
+| Alquant           | Gestion de portefeuille d'actifs  | Fribourg (remote) | https://www.linkedin.com/company/alquant/             |
+-------------------------------------------------------------------------------------------------------------------------------------
+| Flovtec           | Liquidity provider (Market Maker) | Zoug (remote)     | https://www.flovtec.com/what-is-flovtec               |
+-------------------------------------------------------------------------------------------------------------------------------------
+| Aktionariat       | Tokenisation d'actions PME suisse | Zurich (remmote)  | https://www.aktionariat.com/about#open-positions      |
+-------------------------------------------------------------------------------------------------------------------------------------
+| Ondefy            | Agrégateur DeFi                   | Lausanne (remote) | https://www.linkedin.com/company/ondefy-labs/         |
+-------------------------------------------------------------------------------------------------------------------------------------
+| Curve Finance     | AMM                               | Remote            | https://www.linkedin.com/company/curve-finance/       |
+-------------------------------------------------------------------------------------------------------------------------------------
