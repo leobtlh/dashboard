@@ -8,7 +8,7 @@ const MainLayout = ({ children, activeView, setActiveView }) => {
             <Navbar activeView={activeView} setActiveView={setActiveView} />
 
             {/* Contenu Principal */}
-            <main className="max-w-7xl mx-auto px-6 py-10">
+            <main className="max-w-[89%] mx-auto px-6 py-10">
                 {children}
             </main>
 
