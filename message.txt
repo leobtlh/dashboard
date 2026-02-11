@@ -1,0 +1,75 @@
+Dear,
+
+I am developing Moeba Protocol, a decentralized reinsurance infrastructure (DeFi) designed specifically for the Swiss regulatory framework (ISPV / DLT Law).
+
+Unlike traditional Cat Bonds that expose investors to a binary ("all-or-nothing") risk, Moeba introduces the HPIV (Hybrid Parametric Insurance Vault) standard. Through an innovative "Waterfall" architecture, we segment risk into tranches:
+
+    First Loss: Insurer's capital (sacrificed first).
+
+Junior Tranche: High yield to absorb subsequent shocks.
+
+Senior Tranche (ERC-4626): Protected by the first two layers, offering unprecedented security for institutional investors.
+
+The protocol is technically ready (functional PoC) and structured to operate with a technical/legal "Core Team," supported by DAO governance for risk supervision.
+
+I am currently seeking a strong institutional partner to co-build this vision, provide the necessary credibility for audits, and ensure legal compliance (ISPV license).
+
+An interactive simulation is available here: https://moeba-protocol.vercel.app (Tip: Connect the "Simulation Wallet" via "Other Wallets" to access insurer features).
+
+Would you be open to a brief conversation to discuss the role of DeFi in your risk transfer strategies?
+
+Best regards,
+
+Leo Botelho
+
+---
+
+Bonjour,
+
+Je développe Moeba Protocol, une infrastructure de réassurance décentralisée (DeFi) conçue spécifiquement pour le cadre réglementaire suisse (VUSA / Loi DLT).
+
+Contrairement aux Cat Bonds traditionnels qui exposent les investisseurs à un risque binaire ("tout ou rien"), Moeba introduit le standard HPIV (Hybrid Parametric Insurance Vault). Grâce à une architecture "Waterfall" innovante, nous segmentons le risque en tranches :
+
+    First Loss : Capital de l'assureur (sacrifié en premier).
+
+    Tranche Junior : Haut rendement pour absorber les chocs suivants.
+
+    Tranche Senior (ERC-4626) : Protégée par les deux premières couches, offrant une sécurité inédite aux investisseurs institutionnels.
+
+Le protocole est techniquement prêt (PoC fonctionnel) et structuré pour opérer avec une "Core Team" technique/juridique appuyée par une gouvernance DAO pour la supervision des risques.
+
+Je cherche aujourd'hui un partenaire institutionnel solide pour co-construire cette vision, apporter la crédibilité nécessaire aux audits et assurer la conformité légale (licence VUSA).
+
+Une simulation interactive est disponible ici : https://moeba-protocol.vercel.app (Astuce : Connectez le "Simulation Wallet" via "Other Wallets" pour accéder aux fonctionnalités assureur).
+
+Seriez-vous ouvert à un court échange pour discuter de la place de la DeFi dans vos stratégies de transfert de risque ?
+
+Cordialement,
+
+Leo Botelho
+
+---
+
+Sehr geehrte(r) Frau/Herr,
+
+ich entwickle das Moeba Protocol, eine dezentrale Rückversicherungsinfrastruktur (DeFi), die spezifisch für den Schweizer Regulierungsrahmen (VZG / DLT-Gesetz) konzipiert wurde.
+
+Im Gegensatz zu herkömmlichen Cat Bonds, die Investoren einem binären Risiko („Alles oder Nichts“) aussetzen, führt Moeba den HPIV-Standard (Hybrid Parametric Insurance Vault) ein. Dank einer innovativen „Waterfall“-Architektur segmentieren wir das Risiko in Tranchen:
+
+    First Loss: Kapital des Versicherers (wird als Erstes herangezogen).
+
+    Junior Tranche: Hohe Rendite zur Absorption nachfolgender Schocks.
+
+    Senior Tranche (ERC-4626): Durch die ersten beiden Schichten geschützt, bietet sie institutionellen Investoren eine bisher unerreichte Sicherheit.
+
+Das Protokoll ist technisch bereit (funktionierender PoC) und so strukturiert, dass es mit einem technischen und juristischen „Core Team“ operiert, unterstützt durch eine DAO-Governance zur Risikoüberwachung.
+
+Aktuell suche ich einen starken institutionellen Partner, um diese Vision gemeinsam aufzubauen, die notwendige Glaubwürdigkeit für Audits einzubringen und die rechtliche Konformität (VZG-Lizenz) sicherzustellen.
+
+Eine interaktive Simulation finden Sie hier: https://moeba-protocol.vercel.app (Tipp: Verbinden Sie das „Simulation Wallet“ über „Other Wallets“, um auf die Versicherer-Funktionen zuzugreifen).
+
+Wären Sie offen für einen kurzen Austausch, um die Rolle von DeFi in Ihren Risikotransferstrategien zu besprechen?
+
+Freundliche Grüße,
+
+Leo Botelho

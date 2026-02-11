@@ -1,0 +1,262 @@
+:root {
+    --primary-color: #A1C740; /* Bleu agréable pour les accents */
+    --sidebar-bg: #f8f9fa;    /* Fond du menu */
+    --text-color: #333;
+    --border-color: #e5e7eb;
+    --sidebar-width: 280px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: var(--text-color);
+    line-height: 1.6;
+    display: flex;
+    height: 100vh;
+    overflow: hidden; /* Empêche le scroll sur tout le body, on scroll dans les zones */
+}
+
+/* --- SIDEBAR (MENU GAUCHE) --- */
+.sidebar {
+    width: var(--sidebar-width);
+    background-color: var(--sidebar-bg);
+    border-right: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.sidebar-header {
+    padding: 20px;
+    border-bottom: 1px solid var(--border-color);
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: var(--primary-color);
+}
+
+.sidebar-nav {
+    overflow-y: auto; /* Scroll si le menu est trop long */
+    padding: 20px 0;
+    flex: 1;
+}
+
+.sidebar-nav ul {
+    list-style: none;
+}
+
+/* Style des liens du menu */
+.nav-link {
+    display: block;
+    padding: 8px 20px;
+    text-decoration: none;
+    color: #555;
+    font-size: 0.95rem;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+.nav-link:hover {
+    color: var(--primary-color);
+    background-color: rgba(59, 130, 246, 0.05);
+}
+
+/* Lien actif (page en cours) */
+.nav-link.active {
+    color: var(--primary-color);
+    font-weight: 600;
+    border-right: 3px solid var(--primary-color);
+    background-color: rgba(59, 130, 246, 0.1);
+}
+
+/* --- SOUS-CATÉGORIES (INDENTATION) --- */
+/* Titre de catégorie (non cliquable) */
+.category-title {
+    padding: 15px 20px 5px 20px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #888;
+    font-weight: 700;
+}
+
+/* Indentation pour les sous-items */
+.submenu .nav-link {
+    padding-left: 40px; /* Décalage vers la droite pour les sous-menus */
+    font-size: 0.9rem;
+}
+
+/* --- CONTENU PRINCIPAL (DROITE) --- */
+.main-content {
+    flex: 1;
+    overflow-y: auto; /* Scroll indépendant pour le contenu */
+    padding: 40px;
+    scroll-behavior: smooth;
+}
+
+.content-container {
+    max-width: 800px; /* Limite la largeur pour la lisibilité */
+    margin: 0 auto;
+}
+
+/* --- SECTIONS (PAGES) --- */
+/* Par défaut, toutes les sections sont cachées */
+.doc-section {
+    display: none;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Seule la section active est affichée */
+.doc-section.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Styles de typographie pour le contenu */
+h1 { margin-bottom: 20px; font-size: 2.5rem; border-bottom: 2px solid var(--border-color); padding-bottom: 10px; }
+h2 { margin-top: 30px; margin-bottom: 15px; color: #444; }
+p { margin-bottom: 15px; }
+
+code {
+    background-color: #f1f5f9;
+    padding: 2px 5px;
+    border-radius: 4px;
+    font-family: monospace;
+    color: #d63384;
+}
+
+pre {
+    background-color: #1e293b;
+    color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    overflow-x: auto;
+    margin-bottom: 20px;
+}
+
+/* --- RESPONSIVE (MOBILE) --- */
+.mobile-menu-toggle {
+    display: none;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 100;
+    background: white;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        position: absolute;
+        transform: translateX(-100%);
+        transition: transform 0.3s;
+        z-index: 50;
+        width: 100%;
+        background: white;
+    }
+    .sidebar.open {
+        transform: translateX(0);
+    }
+    .mobile-menu-toggle {
+        display: block;
+    }
+    .main-content {
+        padding: 20px;
+        padding-top: 60px; /* Espace pour le bouton menu */
+    }
+}
+
+.badge {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.7em;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 10px;
+        }
+        .badge-sol { background: #1e1e1e; color: #00ff9d; border: 1px solid #333; } /* Solidity */
+        .badge-math { background: #fff0f7; color: #be185d; border: 1px solid #fbcfe8; } /* Maths */
+        .badge-legal { background: #eff6ff; color: #1e40af; border: 1px solid #bfdbfe; } /* Legal */
+        .badge-infra { background: #f0fdf4; color: #15803d; border: 1px solid #bbf7d0; } /* Infra */
+
+        /* Callouts / Alertes */
+        .callout {
+            padding: 20px;
+            border-left: 4px solid;
+            background: #fff;
+            margin: 25px 0;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        .callout-info { border-color: #3b82f6; background: #eff6ff; color: #1e3a8a; }
+        .callout-warn { border-color: #f59e0b; background: #fffbeb; color: #92400e; }
+        .callout-danger { border-color: #ef4444; background: #fef2f2; color: #991b1b; }
+        .callout-success { border-color: #22c55e; background: #f0fdf4; color: #166534; }
+
+        /* Tables Techniques */
+        .tech-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 0.9rem;
+            background: white;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .tech-table th { background: #f8fafc; text-align: left; padding: 12px; border-bottom: 2px solid #e2e8f0; color: #475569; }
+        .tech-table td { padding: 12px; border-bottom: 1px solid #e2e8f0; color: #334155; }
+        .tech-table tr:last-child td { border-bottom: none; }
+        .var-name { font-family: 'Courier New', monospace; color: #d63384; font-weight: bold; }
+
+        /* Bloc Mathématique */
+        .formula-box {
+            background: #fafafa;
+            border: 1px dashed #cbd5e1;
+            padding: 20px;
+            text-align: center;
+            font-family: 'Courier New', monospace;
+            font-size: 1.1em;
+            margin: 20px 0;
+            border-radius: 8px;
+            color: #334155;
+        }
+
+        /* Timeline / Roadmap */
+        .timeline-item {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 20px;
+            border-left: 2px solid #e2e8f0;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: 0;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #3b82f6;
+        }
+        .timeline-date { font-size: 0.8rem; color: #64748b; font-weight: bold; text-transform: uppercase; }
+        .timeline-content { margin-top: 5px; }
+
+        /* Navigation interne */
+        .jumplink {
+            color: #3b82f6;
+            text-decoration: none;
+            border-bottom: 1px dotted #3b82f6;
+        }
+        .jumplink:hover { border-bottom: 1px solid #3b82f6; }
